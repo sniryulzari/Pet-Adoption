@@ -23,6 +23,7 @@ app.use("/users",  usersRoute);
 app.use("/pets", petsRoute);
 app.use("/admin", adminRoute);
 
+mongoose.set("strictQuery", false);
 
 mongoose.connect(
   process.env.MONGO_URI,
