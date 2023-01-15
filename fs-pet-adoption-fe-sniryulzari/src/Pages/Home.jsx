@@ -57,10 +57,12 @@ const Home = () => {
     }
   };
 
+ 
+
   return (
     <div className="home-container">
       <div className="home-top-container">
-      <img src={hillsSvg} alt="hills" className="hills" />
+        <img src={hillsSvg} alt="hills" className="hills" />
 
         {isLogin ? (
           <div>

@@ -1,28 +1,38 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import petOfTheWeek from "../Images/cat-1.webp";
+import petOfTheWeekFrame from "../Images/petOfTheWeekFrame.jpeg";
 
 function PetOfTheWeek() {
-    const [petOfTheWeek, setPetOfTheWeek] = useState({});
+  const [petOfTheWeek, setPetOfTheWeek] = useState({});
+  const [isMousedOver, setMouseOver] = useState(false);
 
-    const getPetOfTheWeek = async () => {
-        try {
-          const res = await axios.get(`http://localhost:8080/pets/weeklyPet`, {
-            withCredentials: true,
-          });
-          setPetOfTheWeek(res.data);
-        } catch (err) {
-            console.log(err);
+  function handleMouseOver() {
+    setMouseOver(true);
+  }
+
+  function handleMouseOut() {
+    setMouseOver(false);
+  }
+
+  const getPetOfTheWeek = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8080/appOperations/weeklyPet`,
+        {
+          withCredentials: true,
         }
-    };
-    
-    
-    useEffect(() => {
-        getPetOfTheWeek();
-        console.log("petOfTheWeek:", petOfTheWeek);
+      );
+      console.log("res.data:", res.data);
+      setPetOfTheWeek(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getPetOfTheWeek();
   }, []);
-  
 
   return (
     <div className="home-pet-of-the-week-container">
@@ -30,16 +40,36 @@ function PetOfTheWeek() {
       <h2 className="pet-of-the-week-heading-bottom">PET OF THE WEEK!</h2>
       <div className="pet-of-the-week-card">
         <div className="pet-of-the-week-card-left">
+          <img src={petOfTheWeekFrame} />
           <img
-            src={petOfTheWeek.imageUrl}
+            src={petOfTheWeek[0]?.imageUrl}
             alt="pet of the week"
             className="pet-of-the-week-image"
+            style={{
+              animationName: isMousedOver
+                ? "pet-of-the-week-image-hover"
+                : "pet-of-the-week-image-unhover",
+            }}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
           />
         </div>
         <div className="pet-of-the-week-card-right">
-          <span>{petOfTheWeek.name}</span>
-          <p>pet info</p>
-          <button>Adopte {"name of pet"}</button>
+          <span className="pet-name">{petOfTheWeek[0]?.name}</span>
+          {/* <p className="pet-bio">{petOfTheWeek[0]?.bio}</p> */}
+          <p className="pet-bio">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <button className="pet-of-the-week-button">
+            Click To Adopte {petOfTheWeek[0]?.name}
+          </button>
         </div>
       </div>
     </div>

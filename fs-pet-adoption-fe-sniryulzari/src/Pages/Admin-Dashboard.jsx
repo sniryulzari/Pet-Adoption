@@ -45,8 +45,8 @@ const AdminDashboard = () => {
     <div className="admin-dashboard-pets-container mt-3">
       <h1 className="display-4">Admin Dashboard</h1>
       <h3 className="display-7 mt-4 mb-2">List of Users</h3>
-
       <UsersList />
+      
       <div className="admin-table-header mt-5 mb-2">
         <h3 className="display-7">List of Pets</h3>
         <button className="add-pet-button-link" onClick={() => navigate("/admin-AddPet")}>Add Pet</button>
