@@ -360,20 +360,19 @@ body,
 .pet-of-the-week-card {
   display: flex;
   width: 100%;
-  /* border: 3px solid green; */
 }
 
 .pet-of-the-week-card-left {
   width: auto;
   margin-left: 10rem;
-  /* border: 3px solid red; */
 }
 
 .pet-of-the-week-card-right {
   width: 60%;
   margin-right: 10rem;
   padding-top: 6rem;
-  /* border: 3px solid blue; */
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .pet-of-the-week-image {
@@ -381,7 +380,7 @@ body,
   width: 629px;
   border-radius: 50%;
   margin-left: 10rem;
-  margin-right: 4rem;
+  margin-right: 2rem;
   position: relative;
   top: -719px;
   left: -76px;
@@ -445,6 +444,68 @@ body,
   color: #ff4880;
   background-color: #ffffff;
   border: 2px solid #ff4880;
+}
+
+/* Clients Testimonias */
+.clients-testimonias-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.clients-testimonias-heading {
+  font-family: "MikadoBold";
+  color: #393d72;
+  font-size: 65px;
+  padding: 1rem;
+  margin-bottom: 70px;
+}
+
+.clients-testimonias-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 3rem;
+}
+
+.clients-testimonias-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.clients-testimonias-person-image {
+  height: 10rem;
+  width: 10rem;
+  margin-bottom: 3rem;
+}
+
+.clients-testimonias-person-name {
+  font-family: "MikadoBold";
+  color: #ff4880;
+  font-size: 35px;
+  font-weight: bolder;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+  line-height: 2.5rem;
+}
+
+.clients-testimonias-person-recommendation {
+  font-family: "Montserrat", sans-serif;
+  color: #858687;
+  font-size: 21px;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  line-height: 2.5rem;
 }
 
 /* nav bar */

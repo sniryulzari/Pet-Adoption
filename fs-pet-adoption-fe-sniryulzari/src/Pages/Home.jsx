@@ -7,6 +7,7 @@ import { UsersContext } from "../Context/Context-Users";
 import HomeWelcome from "../components/Home-Welcome";
 import HomePhotoGallery from "../components/Home-Photo-Gallery";
 import PetOfTheWeek from "../components/Home-PetOfTheWeek";
+import HomeClientsTestimonials from "../components/Home-Clients-Testimonials";
 import hillsSvg from "../Images/hills.svg";
 
 const Home = () => {
@@ -117,6 +118,7 @@ const Home = () => {
       <HomeWelcome />
       <HomePhotoGallery />
       <PetOfTheWeek />
+      <HomeClientsTestimonials />
     </div>
   );
 };
