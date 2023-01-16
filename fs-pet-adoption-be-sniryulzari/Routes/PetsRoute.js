@@ -3,7 +3,7 @@ const router = express.Router();
 const PetsController = require("../Controllers/petsControllers");
 const { filterQuery } = require("../Middleware/PetsMiddleware");
 
-router.get('/weeklyPet', PetsController.getPetOfTheWeek);
+// router.get('/weeklyPet', PetsController.getPetOfTheWeek);
 
 router.get('/search', filterQuery, PetsController.searchPets);
 router.get("/:petId", PetsController.getPetById);

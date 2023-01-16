@@ -17,11 +17,13 @@ const PORT = process.env.PORT || 8080;
 const usersRoute = require("./Routes/UsersRoute");
 const petsRoute = require("./Routes/PetsRoute");
 const adminRoute = require("./Routes/AdminRoute");
+const appOperationsRoute= require("./Routes/appOperationsRoute")
 
 
 app.use("/users",  usersRoute);
 app.use("/pets", petsRoute);
 app.use("/admin", adminRoute);
+app.use("/appOperations", appOperationsRoute);
 
 mongoose.set("strictQuery", false);
 
