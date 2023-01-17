@@ -8,6 +8,7 @@ import HomeWelcome from "../components/Home-Welcome";
 import HomePhotoGallery from "../components/Home-Photo-Gallery";
 import PetOfTheWeek from "../components/Home-PetOfTheWeek";
 import HomeClientsTestimonials from "../components/Home-Clients-Testimonials";
+import Footer from "../components/Footer";
 import hillsSvg from "../Images/hills.svg";
 
 const Home = () => {
@@ -116,9 +117,10 @@ const Home = () => {
         />
       </div>
       <HomeWelcome />
-      <HomePhotoGallery />
+      {/* <HomePhotoGallery /> */}
       <PetOfTheWeek />
       <HomeClientsTestimonials />
+      <Footer />
     </div>
   );
 };
