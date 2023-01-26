@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import petImg2 from "../Images/petImg2.jpeg";
-import { AiFillCheckCircle } from "react-icons/ai";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 function HomeWelcome() {

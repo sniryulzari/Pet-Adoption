@@ -47,7 +47,6 @@ const Home = () => {
       const res = await axios.get("http://localhost:8080/users/logout", {
         withCredentials: true,
       });
-      // console.log(res.data);
       if (res.data.ok) {
         localStorage.clear();
         setIsLogin(false);
@@ -59,11 +58,37 @@ const Home = () => {
     }
   };
 
- 
-
   return (
     <div className="home-container">
       <div className="home-top-container">
+        <img
+          className="dog-bone-img"
+          alt="dog bone img"
+          src={
+            "http://demo2.themelexus.com/petzen/wp-content/uploads/2020/05/revolution-icon-6.svg"
+          }
+        />
+        <img
+          className="arrow-img"
+          alt="arrow img"
+          src={
+            "http://demo2.themelexus.com/petzen/wp-content/uploads/2020/05/revolution-icon-5.svg"
+          }
+        />
+        <img
+          className="star-img"
+          alt="star img"
+          src={
+            "http://demo2.themelexus.com/petzen/wp-content/uploads/2020/05/revolution-icon-4.svg"
+          }
+        />
+        <img
+          className="dog-footprints-img"
+          alt="dog footprints img"
+          src={
+            "http://demo2.themelexus.com/petzen/wp-content/uploads/2020/05/revolution-icon-1.svg"
+          }
+        />
         <img src={hillsSvg} alt="hills" className="hills" />
 
         {isLogin ? (
@@ -94,12 +119,12 @@ const Home = () => {
         <div className="home-bottom-page-container">
           {/* <label>what are we doing?</label>
         <p>
-        For almost two decades, Adopt a Pet has helped in creating true social
+        For almost two decades, Ado-Pet has helped in creating true social
         change by bringing pet adoption into the mainstream. Our work has
         helped make a difference to the Israel rescue community and thousands
         of pets in need of rescue and rehabilitation. But, until every pet is
         safe, respected, and loved, we all still have big, hairy work to do.
-        Find out more about our mission to help save 100,000 healthy and
+        Find out more about our mission to help save 10,000 healthy and
         rehomable pets each year.
       </p> */}
         </div>
@@ -117,7 +142,7 @@ const Home = () => {
         />
       </div>
       <HomeWelcome />
-      {/* <HomePhotoGallery /> */}
+      <HomePhotoGallery />
       <PetOfTheWeek />
       <HomeClientsTestimonials />
       <Footer />

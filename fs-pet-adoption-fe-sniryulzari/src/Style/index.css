@@ -19,20 +19,7 @@ body,
   justify-content: center;
 }
 
-.logo {
-  height: 80px;
-  width: 80px;
-  margin: 10px 30px;
-}
-
 /* Home Page */
-.topHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .home-container {
   height: 100%;
   width: 100%;
@@ -44,32 +31,153 @@ body,
   background-repeat: no-repeat;
   background-attachment: local;
   background-position: center;
-  height: 100vh;
+  height: 63rem;
   width: 100%;
+  position: relative;
+  margin-bottom: 20rem;
 }
 
 .hills {
   transform: rotateY(180deg);
   transform: rotateX(180deg);
   position: absolute;
-  top: 54rem;
+  bottom: 0px;
+}
+
+.dog-bone-img {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  top: 13rem;
+  right: 43rem;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: dog-bone-img;
+}
+
+@keyframes dog-bone-img {
+  0% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scaleX(1.3) scaleY(1.3) translateX(0px) translateY(0px)
+      rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+}
+
+.arrow-img {
+  height: 9.375rem;
+  width: 7.625rem;
+  position: absolute;
+  bottom: 19rem;
+  left: 30rem;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: arrow-img;
+}
+
+@keyframes arrow-img {
+  0% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: scaleX(1) scaleY(1) translateX(20px) translateY(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+  }
+}
+
+.star-img {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: absolute;
+  top: 18rem;
+  right: 6rem;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: star-img;
+}
+
+@keyframes star-img {
+  0% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleX(1.3) scaleY(1.3) translateX(0px) translateY(0px)
+      rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+.dog-footprints-img {
+  height: 4rem;
+  width: 4.4375rem;
+  position: absolute;
+  bottom: 20rem;
+  right: 15rem;
 }
 
 .welcome-container {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 340px;
-  right: 120px;
+  top: 15rem;
+  right: 7.5rem;
   position: absolute;
+  width: 36%;
 }
 
 .welcome-title-top {
-  font-size: 30px;
-  font-weight: bolder;
-  margin-bottom: 40px;
+  font-family: "Comic-Gecko";
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
   letter-spacing: 1px;
   color: #393d72;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: title-top;
+}
+
+@keyframes title-top {
+  
 }
 
 @font-face {
@@ -91,7 +199,7 @@ body,
   font-family: "Comic-Gecko";
   font-weight: normal;
   font-style: normal;
-  font-size: 100px;
+  font-size: 4rem;
   color: #393d72;
 }
 
@@ -99,29 +207,36 @@ body,
   font-family: "Comic-Gecko";
   font-weight: normal;
   font-style: normal;
-  font-size: 100px;
+  font-size: 4rem;
   color: #393d72;
-  margin-top: -25px;
+  margin-top: -0.5rem;
   /* background: -webkit-linear-gradient(right, rgb(255, 145, 86), rgb(224, 245, 36));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
 }
 
 .Login-Btn {
-  width: 230px;
-  height: 65px;
-  background-color: rgb(255, 72, 128);
   color: #ffffff;
-  font-family: "MikadoBold";
-  font-size: 18px;
-  letter-spacing: 1px;
-  border-radius: 20px;
+  background-color: #ff4880;
   border: none;
-  margin-top: 50px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "MikadoBold";
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 10px 0px 0px;
+  padding: 0.8125rem 4rem;
+  width: fit-content;
+  transition-duration: 0.2s;
 }
 
 .Login-Btn:hover {
-  background-color: #00a277;
+  background-color: #ffae00;
+
+  /* color: #ff4880;
+  background-color: #ffffff;
+  border: 2px solid #ff4880; */
 }
 
 /* home welcome */
@@ -130,7 +245,6 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20rem;
   width: 100%;
 }
 
@@ -138,9 +252,10 @@ body,
   font-family: "MikadoBold";
   font-weight: normal;
   font-style: normal;
-  font-size: 70px;
   color: #393d72;
   justify-content: center;
+  align-items: center;
+  font-size: 3.125rem;
 }
 
 .home-welcome-content {
@@ -156,12 +271,13 @@ body,
   padding-right: 15px;
   height: auto;
   margin: 0 auto;
+  position: relative;
 }
 
 .petImg2 {
-  position: relative;
-  top: -25rem;
-  left: 10rem;
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
   animation-duration: 1s;
   animation-fill-mode: both;
   clip-path: path(
@@ -192,9 +308,9 @@ body,
 }
 
 .petImg3 {
-  position: relative;
+  position: absolute;
   top: 5rem;
-  left: 10rem;
+  left: 5rem;
   height: 30rem;
   width: 40rem;
   background-color: #b1b1b142;
@@ -233,28 +349,29 @@ body,
 }
 
 .home-welcome-text-top {
-  /* word-wrap: break-word; */
   font-family: "Montserrat", sans-serif;
   color: #858687;
-  font-size: 21px;
   text-align: left;
   padding-top: 4rem;
-  padding-left: 6rem;
+  padding-left: 5rem;
   padding-right: 6rem;
   box-sizing: border-box;
   line-height: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.875em;
 }
 
 .home-welcome-text-middle {
-  padding-left: 6rem;
+  padding-left: 5rem;
   padding-top: 1.5rem;
+  list-style-type: none;
 }
 .home-welcome-icon-text {
-  justify-content: left;
-  color: #393d72;
-  font-size: 21px;
   font-family: MikadoBold;
-  line-height: 3.5rem;
+  color: #393d72;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  justify-content: left;
 }
 
 .home-welcome-icon-text-line {
@@ -265,16 +382,18 @@ body,
 }
 
 .learn-more-button {
+  font-family: "MikadoBold";
+  font-size: 0.875rem;
   color: #ffffff;
   background-color: #ff4880;
   border: none;
-  padding: 1.3rem 3.5rem;
   border-radius: 20px;
   text-align: center;
-  font-family: "MikadoBold";
-  font-size: 18px;
-  margin-left: 6rem;
+  padding: 0.8125rem 2.5rem;
+  margin-left: 5rem;
   margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 .learn-more-button:hover {
@@ -295,14 +414,14 @@ body,
 
 .photo-gallery-heading-top {
   font-family: "MikadoBold";
-  font-size: 29px;
+  font-size: 1.375rem;
   color: #ff4880;
 }
 
 .photo-gallery-heading-bottom {
   font-family: "MikadoBold";
   color: #393d72;
-  font-size: 65px;
+  font-size: 3.125rem;
   padding: 1rem;
   margin-bottom: -150px;
 }
@@ -314,22 +433,39 @@ body,
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
 
 .photo-gallery-image {
-  height: 300px;
-  width: 300px;
+  height: 14rem;
+  width: 14rem;
   border-radius: 20px;
   margin-bottom: 40px;
+  transition: 2s all ease-in-out;
+}
+
+.photo-gallery-image:hover {
+  transform: scale(1.1);
+  transition-duration: 2s;
 }
 
 .photo-gallery-image-col-2,
 .photo-gallery-image-col-4 {
   margin-top: 150px;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .photo-gallery-image-col-3 {
   margin-top: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.photo-gallery-image-col-1,
+.photo-gallery-image-col-6 {
+  overflow: hidden;
 }
 
 /* Pet of the Week */
@@ -345,14 +481,14 @@ body,
 
 .pet-of-the-week-heading-top {
   font-family: "MikadoBold";
-  font-size: 29px;
+  font-size: 1.375rem;
   color: #ff4880;
 }
 
 .pet-of-the-week-heading-bottom {
   font-family: "MikadoBold";
   color: #393d72;
-  font-size: 65px;
+  font-size: 3.125rem;
   padding: 1rem;
   margin-bottom: 70px;
 }
@@ -364,80 +500,76 @@ body,
 
 .pet-of-the-week-card-left {
   width: auto;
-  margin-left: 10rem;
+  margin-left: 7rem;
+  position: relative;
 }
 
 .pet-of-the-week-card-right {
   width: 60%;
-  margin-right: 10rem;
+  margin-right: 7rem;
   padding-top: 6rem;
-  padding-left: 2rem;
+  padding-left: 5rem;
   padding-right: 2rem;
 }
 
-.pet-of-the-week-image {
-  height: 627px;
-  width: 629px;
+.pet-of-the-week-frame {
+  height: 40rem;
+  width: 40rem;
+}
+
+.pet-of-the-week-image-container {
+  overflow: hidden;
+  height: 79%;
+  width: 84%;
+  position: absolute;
+  top: 68px;
+  left: 67px;
   border-radius: 50%;
-  margin-left: 10rem;
-  margin-right: 2rem;
-  position: relative;
-  top: -719px;
-  left: -76px;
-  animation-duration: 1.5s;
-  animation-fill-mode: both;
 }
 
-@keyframes pet-of-the-week-image-hover {
-  0% {
-    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
-  }
-
-  100% {
-    transform: scaleX(1.2) scaleY(1.2) translateX(0px) translateY(0px)
-      rotate(0deg);
-  }
+.pet-of-the-week-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  transition: 2s all ease-in-out;
 }
 
-@keyframes pet-of-the-week-image-unhover {
-  0% {
-    transform: scaleX(1.2) scaleY(1.2) translateX(0px) translateY(0px)
-      rotate(0deg);
-  }
-
-  100% {
-    transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg);
-  }
+.pet-of-the-week-image:hover {
+  transform: scale(1.1);
+  transition-duration: 2s;
 }
 
 .pet-name {
   font-family: "MikadoBold";
   color: #ffae01;
-  font-size: 50px;
+  font-size: 1.7rem;
 }
 
 .pet-bio {
   font-family: "Montserrat", sans-serif;
   color: #858687;
-  font-size: 21px;
+  font-size: 1rem;
   text-align: left;
   padding-top: 1rem;
   box-sizing: border-box;
-  line-height: 2.5rem;
+  line-height: 1.875em;
 }
 
 .pet-of-the-week-button {
   color: #ffffff;
   background-color: #ff4880;
   border: none;
-  padding: 1.3rem 3.5rem;
   border-radius: 20px;
   text-align: center;
   font-family: "MikadoBold";
-  font-size: 18px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin-top: 3rem;
+  margin: 10px 0px 0px;
+  padding: 13px 40px;
 }
 
 .pet-of-the-week-button:hover {
@@ -455,22 +587,24 @@ body,
   width: 100%;
   margin-top: 10rem;
   margin-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .clients-testimonias-heading {
   font-family: "MikadoBold";
   color: #393d72;
-  font-size: 65px;
+  font-size: 3.125rem;
   padding: 1rem;
-  margin-bottom: 70px;
+  margin-bottom: 3.5rem;
 }
 
 .clients-testimonias-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
+  flex-flow: row nowrap;
 }
 
 .clients-testimonias-person {
@@ -483,15 +617,15 @@ body,
 }
 
 .clients-testimonias-person-image {
-  height: 10rem;
-  width: 10rem;
-  margin-bottom: 3rem;
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 0.3rem;
 }
 
 .clients-testimonias-person-name {
   font-family: "MikadoBold";
   color: #ff4880;
-  font-size: 35px;
+  font-size: 1.3rem;
   font-weight: bolder;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -502,10 +636,10 @@ body,
 .clients-testimonias-person-recommendation {
   font-family: "Montserrat", sans-serif;
   color: #858687;
-  font-size: 21px;
+  font-size: 1rem;
   padding-top: 1rem;
   box-sizing: border-box;
-  line-height: 2.5rem;
+  line-height: 1.67rem;
 }
 
 /* footer */
@@ -552,11 +686,11 @@ body,
 }
 
 .footer-logo {
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 60px;
   border-radius: 50%;
   margin-right: 1rem;
-  top: -90px;
+  margin-top: 1rem;
 }
 
 .social-media-header,
@@ -602,11 +736,10 @@ body,
 .facebook-link:hover,
 .instagram-link:hover,
 .youTube-link:hover {
-background-color:#ff4880;
-color: #fff;
-cursor: pointer;
-transition-duration: 0.7s;
-
+  background-color: #ff4880;
+  color: #fff;
+  cursor: pointer;
+  transition-duration: 0.7s;
 }
 
 .contact-us-info-container {
@@ -658,7 +791,7 @@ transition-duration: 0.7s;
   border-radius: 20px;
   text-align: center;
   font-family: "MikadoBold";
-  font-size: .875rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 10px 0px 0px;
@@ -692,9 +825,9 @@ transition-duration: 0.7s;
 }
 
 .footer-copyright-text {
-color: #858687;
-font-family: "Montserrat", sans-serif;
-font-size: 15px;
+  color: #858687;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
 }
 
 .footer-copyright-text:hover {
@@ -702,47 +835,54 @@ font-size: 15px;
   cursor: pointer;
 }
 
-.terms-of-use:hover, .privacy-policy:hover {
+.terms-of-use:hover,
+.privacy-policy:hover {
   text-decoration: underline;
 }
 
 /* nav bar */
 .navBar {
-  min-width: 100vw;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  height: 4rem;
+  background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
-  /* #edc53b */
+  justify-content: flex-start;
+  align-items: center;
 }
+
+.nav-bar-logo {
+  height: 50px;
+  width: 60px;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.nav-bar-logo-text {
+  font-family: "MikadoBold";
+  color: #ffae00;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+
 .nav-links {
   display: flex;
   list-style-type: none;
-}
-
-.link-container {
-  margin-left: 50px;
-  display: flex;
+  padding-top: 1.5rem;
 }
 
 .link {
-  color: black;
-  font-size: 25px;
+  font-family: "MikadoBold";
+  color: #393d72;
+  font-size: 1.1rem;
   text-decoration: none;
-  padding: 10px 40px;
-  margin-top: 10px;
-}
-li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0px 2.5rem;
 }
 
-.home-bottom-page-container {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 40px;
-  font-size: 30px;
+.link:hover {
+  text-decoration: underline;
+  color: #ff4880;
 }
 
 /* signup and login */

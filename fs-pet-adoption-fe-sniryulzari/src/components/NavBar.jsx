@@ -1,52 +1,51 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../Context/Context-Users";
-import logo from "../Images/petlogo.png"
+import logo from "../Images/logo3.jpg";
 
 function NavigationBar(props) {
   const { isAdmin, isLogin } = useContext(UsersContext);
 
   return (
     <nav className="navBar">
+      <img src={logo} alt="logo" className="nav-bar-logo" />
+      <span className="nav-bar-logo-text">Ado-Pet</span>
       <ul className="nav-links">
-        <img src={logo} alt="logo" className="logo"/>
-        <div className="link-container">
-        <li>
-          <Link className="link" to="/">
-            Home
-          </Link>
-        </li>
-
-        <li>
-          <Link className="link" to="/search">
-            Search
-          </Link>
-        </li>
-
-        {isLogin ? (
           <li>
-            <Link className="link" to="/mypets">
-              My Pets
+            <Link className="link" to="/">
+              Home
             </Link>
           </li>
-        ) : null}
 
-        {isLogin ? (
           <li>
-            <Link className="link" to="/profile-Settings">
-              Profile Settings
+            <Link className="link" to="/search">
+              Search
             </Link>
           </li>
-        ) : null}
 
-        {isAdmin && (
-          <li>
-            <Link className="link" to="/admin-Dashboard">
-              Admin
-            </Link>
-          </li>
-        )}
-        </div>
+          {isLogin ? (
+            <li>
+              <Link className="link" to="/mypets">
+                My Pets
+              </Link>
+            </li>
+          ) : null}
+
+          {isLogin ? (
+            <li>
+              <Link className="link" to="/profile-Settings">
+                Profile Settings
+              </Link>
+            </li>
+          ) : null}
+
+          {isAdmin && (
+            <li>
+              <Link className="link" to="/admin-Dashboard">
+                Admin
+              </Link>
+            </li>
+          )}
       </ul>
     </nav>
   );
