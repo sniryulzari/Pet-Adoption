@@ -4,7 +4,10 @@ const AppOperations = require("../Schemas/AppOperationsSchemas");
 async function petOfTheWeekModel() {
   try {
     let currentDay = new Date().getDay();
-    let isRandomized = await AppOperations.find({}, { isRandomized: 1 });
+    let obj = await AppOperations.find({}, { isRandomized: 1 });
+    let isRandomized = obj[0].isRandomized;
+    console.log("isRandomized:", isRandomized);
+
     // let isRandomized = false;
 
     if (currentDay === 0 && !isRandomized) {
@@ -25,18 +28,19 @@ async function petOfTheWeekModel() {
         { _id: "63c3ca514d92b37155fdc20d" },
         { petsOfTheWeekInfo: petInfo[0] }
       );
-      return petInfo;
 
+      return petInfo;
     } else if (currentDay === 1 && isRandomized) {
       const changeIsRandomized = await AppOperations.updateOne(
         { _id: "63c3ca514d92b37155fdc20d" },
         { isRandomized: false }
       );
-      const petInfo = getPetOfTheWeek();
-      return petInfo;
+      const petInfo = await getPetOfTheWeek();
 
+      return petInfo;
     } else {
-      const petInfo = getPetOfTheWeek();
+      const petInfo = await getPetOfTheWeek();
+
       return petInfo;
     }
   } catch (err) {
@@ -46,7 +50,7 @@ async function petOfTheWeekModel() {
 
 async function randomizedPet() {
   try {
-    const allPets = await Pets.find({}, { _id: 1 });// remove isadopted pet from resulte
+    const allPets = await Pets.find({}, { _id: 1 }); // remove isadopted pet from resulte
     const rnd = Math.round(Math.random() * allPets.length);
     const petId = allPets[rnd];
 
@@ -81,5 +85,5 @@ async function getPetOfTheWeek() {
 }
 
 module.exports = {
-    petOfTheWeekModel,
+  petOfTheWeekModel,
 };

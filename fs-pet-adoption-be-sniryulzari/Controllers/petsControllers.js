@@ -7,7 +7,6 @@ const {
   savedPetInfoModel,
   adoptedPetInfoModel,
   fosteredPetInfoModel,
-  // petsIdModel,
 } = require("../Models/petsModel");
 
 async function searchPets(req, res) {
@@ -102,16 +101,6 @@ async function getMyFosteredPet(req, res) {
   }
 }
 
-// async function getPetOfTheWeek(req, res) {
-//   try {
-//     const petOfTheWeek = await petsIdModel();
-//     res.send(petOfTheWeek);
-//     console.log("petOfTheWeek", petOfTheWeek);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).send(err);
-//   }
-// }
 
 module.exports = {
   searchPets,
@@ -122,5 +111,4 @@ module.exports = {
   getMySavedPet,
   getMyAdoptedPet,
   getMyFosteredPet,
-  // getPetOfTheWeek,
 };

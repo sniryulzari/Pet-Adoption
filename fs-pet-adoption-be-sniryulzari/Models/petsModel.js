@@ -95,23 +95,6 @@ async function fosteredPetInfoModel(id) {
   }
 }
 
-// async function petsIdModel() {
-//   try {
-//     const allPets = await Pets.find({}, { _id: 1 });
-//     // console.log("pet of the week:",allPets);
-
-//     const rnd = Math.round(Math.random() * allPets.length);
-//     // console.log("rnd:", rnd);
-
-//     const petOfTheWeek = allPets[rnd];
-//     const petInfo = await Pets.find({ _id: petOfTheWeek });
-//     return petInfo;
-
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
 module.exports = {
   searchPetsModel,
   getPetByIdModel,
@@ -121,5 +104,4 @@ module.exports = {
   savedPetInfoModel,
   adoptedPetInfoModel,
   fosteredPetInfoModel,
-  // petsIdModel,
 };
