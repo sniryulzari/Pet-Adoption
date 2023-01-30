@@ -14,7 +14,6 @@ function PetOfTheWeek() {
           withCredentials: true,
         }
       );
-      console.log("res.data:", res.data);
       setPetOfTheWeek(res.data);
     } catch (err) {
       console.log(err);

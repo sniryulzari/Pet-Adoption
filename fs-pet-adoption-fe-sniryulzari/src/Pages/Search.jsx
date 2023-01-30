@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import axios from "axios";
-import { Button, Form, Col, Row } from "react-bootstrap";
+import { Form, Col, Row } from "react-bootstrap";
 import { FaDog } from "react-icons/fa";
 import { FaCat } from "react-icons/fa";
 import { FaHorse } from "react-icons/fa";
@@ -22,8 +22,12 @@ const SearchPets = () => {
     maxWeight: 500,
   });
   const [isChecked, setIsChecked] = useState(false);
-  
-  
+  const [isDogPress, setIsDogPress] = useState(false);
+  const [isCatPress, setIsCatPress] = useState(false);
+  const [isHorsePress, setIsHorsePress] = useState(false);
+  const [isDolphinPress, setIsDolphinPress] = useState(false);
+  const [isTigerPress, setIsTigerPress] = useState(false);
+
   const { setPetSearchRes } = useContext(PetContext);
 
   function handlePetInfo(e) {
@@ -35,6 +39,7 @@ const SearchPets = () => {
     const res = await axios.get(`http://localhost:8080/pets/search`, {
       params: { ...petInfo },
     });
+    console.log("res:", res.data);
     setPetSearchRes(res.data);
   };
 
@@ -47,44 +52,93 @@ const SearchPets = () => {
       maxHeight: 300,
       minWeight: 0,
       maxWeight: 500,
-    })
+    });
+  };
+
+  const selectStyle = {
+    border: "1px solid blue",
+    borderRadius: "20px",
+  };
+
+  const unselectStyle = {
+    border: "none",
   };
 
   return (
     <div className="search-container">
       <div className="search-header">
-        <h1 className="display-4">Search for Pet</h1>
+        <h1 className="search-header-text">Search for Pet</h1>
       </div>
       <div className="pets-icons">
         <FaDog
-          className="pet-icon"
+          className="pet-icon dog-icon"
           size="5em"
           name="type"
-          onClick={() => setPetInfo({ ...petInfo, type: "Dog" })}
+          style={isDogPress ? selectStyle : unselectStyle}
+          onClick={() => {
+            setPetInfo({ ...petInfo, type: "Dog" });
+            setIsDogPress(!isDogPress);
+            setIsCatPress(false);
+            setIsHorsePress(false);
+            setIsDolphinPress(false);
+            setIsTigerPress(false);
+          }}
         />
         <FaCat
-          className="pet-icon"
+          className="pet-icon cat-icon"
           size="5em"
           name="type"
-          onClick={() => setPetInfo({ ...petInfo, type: "Cat" })}
+          style={isCatPress ? selectStyle : unselectStyle}
+          onClick={() => {
+            setPetInfo({ ...petInfo, type: "Cat" });
+            setIsCatPress(!isCatPress);
+            setIsDogPress(false);
+            setIsHorsePress(false);
+            setIsDolphinPress(false);
+            setIsTigerPress(false);
+          }}
         />
         <FaHorse
-          className="pet-icon"
+          className="pet-icon horse-icon"
           size="5em"
           name="type"
-          onClick={() => setPetInfo({ ...petInfo, type: "Horse" })}
+          style={isHorsePress ? selectStyle : unselectStyle}
+          onClick={() => {
+            setPetInfo({ ...petInfo, type: "Horse" });
+            setIsHorsePress(!isHorsePress);
+            setIsDogPress(false);
+            setIsCatPress(false);
+            setIsDolphinPress(false);
+            setIsTigerPress(false);
+          }}
         />
         <GiDolphin
-          className="pet-icon"
+          className="pet-icon dolphin-icon"
           size="5em"
           name="type"
-          onClick={() => setPetInfo({ ...petInfo, type: "Dolphin" })}
+          style={isDolphinPress ? selectStyle : unselectStyle}
+          onClick={() => {
+            setPetInfo({ ...petInfo, type: "Dolphin" });
+            setIsDolphinPress(!isDolphinPress);
+            setIsDogPress(false);
+            setIsCatPress(false);
+            setIsHorsePress(false);
+            setIsTigerPress(false);
+          }}
         />
         <GiTigerHead
-          className="pet-icon"
+          className="pet-icon tiger-icon"
           size="5em"
           name="type"
-          onClick={() => setPetInfo({ ...petInfo, type: "Tiger" })}
+          style={isTigerPress ? selectStyle : unselectStyle}
+          onClick={() => {
+            setPetInfo({ ...petInfo, type: "Tiger" });
+            setIsTigerPress(!isTigerPress);
+            setIsDogPress(false);
+            setIsCatPress(false);
+            setIsHorsePress(false);
+            setIsDolphinPress(false);
+          }}
         />
       </div>
 
@@ -92,6 +146,7 @@ const SearchPets = () => {
         <Form.Check
           type="checkbox"
           label="Advanced Search"
+          className="advanced-search"
           onChange={(e) => setIsChecked(e.target.checked)}
         />
       </Form.Group>
@@ -100,24 +155,28 @@ const SearchPets = () => {
         <Form>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>Name</Form.Label>
+              <Form.Label className="search-field">Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
                 placeholder="Name"
                 onChange={handlePetInfo}
+                className="search-field"
               />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridState">
-              <Form.Label>Adoption Status</Form.Label>
+              <Form.Label
+                className="search-field"
+                >Adoption Status</Form.Label>
               <Form.Select
                 name="adoptionStatus"
-                value={petInfo.adoptionStatus}
+                // value={petInfo.adoptionStatus}
                 defaultValue="Choose..."
                 onChange={handlePetInfo}
+                className="search-field"
               >
-                <option value="">Choose...</option>
+                <option value="" >Choose...</option>
                 <option value="Adopted">Adopted</option>
                 <option value="Fostered">Fostered</option>
                 <option value="Available">Available</option>
@@ -126,19 +185,16 @@ const SearchPets = () => {
           </Row>
 
           <Form.Group as={Row} className="search-bars">
-            <Form.Label className="my-3">Height (min - max cm)</Form.Label>
+            <Form.Label className="search-field my-3">Height (min - max cm)</Form.Label>
             <Col xs="6">
               <RangeSlider
                 value={petInfo.minHeight}
                 onChange={(e) => {
                   setPetInfo({ ...petInfo, minHeight: e.target.value });
                 }}
-                // onSelect={(e) => {
-                //   setPetInfo({ ...petInfo, minHeight: e.target.value });
-                // }}
                 tooltipPlacement="top"
                 tooltip="on"
-                className="my-3"
+                className="search-field my-3"
                 name="minHeight"
                 min={0}
                 max={300}
@@ -147,13 +203,12 @@ const SearchPets = () => {
             <Col xs="6">
               <RangeSlider
                 value={petInfo.maxHeight}
-                onChange={(e) =>  setPetInfo({ ...petInfo, maxHeight: e.target.value })}
-                // onSelect={(e) => {
-                //   setPetInfo({ ...petInfo, maxHeight: e.target.value });
-                // }}
+                onChange={(e) =>
+                  setPetInfo({ ...petInfo, maxHeight: e.target.value })
+                }
                 tooltipPlacement="bottom"
                 tooltip="on"
-                className="my-3"
+                className="search-field my-3"
                 name="maxHeight"
                 min={0}
                 max={300}
@@ -162,17 +217,16 @@ const SearchPets = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="search-bars">
-            <Form.Label className="my-3">Weight (min - max kg)</Form.Label>
+            <Form.Label className="search-field my-3">Weight (min - max kg)</Form.Label>
             <Col xs="6">
               <RangeSlider
                 value={petInfo.minWeight}
-                onChange={(e) => setPetInfo({ ...petInfo, minWeight: e.target.value })}
-                // onSelect={(e) => {
-                //   setPetInfo({ ...petInfo, minWeight: e.target.value });
-                // }}
+                onChange={(e) =>
+                  setPetInfo({ ...petInfo, minWeight: e.target.value })
+                }
                 tooltipPlacement="top"
                 tooltip="on"
-                className="my-3"
+                className="search-field my-3"
                 name="minWeight"
                 min={0}
                 max={500}
@@ -181,10 +235,12 @@ const SearchPets = () => {
             <Col xs="6">
               <RangeSlider
                 value={petInfo.maxWeight}
-                onChange={(e) => setPetInfo({ ...petInfo, maxWeight: e.target.value })}
+                onChange={(e) =>
+                  setPetInfo({ ...petInfo, maxWeight: e.target.value })
+                }
                 tooltipPlacement="bottom"
                 tooltip="on"
-                className="my-3"
+                className="search-field my-3"
                 name="maxWeight"
                 min={0}
                 max={500}
@@ -194,22 +250,16 @@ const SearchPets = () => {
         </Form>
       </div>
       <div className="search-pet-btn-container">
-        <Button
-         
-          type="submit"
-          className="search-pet-btn fs-4"
-          onClick={handleSearch}
-        >
+        <button type="submit" className="search-pet-btn" onClick={handleSearch}>
           Search
-        </Button>
-        <Button
-         
+        </button>
+        <button
           type="submit"
-          className="search-pet-btn fs-4"
+          className="search-pet-btn clear-search"
           onClick={handleClearSearch}
         >
           Clear Search
-        </Button>
+        </button>
       </div>
 
       <SearchPetsCardList />

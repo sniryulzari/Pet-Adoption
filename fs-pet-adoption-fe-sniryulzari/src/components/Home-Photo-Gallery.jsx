@@ -1,11 +1,7 @@
 import React from "react";
-import { useContext } from "react";
-import { PetContext } from "../Context/Context-Pets";
 
 function HomePhotoGallery() {
 
-    const { pets } = useContext(PetContext);
-    console.log("pets:", pets);
 
   return (
     <div className="home-photo-gallery-container">
