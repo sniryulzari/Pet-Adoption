@@ -7,7 +7,7 @@ function filterQuery(req, res, next) {
     delete req.query[key];
     }
   }
-    // console.log("middelware:",req.query);
+   
   if (name) {
     req.query.name = { $regex: name, $options: "i" };
   }
@@ -18,10 +18,14 @@ function filterQuery(req, res, next) {
 
   if (minHeight && maxHeight) {
       req.query.height = { $gt: Number(minHeight), $lte: Number(maxHeight) };
+      delete req.query.minHeight;
+      delete req.query.maxHeight;
   }
 
   if (minWeight && maxWeight) {
       req.query.weight = { $gt: Number(minWeight), $lte: Number(maxWeight) };
+      delete req.query.minWeight;
+      delete req.query.maxWeight;
   }
 
 

@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 
 async function Auth(req, res, next) {
   const { token } = req.cookies;
-  // console.log("token auth:",token);
   if (!token) {
     res.status(401).send("Token Required");
     return;

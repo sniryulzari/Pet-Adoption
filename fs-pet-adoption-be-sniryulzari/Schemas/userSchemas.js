@@ -15,7 +15,6 @@ const userSchema = new Schema(
     fosterPet: { type: Array },
     petOwner: { type: String },
   },
-  // { timestamps: true },
   { collection: "users" }
 );
 

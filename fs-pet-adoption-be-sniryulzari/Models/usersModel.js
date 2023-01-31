@@ -13,7 +13,6 @@ async function signupModel(newUser) {
 async function getUserByEmailModel(email) {
   try {
     const user = await User.findOne({ email });
-    // console.log("user model:" ,user)
     return user;
   } catch (err) {
     console.log(err);
@@ -38,7 +37,6 @@ async function deleteSavePetModel(petId, userId) {
       { _id: userId },
       { $pull: { savedPet: petId.petId } }
     );
-    // console.log("deletePet:", deletePet);
     return deletePet;
   } catch (err) {
     console.log(err);
@@ -110,7 +108,6 @@ async function myPetsModel(userId) {
 async function getUserInfoByIdModel(userId) {
   try {
     const userInfo = await User.findById({ _id: userId });
-    // console.log(userInfo);
     return userInfo;
   } catch (err) {
     console.log(err);

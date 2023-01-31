@@ -6,9 +6,6 @@ async function petOfTheWeekModel() {
     let currentDay = new Date().getDay();
     let obj = await AppOperations.find({}, { isRandomized: 1 });
     let isRandomized = obj[0].isRandomized;
-    console.log("isRandomized:", isRandomized);
-
-    // let isRandomized = false;
 
     if (currentDay === 0 && !isRandomized) {
       const petInfo = await randomizedPet();
@@ -50,18 +47,9 @@ async function petOfTheWeekModel() {
 
 async function randomizedPet() {
   try {
-    const allPets = await Pets.find({}, { _id: 1 }); // remove isadopted pet from resulte
+    const allPets = await Pets.find({}, { _id: 1 }); // remove isadopted pet from result
     const rnd = Math.round(Math.random() * allPets.length);
     const petId = allPets[rnd];
-
-    // const prevPetsList = await AppOperations.find(
-    //     { _id: "63c3ca514d92b37155fdc20d" },
-    //     { petsOfTheWeek: 1 }
-    //     );
-    //     const petsOfTheWeekList = prevPetsList[0].petsOfTheWeek;
-    //     console.log("list of pets of the week:", petsOfTheWeekList);
-    //     console.log("pet id:", petId);
-
     const petInfo = await Pets.find({ _id: petId });
 
     return petInfo;

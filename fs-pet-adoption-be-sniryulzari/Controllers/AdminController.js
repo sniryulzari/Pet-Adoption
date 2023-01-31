@@ -61,7 +61,6 @@ async function getPetById(req, res) {
   try {
     const { petId } = req.params;
     const petInfo = await getPetByIdModel(petId);
-    // console.log(petInfo);
     res.send(petInfo);
   } catch (err) {
     console.log(err);
@@ -72,7 +71,6 @@ async function getPetById(req, res) {
 async function getAllUsers(req, res) {
   try {
     const allUsers = await getAllUsersModel();
-    // console.log(allUsers);
     res.send(allUsers);
     return allUsers;
   } catch (err) {
@@ -84,7 +82,6 @@ async function deletePet(req, res) {
   try {
     const petId = req.params.petId
     const deletePet = await deletePetModel(petId);
-    // console.log("deletePet:", deletePet)
     res.send({ ok: true })
   } catch (err) {
     res.status(500).send(err);
@@ -110,7 +107,6 @@ async function editPet(req, res) {
 
     const petId = req.body._id;
     const pet = await editPetModel(req.body, petId);
-    // console.log(pet)
     res.send({ ok: true})
   } catch (err) {
     res.status(500).send(err);

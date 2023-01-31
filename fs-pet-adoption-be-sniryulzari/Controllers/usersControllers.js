@@ -39,7 +39,6 @@ async function signup(req, res) {
 function login(req, res) {
   try {
     const { user } = req.body;
-    // console.log("user:",user);
     const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, {
       expiresIn: "2h",
     });
@@ -77,7 +76,6 @@ function logout(req, res) {
 async function savePet(req, res) {
   try {
     const savedpet = await savePetModel(req.params, req.body.userId);
-    // console.log("savedpet:",savedpet);
     res.send({ ok: true });
   } catch (err) {
     res.status(500).send(err);
@@ -137,7 +135,6 @@ async function getUserInfoById(req, res) {
   try {
     const userId = req.body.userId;
     const userInfo = await getUserInfoByIdModel(userId);
-    // console.log("userInfo:", userInfo)
     res.send(userInfo);
   } catch (err) {
     res.status(500).send(err);
@@ -149,7 +146,6 @@ async function editUser(req, res) {
     const userId = req.body.userId;
     const newUserInfo = req.body;
     const userInfo = await editUserdModel(userId, newUserInfo);
-    // console.log("userInfo:", userInfo)
     res.send({ ok: true });
   } catch (err) {
     res.status(500).send(err);

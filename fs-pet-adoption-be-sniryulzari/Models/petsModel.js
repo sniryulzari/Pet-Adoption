@@ -48,11 +48,7 @@ async function returnPetModel(userId, petId) {
       { _id: petId },
       { $set: { adoptionStatus: "Available", userId: "" } }
     );
-    // const deleteUser = await Pets.deleteOne(
-    //   { _id: petId },
-    //   { userId: userId }
-    // );
-    //delete user id from pet
+
     return returnPet;
   } catch (err) {
     console.log(err);
@@ -62,9 +58,7 @@ async function returnPetModel(userId, petId) {
 async function savedPetInfoModel(id) {
   try {
     const { petId } = id;
-    // console.log("petId:", petId);
     const petinfo = await Pets.findById({ _id: petId });
-    // console.log("petinfo:", petinfo);
     return petinfo;
   } catch (err) {
     console.log(err);
@@ -74,9 +68,7 @@ async function savedPetInfoModel(id) {
 async function adoptedPetInfoModel(id) {
   try {
     const { petId } = id;
-    // console.log("petId:", petId);
     const petinfo = await Pets.findById({ _id: petId });
-    // console.log("petinfo:", petinfo);
     return petinfo;
   } catch (err) {
     console.log(err);
@@ -86,9 +78,7 @@ async function adoptedPetInfoModel(id) {
 async function fosteredPetInfoModel(id) {
   try {
     const { petId } = id;
-    // console.log("petId:", petId);
     const petinfo = await Pets.findById({ _id: petId });
-    // console.log("petinfo:", petinfo);
     return petinfo;
   } catch (err) {
     console.log(err);

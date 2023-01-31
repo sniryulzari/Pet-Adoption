@@ -11,7 +11,6 @@ const {
 
 async function searchPets(req, res) {
   try {
-    // console.log("controller query:",(req.query));
     const searchPets = await searchPetsModel(req.query);
     res.send(searchPets);
   } catch (err) {
@@ -35,7 +34,6 @@ async function adoptPetStatus(req, res) {
     const { userId } = req.body.userId;
     const petId = req.body.petId;
     await adoptPetStatusModel(userId, petId);
-    // console.log(petStatus);
     res.send({ ok: true });
   } catch (err) {
     console.log(err);
@@ -48,7 +46,6 @@ async function fosterPetStatus(req, res) {
     const { userId } = req.body.userId;
     const petId = req.body.petId;
     const petStatus = await fosterPetStatusModel(userId, petId);
-    // console.log(petStatus);
     res.send({ ok: true });
   } catch (err) {
     console.log(err);
@@ -70,7 +67,6 @@ async function returnPet(req, res) {
 
 async function getMySavedPet(req, res) {
   try {
-    // console.log(req.params);
     const petInfo = await savedPetInfoModel(req.params);
     res.send(petInfo);
   } catch (err) {
@@ -81,7 +77,6 @@ async function getMySavedPet(req, res) {
 
 async function getMyAdoptedPet(req, res) {
   try {
-    // console.log(req.params);
     const petInfo = await adoptedPetInfoModel(req.params);
     res.send(petInfo);
   } catch (err) {
@@ -92,7 +87,6 @@ async function getMyAdoptedPet(req, res) {
 
 async function getMyFosteredPet(req, res) {
   try {
-    // console.log(req.params);
     const petInfo = await fosteredPetInfoModel(req.params);
     res.send(petInfo);
   } catch (err) {
@@ -100,7 +94,6 @@ async function getMyFosteredPet(req, res) {
     res.status(500).send(err);
   }
 }
-
 
 module.exports = {
   searchPets,
