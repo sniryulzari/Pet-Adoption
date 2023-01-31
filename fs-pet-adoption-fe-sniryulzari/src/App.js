@@ -22,6 +22,7 @@ const App = () => {
   const [pets, setPets] = useState([]);
   const [users, setusers] = useState([]);
   const [petSearchRes, setPetSearchRes] = useState([]);
+  const [noSearchRes, setNoSearchRes] = useState(false);
   const [isAdmin, setisAdmin] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [petId, setPetId] = useState([]);
@@ -72,6 +73,8 @@ const App = () => {
           setPetSearchRes,
           petId,
           setPetId,
+          noSearchRes, 
+          setNoSearchRes,
         }}
       >
         <div className="main-container">

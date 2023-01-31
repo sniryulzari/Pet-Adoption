@@ -45,7 +45,7 @@ function SignupForm(props) {
   return (
     <div className="SignupForm">
       <form onSubmit={handleSubmit}>
-        <h1 className="display-5 ">Signup</h1>
+        <h1 className="signup-header">Create an account</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Group className="mb-3" controlId="formBasicFirstName">
             <Form.Label>First Name</Form.Label>

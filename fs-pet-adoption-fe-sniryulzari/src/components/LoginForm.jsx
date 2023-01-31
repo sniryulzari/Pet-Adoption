@@ -43,7 +43,7 @@ function LoginForm(props) {
 
   return (
     <Form className="loginForm">
-      <h1 className="display-5">Log In</h1>
+      <h1 className="login-header">Welcome Back!</h1>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control

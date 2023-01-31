@@ -15,8 +15,7 @@ body,
 .main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
 /* Home Page */
@@ -232,10 +231,6 @@ body,
 
 .Login-Btn:hover {
   background-color: #ffae00;
-
-  /* color: #ff4880;
-  background-color: #ffffff;
-  border: 2px solid #ff4880; */
 }
 
 /* home welcome */
@@ -397,7 +392,7 @@ body,
 .learn-more-button:hover {
   color: #ff4880;
   background-color: #ffffff;
-  border: 2px solid #ff4880;
+  border: 1px solid #ff4880;
 }
 
 /* photo gallery */
@@ -573,7 +568,7 @@ body,
 .pet-of-the-week-button:hover {
   color: #ff4880;
   background-color: #ffffff;
-  border: 2px solid #ff4880;
+  border: 1px solid #ff4880;
 }
 
 /* Clients Testimonias */
@@ -886,11 +881,16 @@ body,
 /* signup and login */
 .SignupForm,
 .loginForm {
-  padding: 30px;
-  font-size: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  padding: 1.875rem 3rem;
+}
+
+.login-header, .signup-header {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .signup-modal-bottom,
@@ -899,7 +899,6 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3vh;
 }
 
 .signup-buttons,
@@ -907,29 +906,33 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 25vw;
-  margin-bottom: 20px;
-  margin-top: 1vw;
+  width: 22rem;
+  padding-top: 1rem;
 }
 
 .signup-login-btn {
-  font-size: 18px;
-  width: 10vw;
-  height: 5vh;
-  background-color: #00a277;
+  font-size: 1rem;
   color: #ffffff;
-  border-radius: 10px;
+  background-color: #ff4880;
   border: none;
+  border-radius: 20px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  padding: 0.8125rem 2.5rem;
+  /* margin-bottom: 1rem; */
 }
 
 .signup-login-btn:hover {
-  background-color: #028a66;
+  color: #ff4880;
+  background-color: #ffffff;
+  border: 1px solid #ff4880;
 }
 
 .link-signup {
   color: blue;
   text-decoration: underline;
   cursor: pointer;
+  padding-top: 1.5rem;
 }
 
 /* admin pages */
@@ -1025,6 +1028,10 @@ body,
 
 /* Search */
 .search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 1rem;
 }
 
@@ -1081,10 +1088,14 @@ body,
   color: #ffae00;
 }
 
-.advanced-search {
+.advanced-search-checkbox {
   font-family: "MikadoBold";
   font-size: 1.2rem;
   color: #393d72;
+}
+
+.advanced-search-container {
+  margin-top: 1rem;
 }
 
 .search-field {
@@ -1098,6 +1109,7 @@ body,
   align-items: center;
   justify-content: flex-end;
   margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .search-pet-btn {
@@ -1117,11 +1129,20 @@ body,
 .search-pet-btn:hover {
   color: #ff4880;
   background-color: #ffffff;
-  border: 2px solid #ff4880;
+  border: 1px solid #ff4880;
 }
 
 .search-pet-results {
-  width: 90vw;
+  display: block;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.search-no-result-text {
+  font-family: "MikadoBold";
+  font-size: 2rem;
+  color: #393d72;
+  padding: 1rem;
 }
 
 /* pet-card */
