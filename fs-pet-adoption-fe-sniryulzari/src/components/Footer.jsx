@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Images/logo3.jpg";
+import logo from "../Images/logo.jpg";
 import { GrTwitter } from "react-icons/gr";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineInstagram } from "react-icons/ai";

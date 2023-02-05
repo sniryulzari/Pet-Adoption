@@ -1,10 +1,14 @@
-* {
-  margin: 0;
+html {
+  box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body #root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -843,6 +847,13 @@ body,
   align-items: center;
 }
 
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-bar-logo {
   height: 50px;
   width: 60px;
@@ -888,7 +899,8 @@ body,
   padding: 1.875rem 3rem;
 }
 
-.login-header, .signup-header {
+.login-header,
+.signup-header {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -1045,12 +1057,14 @@ body,
   font-family: "MikadoBold";
   color: #393d72;
   font-size: 3rem;
+  padding-top: 1rem;
 }
 
 .pets-icons {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 1rem;
 }
 
 .pet-icon {
@@ -1108,7 +1122,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -1213,4 +1227,62 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Profile Settings Page */
+.profile-settings-container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-settings-header {
+  font-family: "MikadoBold";
+  font-size: 3rem;
+  color: #393d72;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.profile-settings-form {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #858687;
+  width: fit-content;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+}
+
+.profile-settings-field {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-settings-button-container {
+  width: 100%;
+  height: fit-content;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.profile-settings-button {
+  font-size: 0.875rem;
+  color: #ffffff;
+  background-color: #ff4880;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0.8125rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.profile-settings-button:hover {
+  color: #ff4880;
+  background-color: #ffffff;
+  border: 1px solid #ff4880;
 }

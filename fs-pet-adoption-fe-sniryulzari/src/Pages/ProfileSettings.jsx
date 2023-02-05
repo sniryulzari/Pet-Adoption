@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Form, Button, FloatingLabel } from "react-bootstrap";
+import { Form, FloatingLabel } from "react-bootstrap";
 
 const ProfileSettings = () => {
   const [firstName, setFirstName] = useState("");
@@ -49,9 +49,9 @@ const ProfileSettings = () => {
 
   return (
     <div className="profile-settings-container">
-      <h1 className="display-5 ">Profile Settings</h1>
-      <form>
-        <Form.Group className="mb-3" controlId="formBasicFirstName">
+      <h1 className="profile-settings-header">Profile Settings</h1>
+      <form className="profile-settings-form">
+        <Form.Group className="profile-settings-field" controlId="formBasicFirstName">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             onChange={(e) => setFirstName(e.target.value)}
@@ -61,7 +61,7 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicLastName">
+        <Form.Group className="profile-settings-field" controlId="formBasicLastName">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             onChange={(e) => setLastName(e.target.value)}
@@ -71,7 +71,7 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+        <Form.Group className="profile-settings-field" controlId="formBasicPhoneNumber">
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             onChange={(e) => setPhoneNumber(e.target.value)}
@@ -81,7 +81,7 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="profile-settings-field" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
             onChange={(e) => setEmail(e.target.value)}
@@ -91,7 +91,7 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="profile-settings-field" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             onChange={(e) => setPassword(e.target.value)}
@@ -101,8 +101,9 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
+        <Form.Group className="profile-settings-field" controlId="formBasicTextarea">
         <Form.Label>Bio</Form.Label>
-        <FloatingLabel controlId="floatingTextarea" className="mb-3">
+        <FloatingLabel controlId="floatingTextarea" className="profile-settings-field">
           <Form.Control
             as="textarea"
             placeholder="Leave a comment here"
@@ -110,11 +111,12 @@ const ProfileSettings = () => {
             value={bio}
           />
         </FloatingLabel>
+        </Form.Group>
 
-        <div className="signup-form-buttons">
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <div className="profile-settings-button-container">
+          <button className="profile-settings-button" type="submit" onClick={handleSubmit}>
             Save
-          </Button>
+          </button>
         </div>
       </form>
     </div>
