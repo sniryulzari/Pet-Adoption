@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Col, Row } from "react-bootstrap";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const AdminAddPet = () => {
   const [newPetInfo, setNewPetInfo] = useState({
@@ -59,9 +59,9 @@ const AdminAddPet = () => {
           dietaryRestrictions: "",
         });
         navigate("/admin-Dashboard");
-        toast.success('Pet was successfully Added !', {
-          position: toast.POSITION.TOP_RIGHT
-      });
+        toast.success("Pet was successfully Added !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       }
     } catch (err) {
       console.log(err);
@@ -70,7 +70,7 @@ const AdminAddPet = () => {
 
   return (
     <div className="admin-add-pet-container">
-      <h1 className="display-3">Add Pets</h1>
+      <h1 className="admin-add-pet-header">Add Pets</h1>
       <Form className="admin-add-pet-form">
         <Row className="mb-3">
           <Form.Group
@@ -102,9 +102,6 @@ const AdminAddPet = () => {
               placeholder="Breed of Pet"
             />
           </Form.Group>
-        </Row>
-
-        <Row className="mb-3">
           <Form.Group as={Col} className="mb-3" controlId="formBasicname">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -114,22 +111,25 @@ const AdminAddPet = () => {
               placeholder="Name"
             />
           </Form.Group>
+
           <Form.Group
             as={Col}
             className="mb-3"
             controlId="formBasicAdoptionStatus"
           >
-            <Form.Label>Adoption Status</Form.Label>
-            <Form.Select name="adoptionStatus" onChange={handlePetInfo}>
-              <option>Select Adoption Status</option>
-              <option value="Adopted">Adopted</option>
-              <option value="Fostered">Fostered</option>
-              <option value="Available">Available</option>
+            <Form.Label>Color</Form.Label>
+            <Form.Select name="color" onChange={handlePetInfo}>
+              <option>Select Pet Color</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+              <option value="Brown">Brown</option>
+              <option value="Grey">Grey</option>
+              <option value="Orange">Orange</option>
+              <option value="Golden">Golden</option>
+              <option value="MixColors">Mix Colors</option>
             </Form.Select>
           </Form.Group>
-        </Row>
 
-        <Row className="mb-3">
           <Form.Group as={Col} className="mb-3" controlId="formBasicHeight">
             <Form.Label>Height (cm)</Form.Label>
             <Form.Control
@@ -156,38 +156,6 @@ const AdminAddPet = () => {
             className="mb-3"
             controlId="formBasicAdoptionStatus"
           >
-            <Form.Label>Color</Form.Label>
-            <Form.Select name="color" onChange={handlePetInfo}>
-              <option>Select Pet Color</option>
-              <option value="White">White</option>
-              <option value="Black">Black</option>
-              <option value="Brown">Brown</option>
-              <option value="Grey">Grey</option>
-              <option value="Orange">Orange</option>
-              <option value="Golden">Golden</option>
-              <option value="MixColors">Mix Colors</option>
-            </Form.Select>
-          </Form.Group>
-
-          <Form.Group as={Col} className="mb-3" controlId="formBasicBio">
-            <Form.Label>Bio</Form.Label>
-            <Form.Control
-              name="bio"
-              onChange={handlePetInfo}
-              as="textarea"
-              rows={3}
-              type="text"
-              placeholder="Bio"
-            />
-          </Form.Group>
-        </Row>
-
-        <Row className="mb-3">
-          <Form.Group
-            as={Col}
-            className="mb-3"
-            controlId="formBasicAdoptionStatus"
-          >
             <Form.Label>Hypoallergenic</Form.Label>
             <Form.Select
               name="hypoallergenic"
@@ -198,6 +166,20 @@ const AdminAddPet = () => {
               <option>Hypoallergenic?</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
+            </Form.Select>
+          </Form.Group>
+
+          <Form.Group
+            as={Col}
+            className="mb-3"
+            controlId="formBasicAdoptionStatus"
+          >
+            <Form.Label>Adoption Status</Form.Label>
+            <Form.Select name="adoptionStatus" onChange={handlePetInfo}>
+              <option>Select Adoption Status</option>
+              <option value="Adopted">Adopted</option>
+              <option value="Fostered">Fostered</option>
+              <option value="Available">Available</option>
             </Form.Select>
           </Form.Group>
 
@@ -224,6 +206,17 @@ const AdminAddPet = () => {
               accept="image/*"
               name="image"
               onChange={handleImage}
+            />
+          </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="formBasicBio">
+            <Form.Label>Bio</Form.Label>
+            <Form.Control
+              name="bio"
+              onChange={handlePetInfo}
+              as="textarea"
+              rows={3}
+              type="text"
+              placeholder="Bio"
             />
           </Form.Group>
         </Row>
