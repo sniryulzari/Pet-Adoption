@@ -217,7 +217,7 @@ body #root {
   -webkit-text-fill-color: transparent; */
 }
 
-.Login-Btn {
+.welcome-login-search-Button {
   color: #ffffff;
   background-color: #ff4880;
   border: none;
@@ -233,7 +233,7 @@ body #root {
   transition-duration: 0.2s;
 }
 
-.Login-Btn:hover {
+.welcome-login-search-Button:hover {
   background-color: #ffae00;
 }
 
@@ -639,7 +639,7 @@ body #root {
   line-height: 1.67rem;
 }
 
-/* footer */
+/* Footer */
 .footer-container {
   background-image: url("../Images/footer-bg-01.png");
   height: 32rem;
@@ -839,12 +839,20 @@ body #root {
 
 /* nav bar */
 .navBar {
-  width: 100%;
-  height: 4rem;
+  height: auto;
   background-color: #ffffff;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0 3rem;
+  list-style-type: none;
   display: flex;
-  justify-content: flex-start;
+  flex-flow: row wrap;
+  justify-content:center;
   align-items: center;
+  gap: 0 3rem;
+  width: 100%;
 }
 
 .logo-link {
@@ -859,7 +867,6 @@ body #root {
   width: 60px;
   border-radius: 50%;
   margin-left: 1rem;
-  margin-top: 0.5rem;
 }
 
 .nav-bar-logo-text {
@@ -867,13 +874,7 @@ body #root {
   color: #ffae00;
   font-size: 1.5rem;
   padding-bottom: 1rem;
-  padding-top: 1.5rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style-type: none;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .link {
@@ -881,7 +882,6 @@ body #root {
   color: #393d72;
   font-size: 1.1rem;
   text-decoration: none;
-  padding: 0px 2.5rem;
 }
 
 .link:hover {
@@ -889,7 +889,42 @@ body #root {
   color: #ff4880;
 }
 
-/* signup and login */
+.nav-logout-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.nav-welcome-user {
+  font-family: "MikadoBold";
+  color: #ffae00;
+  font-size: 1.1rem;
+  padding: 0px 1rem;
+  text-decoration: underline;
+}
+
+.logout {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #ff4880;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 2.2rem;
+  margin-left: 2rem;
+}
+
+.logout:hover {
+  color: #ff4880;
+  background-color: #ffffff;
+  border: 1px solid #ff4880;
+  transition-duration: 0.4s;
+}
+
+/* Signup and Login Modal */
 .SignupForm,
 .loginForm {
   display: flex;
@@ -947,7 +982,8 @@ body #root {
 }
 
 /* admin pages */
-.admin-dashboard-pets-container, .admin-add-pet-container {
+.admin-dashboard-pets-container,
+.admin-add-pet-container {
   font-size: 1rem;
   width: 100%;
   padding: 1rem 4rem;
@@ -955,7 +991,8 @@ body #root {
   flex-direction: column;
 }
 
-.admin-dashboard-header, .admin-add-pet-header {
+.admin-dashboard-header,
+.admin-add-pet-header {
   font-family: "MikadoBold";
   font-size: 3rem;
   color: #393d72;
@@ -1035,7 +1072,7 @@ body #root {
 
 .add-pet-buttons-container {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 1rem;
 }
@@ -1055,6 +1092,15 @@ body #root {
 
 .pet-img {
   border-radius: 50%;
+}
+
+/* admin user pets */
+.admin-user-pets-container {
+  font-size: 1rem;
+  width: 100%;
+  padding: 1rem 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Search */
@@ -1169,6 +1215,8 @@ body #root {
   display: block;
   padding-left: 3rem;
   padding-right: 3rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 .search-no-result-text {
@@ -1178,66 +1226,79 @@ body #root {
   padding: 1rem;
 }
 
+.see-more-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
 /* pet-card */
 .pet-card-container {
-  margin-top: 10px;
-  border: 2px solid black;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .pet-card {
-  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
 }
 
-.card-header {
+.card-right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.pet-card-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  font-size: 20px;
-}
-
-.pet-info {
-  margin: 1px 0;
-}
-
-.pet-card-button-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pet-card-button {
-  color: white;
-  background-color: rgb(21, 151, 21);
-  font-size: 20px;
-  border: none;
-  padding: 2vh 4vw;
-  margin: 0 12px;
-  border-radius: 15px;
-}
-
-.pet-card-button:hover {
-  background-color: rgb(5, 109, 5);
-  cursor: pointer;
-}
-
-.pet-card-list {
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 4rem;
   width: 100%;
 }
 
-.my-pets {
-  width: 30% !important;
+.pet-card-image {
+  border-radius: 20px;
+}
+
+.pet-card-pet-name {
+  font-family: "MikadoBold";
+  font-size: 3rem;
+  color: #393d72;
+}
+
+.pet-card-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.pet-info {
+  margin: 0.5rem 0;
+}
+
+.pet-card-button-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pet-card-button {
+  font-size: 0.875rem;
+  color: #ffffff;
+  background-color: #ff4880;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 0.8125rem 2.5rem;
+  margin-right: 2rem;
+}
+
+.pet-card-button:hover {
+  cursor: pointer;
+  color: #ff4880;
+  background-color: #ffffff;
+  border: 1px solid #ff4880;
 }
 
 /* my pets page */
@@ -1246,6 +1307,41 @@ body #root {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.my-pets-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.my-pets-header {
+  font-family: "MikadoBold";
+  font-size: 3rem;
+  color: #393d72;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.my-pets-button {
+  font-family: "MikadoBold";
+  margin-left: 3rem;
+}
+
+.my-pets-sub-header {
+  font-family: "MikadoBold";
+  font-size: 1.5rem;
+  color: #ff4880;
+  padding-left: 3.3rem;
+  margin-top: 1rem;
+}
+
+.my-pets {
+  width: 25% !important;
 }
 
 /* Profile Settings Page */

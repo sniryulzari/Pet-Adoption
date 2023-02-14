@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SignupModal from "../components/SignupModal";
 import LoginModal from "../components/LoginModal";
-import axios from "axios";
 import { UsersContext } from "../Context/Context-Users";
 import HomeWelcome from "../components/Home-Welcome";
 import HomePhotoGallery from "../components/Home-Photo-Gallery";
@@ -14,9 +13,11 @@ import hillsSvg from "../Images/hills.svg";
 const Home = () => {
   const [show, setShow] = useState(false);
   const [loginShow, setLoginShow] = useState(false);
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
-  const { isLogin, setIsLogin, setisAdmin } = useContext(UsersContext);
+  const {
+    isLogin,
+    setfirstName,
+    setlastName,
+  } = useContext(UsersContext);
 
   const navigate = useNavigate();
 
@@ -40,22 +41,6 @@ const Home = () => {
 
   const handleLoginClose = () => {
     setLoginShow(false);
-  };
-
-  const handleLogout = async () => {
-    try {
-      const res = await axios.get("http://localhost:8080/users/logout", {
-        withCredentials: true,
-      });
-      if (res.data.ok) {
-        localStorage.clear();
-        setIsLogin(false);
-        setisAdmin(false);
-        navigate("/");
-      }
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   return (
@@ -92,15 +77,14 @@ const Home = () => {
         <img src={hillsSvg} alt="hills" className="hills" />
 
         {isLogin ? (
-          <div>
-            <h1 className="welcome-title display-5">
-              Welcom {firstName} {lastName}
-            </h1>
-            <button
-              className="Login-Btn btn btn-success"
-              onClick={handleLogout}
-            >
-              Logout
+          <div className="welcome-container">
+            <span className="welcome-title-top">
+              Two Is always Better Than One
+            </span>
+            <span className="welcome-title-bottom-start">AdoPet Your</span>
+            <span className="welcome-title-bottom-end">New Best Friend</span>
+            <button className="welcome-login-search-Button" onClick={() => navigate("/search")}>
+              Search Your New Pet
             </button>
           </div>
         ) : (
@@ -110,7 +94,7 @@ const Home = () => {
             </span>
             <span className="welcome-title-bottom-start">AdoPet Your</span>
             <span className="welcome-title-bottom-end">New Best Friend</span>
-            <button className="Login-Btn" onClick={handleLoginShow}>
+            <button className="welcome-login-search-Button" onClick={handleLoginShow}>
               LOGIN
             </button>
           </div>
@@ -137,8 +121,6 @@ const Home = () => {
           loginShow={loginShow}
           handleLoginClose={handleLoginClose}
           handleShow={handleShow}
-          setfirstName={setfirstName}
-          setlastName={setlastName}
         />
       </div>
       <HomeWelcome />

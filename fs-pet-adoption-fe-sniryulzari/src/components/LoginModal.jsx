@@ -3,12 +3,21 @@ import Button from "react-bootstrap/Button";
 import LoginForm from "../components/LoginForm";
 
 const LoginModal = (props) => {
-  const { loginShow, handleLoginClose, handleShow, setIsLogin, setfirstName, setlastName } = props;
+  const {
+    loginShow,
+    handleLoginClose,
+    handleShow,
+    setIsLogin
+  } = props;
 
   return (
     <div>
-      <Modal show={loginShow} >
-        <LoginForm handleLoginClose={handleLoginClose} handleShow={handleShow} setIsLogin={setIsLogin} setfirstName={setfirstName} setlastName={setlastName}/>
+      <Modal show={loginShow}>
+        <LoginForm
+          handleLoginClose={handleLoginClose}
+          handleShow={handleShow}
+          setIsLogin={setIsLogin}
+        />
       </Modal>
     </div>
   );

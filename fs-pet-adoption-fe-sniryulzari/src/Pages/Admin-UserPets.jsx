@@ -5,8 +5,6 @@ import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-
-
 function AdminUserPets() {
   const [userAdoptedPetInfo, setUserAdoptedPetInfo] = useState([]);
   const [userFosteredPetInfo, setUserFosteredPetInfo] = useState([]);
@@ -18,10 +16,8 @@ function AdminUserPets() {
   const fosteredPets = userPets.fosterPet;
 
   const getUserAdoptedPetsInfo = async () => {
-
     try {
       for (let key of adoptedPets) {
-        // console.log("key:", key);
         const res = await axios.get(
           `http://localhost:8080/pets/myAdoptedPets/${key}`,
           {
@@ -29,7 +25,7 @@ function AdminUserPets() {
           }
         );
         if (res.data._id) {
-            setUserAdoptedPetInfo((prev) => [...prev, res.data]);
+          setUserAdoptedPetInfo((prev) => [...prev, res.data]);
         }
       }
     } catch (err) {
@@ -42,19 +38,17 @@ function AdminUserPets() {
   }, []);
 
   const getUserFosteredPetsInfo = async () => {
-    // console.log("myFosteredPetId:", myFosteredPetId);
     try {
       for (let key of fosteredPets) {
-        // console.log("key:", key);
         const res = await axios.get(
           `http://localhost:8080/pets/myFosteredPets/${key}`,
           {
             withCredentials: true,
           }
         );
-        // console.log("fostered pets result:",res.data);
+
         if (res.data._id) {
-            setUserFosteredPetInfo((prev) => [...prev, res.data]);
+          setUserFosteredPetInfo((prev) => [...prev, res.data]);
         }
       }
     } catch (err) {
@@ -68,24 +62,29 @@ function AdminUserPets() {
 
   return (
     <div className="admin-user-pets-container">
-      <h1 className="display-5 mx-4">
+      <h1 className="my-pets-header">
         Pets that {userPets.firstName} {userPets.lastName} owned
       </h1>
       <div>
-        
-          <Row xs={1} md={2} lg={3} xl={4} className="g-4 mx-1 my-1">
-            {userAdoptedPetInfo.map((pet) => (
-              <Col key={pet._id} onClick={() => navigate(`/petcard?petId=${pet._id}`)}>
-                <SearchPetCard {...pet} />
-              </Col>
-            ))}
-            {userFosteredPetInfo.map((pet) => (
-              <Col key={pet._id} onClick={() => navigate(`/petcard?petId=${pet._id}`)}>
-                <SearchPetCard {...pet} />
-              </Col>
-            ))}
-          </Row>
-        </div>
+        <Row xs={1} md={2} lg={3} xl={4} className="search-pet-results">
+          {userAdoptedPetInfo.map((pet) => (
+            <Col
+              key={pet._id}
+              onClick={() => navigate(`/petcard?petId=${pet._id}`)}
+            >
+              <SearchPetCard {...pet} />
+            </Col>
+          ))}
+          {userFosteredPetInfo.map((pet) => (
+            <Col
+              key={pet._id}
+              onClick={() => navigate(`/petcard?petId=${pet._id}`)}
+            >
+              <SearchPetCard {...pet} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     </div>
   );
 }

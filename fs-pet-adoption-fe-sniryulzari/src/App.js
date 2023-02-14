@@ -27,6 +27,8 @@ const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [petId, setPetId] = useState([]);
   const [userPets, setUserPets] = useState({});
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
 
   const getUser = async () => {
     try {
@@ -63,6 +65,10 @@ const App = () => {
         setisAdmin,
         userPets,
         setUserPets,
+        firstName, 
+        setfirstName,
+        lastName, 
+        setlastName
       }}
     >
       <PetContext.Provider

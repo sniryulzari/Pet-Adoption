@@ -20,8 +20,7 @@ function SearchPetCard(props) {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="pets-search-results mx-1 my-1 ">
+    <div className="mx-1 my-1 ">
       <Card border={adoptionStatus == "Available" && "primary"}>
         <Card.Img
           variant="top"
@@ -33,11 +32,22 @@ function SearchPetCard(props) {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>Breed: {breed}</Card.Text>
-          <Card.Text style={adoptionStatus === "Available" ? {color:"#22CC14"} : {color: "#EF233C"}}>
+          <Card.Text
+            style={
+              adoptionStatus === "Available"
+                ? { color: "#22CC14" }
+                : { color: "#EF233C" }
+            }
+          >
             {adoptionStatus}
           </Card.Text>
         </Card.Body>
-        <Button onClick={() => navigate(`/petcard?petId=${id}`)}>See more</Button>
+        <Button
+          onClick={() => navigate(`/petcard?petId=${id}`)}
+          className="see-more-button"
+        >
+          See more
+        </Button>
       </Card>
     </div>
   );

@@ -201,72 +201,76 @@ function PetCard() {
     }
   };
 
-
   return (
     <div className="pet-card-container">
       {pet ? (
         <div className="pet-card">
-          <div className="card-header">
-            <img
-              src={pet.imageUrl}
-              height="300em"
-              width="500em"
-              alt="Pet Image"
-            ></img>
+          <img
+            src={pet.imageUrl}
+            height="500em"
+            width="500em"
+            alt="Pet Image"
+            className="pet-card-image"
+          ></img>
+          <div className="card-right">
+            <div className="pet-card-info">
+              <span className="pet-card-pet-name">{pet.name}</span>
 
-            <h1>{pet.name}</h1>
-          </div>
-          <div className="pet-card-info">
-            <p className="pet-info">
-              This {pet.type} is of the breed {pet.breed}.
-            </p>
-            <p className="pet-info">
-              {pet.name} is {pet.height} cm tall and weight {pet.weight} kg.
-            </p>
-            <p className="pet-info">color: {pet.color}</p>
-            <p className="pet-info">Adoption Status: {pet.adoptionStatus}</p>
-            <p className="pet-info">Hypoallergenic: {pet.hypoallergenic}</p>
-            <p className="pet-info">
-              Dietary Restrictions: {pet.dietaryRestrictions}
-            </p>
-            <p className="pet-info">Bio: {pet.bio}</p>
-          </div>
-          {isLogin ? (
-            <div className="pet-card-button-container">
-              {fosterPet ? (
-                <button className="pet-card-button" onClick={handleAdopt}>
-                  Adopt
-                </button>
-              ) : null}
+              <p className="pet-info">
+                This {pet.type} is of the breed {pet.breed}.
+              </p>
+              <p className="pet-info">
+                {pet.name} is {pet.height} cm tall and weight {pet.weight} kg.
+              </p>
+              <p className="pet-info">color: {pet.color}</p>
+              <p className="pet-info">Adoption Status: {pet.adoptionStatus}</p>
+              <p className="pet-info">Hypoallergenic: {pet.hypoallergenic}</p>
+              <p className="pet-info">
+                Dietary Restrictions: {pet.dietaryRestrictions}
+              </p>
+              <p className="pet-info">Bio: {pet.bio}</p>
+            </div>
 
-              {adoptPet || fosterPet ? (
-                <button className="pet-card-button" onClick={handleReturn}>
-                  Return Pet
-                </button>
-              ) : (
-                <div>
+            {isLogin ? (
+              <div className="pet-card-button-container">
+                {fosterPet ? (
                   <button className="pet-card-button" onClick={handleAdopt}>
                     Adopt
                   </button>
-                  <button className="pet-card-button" onClick={handleFoster}>
-                    Foster
+                ) : null}
+
+                {adoptPet || fosterPet ? (
+                  <button className="pet-card-button" onClick={handleReturn}>
+                    Return Pet
                   </button>
-                </div>
-              )}
+                ) : (
+                  <div>
+                    <button className="pet-card-button" onClick={handleAdopt}>
+                      Adopt
+                    </button>
+                    <button className="pet-card-button" onClick={handleFoster}>
+                      Foster
+                    </button>
+                  </div>
+                )}
 
-              {savePet && !(adoptPet || fosterPet) ? (
-                <button className="pet-card-button" onClick={handleUnSavedPet}>
-                  Unsave Pet
-                </button>
-              ) : null}
+                {savePet && !(adoptPet || fosterPet) ? (
+                  <button
+                    className="pet-card-button"
+                    onClick={handleUnSavedPet}
+                  >
+                    Unsave Pet
+                  </button>
+                ) : null}
 
-              {!savePet && !(adoptPet || fosterPet) ? (
-                <button className="pet-card-button" onClick={handleSavePet}>
-                  Save Pet
-                </button>
-              ) : null}
-            </div>
-          ) : null}
+                {!savePet && !(adoptPet || fosterPet) ? (
+                  <button className="pet-card-button" onClick={handleSavePet}>
+                    Save Pet
+                  </button>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       ) : (
         ""

@@ -1,18 +1,41 @@
 import React, { useContext } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../Context/Context-Users";
 import logo from "../Images/logo.jpg";
 
 function NavigationBar(props) {
-  const { isAdmin, isLogin } = useContext(UsersContext);
+  const { isAdmin, isLogin, setIsLogin, setisAdmin, firstName, lastName } =
+    useContext(UsersContext);
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/users/logout", {
+        withCredentials: true,
+      });
+      if (res.data.ok) {
+        localStorage.clear();
+        setIsLogin(false);
+        setisAdmin(false);
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <nav className="navBar">
-      <a href="/" className="logo-link">
-        <img src={logo} alt="logo" className="nav-bar-logo" />
-        <span className="nav-bar-logo-text">Ado-Pet</span>
-      </a>
-      <ul className="nav-links">
+      <ul>
+        <li>
+          <a href="/" className="logo-link">
+            <img src={logo} alt="logo" className="nav-bar-logo" />
+            <span className="nav-bar-logo-text">Ado-Pet</span>
+          </a>
+        </li>
         <li>
           <Link className="link" to="/">
             Home
@@ -48,6 +71,21 @@ function NavigationBar(props) {
             </Link>
           </li>
         )}
+      
+      {isLogin ? (
+        <div className="nav-logout-container">
+          <li>
+            <span className="nav-welcome-user">
+              Welcome {firstName} {lastName}
+            </span>
+          </li>
+          <li>
+            <button className="logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>
+        </div>
+      ) : null}
       </ul>
     </nav>
   );
