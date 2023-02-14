@@ -8,6 +8,7 @@ function PetCard() {
   const [savePet, setSavePet] = useState(false);
   const [adoptPet, setAdoptPet] = useState(false);
   const [fosterPet, setFosterPet] = useState(false);
+  const [avialable, setAvialable] = useState(false);
 
   const getPetId = () => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -21,6 +22,13 @@ function PetCard() {
         withCredentials: true,
       });
       setPet(res.data);
+
+      setAvialable(false);
+      if (res.data.adoptionStatus === "Available") {
+        setAvialable(true);
+      }
+
+      console.log("avialable", avialable);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +45,7 @@ function PetCard() {
       const res = await axios.get(`http://localhost:8080/users/userInfo`, {
         withCredentials: true,
       });
-      // return res.data;
+
       const savedPet = res.data.savedPet;
       const adoptPet = res.data.adoptPet;
       const fosterPet = res.data.fosterPet;
@@ -231,7 +239,7 @@ function PetCard() {
               <p className="pet-info">Bio: {pet.bio}</p>
             </div>
 
-            {isLogin ? (
+            {isLogin && (avialable || adoptPet || fosterPet) ? (
               <div className="pet-card-button-container">
                 {fosterPet ? (
                   <button className="pet-card-button" onClick={handleAdopt}>

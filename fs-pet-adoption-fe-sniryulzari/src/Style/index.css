@@ -849,7 +849,7 @@ nav ul {
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   gap: 0 3rem;
   width: 100%;
