@@ -34,12 +34,12 @@ function LoginForm(props) {
         setfirstName(res.data.firstName);
         setlastName(res.data.lastName);
         toast.success("Login Success!", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: toast.POSITION.BOTTOM_RIGHT,
         });
       }
     } catch (err) {
       console.log(err);
-      toast.error("Error: " + err.message, {
+      toast.error("The email address or password is incorrect. Please retry...", {
         position: toast.POSITION.TOP_RIGHT,
       });
     }

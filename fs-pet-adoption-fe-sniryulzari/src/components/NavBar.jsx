@@ -78,8 +78,8 @@ function NavigationBar(props) {
             <span className="nav-welcome-user">
               Welcome {firstName} {lastName}
             </span>
-          </li>
-          <li>
+          
+          
             <button className="logout" onClick={handleLogout}>
               Logout
             </button>

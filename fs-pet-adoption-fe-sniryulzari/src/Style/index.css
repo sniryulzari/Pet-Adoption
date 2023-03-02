@@ -13,6 +13,7 @@ body #root {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
   background-color: #ffffff;
 }
 
@@ -29,22 +30,22 @@ body #root {
 }
 
 .home-top-container {
-  background-image: url("../Images/1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: local;
-  background-position: center;
-  height: 63rem;
+  height: 100%;
   width: 100%;
-  position: relative;
   margin-bottom: 20rem;
+  position: relative;
+}
+.main-image {
+  width: 100%;
 }
 
 .hills {
   transform: rotateY(180deg);
   transform: rotateX(180deg);
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .dog-bone-img {
@@ -844,7 +845,7 @@ body #root {
 }
 
 nav ul {
-  margin: 0;
+  margin: 0 0 1rem 0;
   padding: 0 3rem;
   list-style-type: none;
   display: flex;
@@ -882,6 +883,7 @@ nav ul {
   color: #393d72;
   font-size: 1.1rem;
   text-decoration: none;
+  display: block;
 }
 
 .link:hover {
@@ -937,7 +939,39 @@ nav ul {
 .login-header,
 .signup-header {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 0.9rem;
+}
+
+.signupInput {
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid rgb(213, 213, 213);
+}
+
+.error-message {
+  font-size: 0.8rem;
+  padding: 0.2rem 0rem;
+  color: red;
+  display: none;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ .error-message {
+  display: block;
 }
 
 .signup-modal-bottom,
@@ -979,6 +1013,7 @@ nav ul {
   text-decoration: underline;
   cursor: pointer;
   padding-top: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* admin pages */
@@ -1400,4 +1435,18 @@ nav ul {
   color: #ff4880;
   background-color: #ffffff;
   border: 1px solid #ff4880;
+}
+
+@media (max-width: 850px) {
+  nav ul {
+    justify-content: flex-start;
+  }
+  nav li:first-child {
+    flex-basis: 100%;
+  }
+
+  .pet-of-the-week-frame {
+    height: 20rem;
+    width: 20rem;
+  }
 }

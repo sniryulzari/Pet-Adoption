@@ -8,16 +8,13 @@ import HomePhotoGallery from "../components/Home-Photo-Gallery";
 import PetOfTheWeek from "../components/Home-PetOfTheWeek";
 import HomeClientsTestimonials from "../components/Home-Clients-Testimonials";
 import Footer from "../components/Footer";
+import mainImage from "../Images/1.jpg"
 import hillsSvg from "../Images/hills.svg";
 
 const Home = () => {
   const [show, setShow] = useState(false);
   const [loginShow, setLoginShow] = useState(false);
-  const {
-    isLogin,
-    setfirstName,
-    setlastName,
-  } = useContext(UsersContext);
+  const { isLogin, setfirstName, setlastName } = useContext(UsersContext);
 
   const navigate = useNavigate();
 
@@ -46,6 +43,9 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-top-container">
+        <img className="main-image" alt="main image" src={mainImage} />
+        <img src={hillsSvg} alt="hills" className="hills" />
+
         <img
           className="dog-bone-img"
           alt="dog bone img"
@@ -74,7 +74,6 @@ const Home = () => {
             "http://demo2.themelexus.com/petzen/wp-content/uploads/2020/05/revolution-icon-1.svg"
           }
         />
-        <img src={hillsSvg} alt="hills" className="hills" />
 
         {isLogin ? (
           <div className="welcome-container">
@@ -83,7 +82,10 @@ const Home = () => {
             </span>
             <span className="welcome-title-bottom-start">AdoPet Your</span>
             <span className="welcome-title-bottom-end">New Best Friend</span>
-            <button className="welcome-login-search-Button" onClick={() => navigate("/search")}>
+            <button
+              className="welcome-login-search-Button"
+              onClick={() => navigate("/search")}
+            >
               Search Your New Pet
             </button>
           </div>
@@ -94,7 +96,10 @@ const Home = () => {
             </span>
             <span className="welcome-title-bottom-start">AdoPet Your</span>
             <span className="welcome-title-bottom-end">New Best Friend</span>
-            <button className="welcome-login-search-Button" onClick={handleLoginShow}>
+            <button
+              className="welcome-login-search-Button"
+              onClick={handleLoginShow}
+            >
               LOGIN
             </button>
           </div>

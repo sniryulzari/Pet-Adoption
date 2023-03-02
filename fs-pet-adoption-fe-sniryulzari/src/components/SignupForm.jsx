@@ -1,110 +1,119 @@
 import axios from "axios";
 import { useState } from "react";
-import { Form } from "react-bootstrap";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import FormInput from "../components/FormInput";
 
 function SignupForm(props) {
   const { handleClose, handleLoginShow } = props;
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [repassword, setRepassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    repassword: "",
+  });
+
+  const inputs = [
+    {
+      id: 1,
+      name: "firstName",
+      type: "text",
+      placeholder: "First Name",
+      errorMessage: "First Name should be 3-16 characters and shouldn't include any special character",
+      label: "First Name",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "lastName",
+      type: "text",
+      placeholder: "Last Name",
+      errorMessage: "Last Name should be 3-16 characters and shouldn't include any special character",
+      label: "Last Name",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    {
+      id: 3,
+      name: "phoneNumber",
+      type: "text",
+      placeholder: "Phone Number",
+      errorMessage: "Phone Number should be 9-16 characters and should include only numbers",
+      label: "Phone Number",
+      pattern: "^[0-9]{9,16}",
+      required: true,
+    },
+    {
+      id: 4,
+      name: "email",
+      type: "email",
+      placeholder: "Email Address",
+      errorMessage: "It should be a valid email address",
+      label: "Email Address",
+      required: true,
+    },
+    {
+      id: 5,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
+      label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
+    },
+    {
+      id: 6,
+      name: "repassword",
+      type: "password",
+      placeholder: "Confirm Password",
+      errorMessage: "Password don't match",
+      label: "Confirm Password",
+      pattern: values.password,
+      required: true,
+    },
+  ];
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const newUser = {
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber,
-        email: email,
-        password: password,
-        repassword: repassword,
-      };
       const res = await axios.post(
         "http://localhost:8080/users/signup",
-        newUser
+        values
       );
       if (res.data.email.length > 0) {
         handleClose();
         handleLoginShow();
-        toast.success('Signup Success!', {
-          position: toast.POSITION.TOP_RIGHT
-      });
+        toast.success("Signup Success!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       }
     } catch (err) {
       console.log(err);
-      toast.error('Error: ' + err.message, {
-        position: toast.POSITION.TOP_RIGHT
-    });
+      toast.error(err.response.data, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
+  };
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   return (
     <div className="SignupForm">
       <form onSubmit={handleSubmit}>
         <h1 className="signup-header">Create an account</h1>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Group className="mb-3" controlId="formBasicFirstName">
-            <Form.Label>First Name</Form.Label>
-            <Form.Control
-              onChange={(e) => setFirstName(e.target.value)}
-              name="firstName"
-              type="text"
-              placeholder="First Name"
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicLastName">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control
-              onChange={(e) => setLastName(e.target.value)}
-              name="lastName"
-              type="text"
-              placeholder="Last Name"
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              name="phoneNumber"
-              type="text"
-              placeholder="Phone Number"
-            />
-          </Form.Group>
-
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            type="email"
-            placeholder="Enter email"
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-            type="password"
-            placeholder="Enter password"
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Re-Password</Form.Label>
-          <Form.Control
-            onChange={(e) => setRepassword(e.target.value)}
-            name="repassword"
-            type="password"
-            placeholder="Re-Password"
-          />
-        </Form.Group>
+        ))}
 
         <div className="signup-modal-bottom">
           <div className="signup-buttons">
