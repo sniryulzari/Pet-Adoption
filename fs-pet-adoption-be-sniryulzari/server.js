@@ -24,7 +24,7 @@ app.use("/pets", petsRoute);
 app.use("/admin", adminRoute);
 app.use("/appOperations", appOperationsRoute);
 
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -35,6 +35,7 @@ mongoose
     console.log("Connected to db");
     app.listen(PORT, () => {
       console.log(`App is listening on port: ${PORT}`);
+      console.log("mongo uri:", process.env.MONGO_URI);
     });
   })
   .catch((err) => {
