@@ -24,7 +24,7 @@ app.use("/pets", petsRoute);
 app.use("/admin", adminRoute);
 app.use("/appOperations", appOperationsRoute);
 
-// mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", true);
 
 mongoose
   .connect(process.env.MONGO_URI, {
