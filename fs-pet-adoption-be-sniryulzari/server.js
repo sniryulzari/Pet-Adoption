@@ -27,7 +27,7 @@ app.use("/appOperations", appOperationsRoute);
 mongoose.set("strictQuery", true);
 
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect("mongodb+srv://sniryulzari:sniryulzari@cluster0.dkzsdd1.mongodb.net/petadoption?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
