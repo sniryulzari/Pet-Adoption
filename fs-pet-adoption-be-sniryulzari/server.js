@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+require("dotenv").config({path: "./.env"});
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
@@ -27,10 +27,11 @@ app.use("/appOperations", appOperationsRoute);
 
 mongoose.set("strictQuery", false);
 
-mongoose.connect(
+const connect = mongoose.connect(
   process.env.MONGO_URI,
   {useNewUrlParser: true, useUnifiedTopology: true}
-).then(() => {
+)
+connect.then(() => {
   console.log('Connected to db');
   app.listen(PORT, () => {
     console.log(`App is listening on port: ${PORT}`);
