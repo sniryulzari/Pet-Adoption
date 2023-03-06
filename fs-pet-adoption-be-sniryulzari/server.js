@@ -1,6 +1,5 @@
 const express = require("express");
-const path = require("path");
-require("dotenv").config({path: path.resolve(__dirname, './.env')});
+require("dotenv").config({path:__dirname + '/.env' });
 const PORT = process.env.PORT || 8080;
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -27,7 +26,7 @@ app.use("/appOperations", appOperationsRoute);
 mongoose.set("strictQuery", true);
 
 mongoose
-  .connect("mongodb+srv://sniryulzari:sniryulzari@cluster0.dkzsdd1.mongodb.net/petadoption?retryWrites=true&w=majority", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
