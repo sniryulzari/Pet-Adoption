@@ -36,7 +36,6 @@ mongoose
     app.listen(PORT, () => {
       console.log(`App is listening on port: ${PORT}`);
     });
-    console.log("mongo uri:", process.env.MONGO_URI);
   })
   .catch((err) => {
     console.error(err.stack);
