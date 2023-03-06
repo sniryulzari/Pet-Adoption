@@ -1,7 +1,7 @@
 const express = require("express");
+require("dotenv").config();
+const PORT = process.env.PORT || 8080;
 const cors = require("cors");
-require("dotenv").config({ path: "./.env" });
-const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
@@ -12,7 +12,6 @@ app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-const PORT = process.env.PORT || 8080;
 
 const usersRoute = require("./Routes/UsersRoute");
 const petsRoute = require("./Routes/PetsRoute");
