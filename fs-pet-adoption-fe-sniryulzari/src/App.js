@@ -57,9 +57,9 @@ const App = () => {
 
   const getServerUrl = () => {
     if (process.env.NODE_ENV == "production") {
-      return "https://pet-adoption-133f.onrender.com";
+      return 'https://pet-adoption-133f.onrender.com'
     }
-    return "http://localhost:8080";
+    return 'http://localhost:8080'
   };
 
   return (
