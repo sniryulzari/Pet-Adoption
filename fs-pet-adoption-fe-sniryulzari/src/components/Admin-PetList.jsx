@@ -7,7 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const PetsList = () => {
-  const { pets, setPetId } = useContext(PetContext);
+  const { pets, setPetId, getServerUrl } = useContext(PetContext);
   const navigate = useNavigate();
 
   const handleEdit = (petId) => {
@@ -16,8 +16,9 @@ const PetsList = () => {
   };
 
   const handleDelete = async (petId) => {
+    const url = `${getServerUrl()}/admin/${petId}`;
     try {
-      const res = await axios.delete(`http://localhost:8080/admin/${petId}`, {
+      const res = await axios.delete(url, {
         withCredentials: true,
       });
     } catch (err) {

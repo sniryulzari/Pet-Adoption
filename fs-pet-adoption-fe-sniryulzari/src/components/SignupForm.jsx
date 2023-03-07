@@ -1,9 +1,12 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import FormInput from "../components/FormInput";
+import { UsersContext } from "../Context/Context-Users";
 
 function SignupForm(props) {
+  const {getServerUrl} = useContext(UsersContext);
   const { handleClose, handleLoginShow } = props;
   const [values, setValues] = useState({
     firstName: "",
@@ -20,7 +23,8 @@ function SignupForm(props) {
       name: "firstName",
       type: "text",
       placeholder: "First Name",
-      errorMessage: "First Name should be 3-16 characters and shouldn't include any special character",
+      errorMessage:
+        "First Name should be 3-16 characters and shouldn't include any special character",
       label: "First Name",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
@@ -30,7 +34,8 @@ function SignupForm(props) {
       name: "lastName",
       type: "text",
       placeholder: "Last Name",
-      errorMessage: "Last Name should be 3-16 characters and shouldn't include any special character",
+      errorMessage:
+        "Last Name should be 3-16 characters and shouldn't include any special character",
       label: "Last Name",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
@@ -40,7 +45,8 @@ function SignupForm(props) {
       name: "phoneNumber",
       type: "text",
       placeholder: "Phone Number",
-      errorMessage: "Phone Number should be 9-16 characters and should include only numbers",
+      errorMessage:
+        "Phone Number should be 9-16 characters and should include only numbers",
       label: "Phone Number",
       pattern: "^[0-9]{9,16}",
       required: true,
@@ -59,7 +65,8 @@ function SignupForm(props) {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
@@ -77,12 +84,10 @@ function SignupForm(props) {
   ];
 
   const handleSubmit = async (e) => {
+    const url = `${getServerUrl()}/users/signup`;
     try {
       e.preventDefault();
-      const res = await axios.post(
-        "http://localhost:8080/users/signup",
-        values
-      );
+      const res = await axios.post(url, values);
       if (res.data.email.length > 0) {
         handleClose();
         handleLoginShow();

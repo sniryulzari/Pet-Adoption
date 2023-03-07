@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../Context/Context-Users";
 import { Table } from "react-bootstrap";
-import axios from "axios";
 import { MdPets } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 

@@ -8,14 +8,21 @@ function LoginForm(props) {
   const { handleLoginClose, handleShow } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setIsLogin, setfirstName, firstName, setlastName, lastName } =
-    useContext(UsersContext);
+  const {
+    setIsLogin,
+    setfirstName,
+    firstName,
+    setlastName,
+    lastName,
+    getServerUrl,
+  } = useContext(UsersContext);
 
   const handleLogin = async (e) => {
+    const url = `${getServerUrl()}/users/login`;
     try {
       e.preventDefault();
       const res = await axios.post(
-        "http://localhost:8080/users/login",
+        url,
         {
           email,
           password,
@@ -39,9 +46,12 @@ function LoginForm(props) {
       }
     } catch (err) {
       console.log(err);
-      toast.error("The email address or password is incorrect. Please retry...", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      toast.error(
+        "The email address or password is incorrect. Please retry...",
+        {
+          position: toast.POSITION.TOP_RIGHT,
+        }
+      );
     }
   };
 

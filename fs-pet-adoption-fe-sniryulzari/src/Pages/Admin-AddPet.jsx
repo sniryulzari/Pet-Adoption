@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Col, Row } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { UsersContext } from "../Context/Context-Users";
 
 const AdminAddPet = () => {
   const [newPetInfo, setNewPetInfo] = useState({
@@ -18,6 +19,7 @@ const AdminAddPet = () => {
     dietaryRestrictions: "",
   });
   const [petImage, setPetImage] = useState();
+  const {getServerUrl} = useContext(UsersContext);
   const navigate = useNavigate();
 
   const handlePetInfo = (e) => {
@@ -38,13 +40,11 @@ const AdminAddPet = () => {
       }
       formData.append("petImage", petImage);
 
-      const res = await axios.post(
-        "http://localhost:8080/admin/add",
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
+      const url = `${getServerUrl()}/admin/add`;
+
+      const res = await axios.post(url, formData, {
+        withCredentials: true,
+      });
       if (res.data.name) {
         setNewPetInfo({
           type: "",

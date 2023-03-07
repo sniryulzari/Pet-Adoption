@@ -1,19 +1,19 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import petOfTheWeekFrame from "../Images/petOfTheWeekFrame.jpeg";
+import { PetContext } from "../Context/Context-Pets";
 
 function PetOfTheWeek() {
   const [petOfTheWeek, setPetOfTheWeek] = useState({});
+  const {getServerUrl} = useContext(PetContext);
 
   const getPetOfTheWeek = async () => {
+    const url = `${getServerUrl()}/appOperations/weeklyPet`;
     try {
-      const res = await axios.get(
-        `http://localhost:8080/appOperations/weeklyPet`,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get(url, {
+        withCredentials: true,
+      });
       setPetOfTheWeek(res.data);
     } catch (err) {
       console.log(err);

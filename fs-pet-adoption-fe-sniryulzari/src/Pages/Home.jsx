@@ -8,7 +8,7 @@ import HomePhotoGallery from "../components/Home-Photo-Gallery";
 import PetOfTheWeek from "../components/Home-PetOfTheWeek";
 import HomeClientsTestimonials from "../components/Home-Clients-Testimonials";
 import Footer from "../components/Footer";
-import mainImage from "../Images/1.jpg"
+import mainImage from "../Images/1.jpg";
 import hillsSvg from "../Images/hills.svg";
 
 const Home = () => {
@@ -129,10 +129,10 @@ const Home = () => {
         />
       </div>
       <HomeWelcome />
-      <HomePhotoGallery />
-      <PetOfTheWeek />
-      <HomeClientsTestimonials />
-      <Footer />
+      {/* <HomePhotoGallery /> */}
+      {/* <PetOfTheWeek /> */}
+      {/* <HomeClientsTestimonials /> */}
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -30,9 +30,7 @@ body #root {
 }
 
 .home-top-container {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
   position: relative;
 }
 .main-image {
@@ -86,8 +84,8 @@ body #root {
   height: 9.375rem;
   width: 7.625rem;
   position: absolute;
-  bottom: 19rem;
-  left: 30rem;
+  bottom: 13rem;
+  right: 50rem;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -157,7 +155,6 @@ body #root {
 .welcome-container {
   display: flex;
   flex-direction: column;
-  position: fixed;
   top: 15rem;
   right: 7.5rem;
   position: absolute;
@@ -178,9 +175,6 @@ body #root {
   animation-fill-mode: none;
   animation-play-state: running;
   animation-name: title-top;
-}
-
-@keyframes title-top {
 }
 
 @font-face {
@@ -213,9 +207,6 @@ body #root {
   font-size: 4rem;
   color: #393d72;
   margin-top: -0.5rem;
-  /* background: -webkit-linear-gradient(right, rgb(255, 145, 86), rgb(224, 245, 36));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 
 .welcome-login-search-Button {
@@ -236,6 +227,53 @@ body #root {
 
 .welcome-login-search-Button:hover {
   background-color: #ffae00;
+}
+
+@media (max-width: 1200px) {
+  .welcome-container {
+    top: 13rem;
+    right: 4rem;
+  }
+  .welcome-title-top {
+    font-size: 1.2rem;
+  }
+  .welcome-title-bottom-start,
+  .welcome-title-bottom-end {
+    font-size: 2.5rem;
+  }
+  .dog-bone-img {
+    top: 9rem;
+    right: 28rem;
+  }
+  .arrow-img {
+    bottom: 7rem;
+    right: 32rem;
+  }
+  .dog-footprints-img {
+    bottom: 15rem;
+    right: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hills,
+  .arrow-img,
+  .dog-footprints-img,
+  .dog-bone-img,
+  .star-img {
+    display: none;
+  }
+  .welcome-container {
+    position: initial;
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-login-search-Button {
+    margin: 2rem 0;
+  }
 }
 
 /* home welcome */
@@ -364,6 +402,7 @@ body #root {
   padding-top: 1.5rem;
   list-style-type: none;
 }
+
 .home-welcome-icon-text {
   font-family: MikadoBold;
   color: #393d72;
@@ -375,6 +414,7 @@ body #root {
 .home-welcome-icon-text-line {
   padding-left: 1.5rem;
 }
+
 .checkIcon {
   color: #ff4880;
 }
@@ -398,6 +438,26 @@ body #root {
   color: #ff4880;
   background-color: #ffffff;
   border: 1px solid #ff4880;
+}
+
+@media (max-width: 1250px) {
+  .home-welcome-content {
+    flex-direction: column;
+  }
+  .home-welcome-heading {
+    font-size: 2.5rem;
+  }
+  .home-welcome-text {
+    width: 100%;
+  }
+  .home-welcome-img {
+    width: 100%;
+  }
+  .petImg2,
+  .petImg3 {
+    /* display: none; */
+    width: 100%;
+  }
 }
 
 /* photo gallery */
@@ -576,6 +636,18 @@ body #root {
   border: 1px solid #ff4880;
 }
 
+@media (max-width: 1200px) {
+  .pet-of-the-week-card {
+    flex-flow: column wrap;
+  }
+  .pet-of-the-week-card-left {
+    margin: 0 auto;
+  }
+  .pet-of-the-week-frame {
+    max-width: 100%;
+  }
+}
+
 /* Clients Testimonias */
 .clients-testimonias-container {
   display: flex;
@@ -600,9 +672,10 @@ body #root {
 .clients-testimonias-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem 2rem;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  gap: 1rem;
 }
 
 .clients-testimonias-person {
@@ -612,6 +685,7 @@ body #root {
   justify-content: center;
   padding-left: 2rem;
   padding-right: 2rem;
+  width: 30%;
 }
 
 .clients-testimonias-person-image {
@@ -625,8 +699,7 @@ body #root {
   color: #ff4880;
   font-size: 1.3rem;
   font-weight: bolder;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   box-sizing: border-box;
   line-height: 2.5rem;
 }
@@ -638,6 +711,26 @@ body #root {
   padding-top: 1rem;
   box-sizing: border-box;
   line-height: 1.67rem;
+}
+
+@media (max-width: 850px) {
+  .clients-testimonias-heading {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+    text-align: center;
+  }
+  .clients-testimonias-person {
+    flex-flow: column nowrap;
+    width: fit-content;
+    text-align: center;
+  }
+  .clients-testimonias-person-image {
+    margin-top: 3rem;
+  }
+  .clients-testimonias-person-name {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
 }
 
 /* Footer */
@@ -838,6 +931,29 @@ body #root {
   text-decoration: underline;
 }
 
+@media (max-width: 850px) {
+  .footer-container {
+    background-image: none;
+    background-color: #8f94f9;
+    height: 100%;
+    flex-flow: column wrap;
+  }
+  .footer-main {
+    flex-flow: column wrap;
+    margin: 0;
+    padding: 1rem;
+  }
+  .footer-social-media,
+  .footer-contact-us,
+  .footer-working-hours,
+  .footer-newsletter {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 3rem;
+  }
+}
+
 /* nav bar */
 .navBar {
   height: auto;
@@ -924,6 +1040,18 @@ nav ul {
   background-color: #ffffff;
   border: 1px solid #ff4880;
   transition-duration: 0.4s;
+}
+
+@media (max-width: 850px) {
+  nav ul {
+    justify-content: flex-start;
+  }
+  nav li:first-child {
+    flex-basis: 100%;
+  }
+  nav li {
+    margin: 0.5rem auto;
+  }
 }
 
 /* Signup and Login Modal */
@@ -1435,18 +1563,4 @@ input:invalid[focused="true"] ~ .error-message {
   color: #ff4880;
   background-color: #ffffff;
   border: 1px solid #ff4880;
-}
-
-@media (max-width: 850px) {
-  nav ul {
-    justify-content: flex-start;
-  }
-  nav li:first-child {
-    flex-basis: 100%;
-  }
-
-  .pet-of-the-week-frame {
-    height: 20rem;
-    width: 20rem;
-  }
 }

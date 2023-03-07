@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { PetContext } from "../Context/Context-Pets";
 import { useNavigate } from "react-router-dom";
 import { Form, Col, Row } from "react-bootstrap";
 
 const EditPet = () => {
+  const { getServerUrl } = useContext(PetContext);
   const [newPetInfo, setNewPetInfo] = useState({
     type: "",
     breed: "",
@@ -28,6 +30,7 @@ const EditPet = () => {
   };
 
   const handleSubmit = async (e) => {
+    const url = `${getServerUrl()}/pets/add`;
     try {
       e.preventDefault();
 
@@ -37,7 +40,7 @@ const EditPet = () => {
       }
       formData.append("petImage", petImage);
 
-      const res = await axios.post("http://localhost:8080/pets/add", formData, {
+      const res = await axios.post(url, formData, {
         withCredentials: true,
       });
       if (res.data.name) {
@@ -219,7 +222,11 @@ const EditPet = () => {
           </Form.Group>
         </Row>
         <div className="add-pet-buttons-container">
-          <button className="add-pet-buttons" type="submit" onClick={handleSubmit}>
+          <button
+            className="add-pet-buttons"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Add Pet
           </button>
           <button

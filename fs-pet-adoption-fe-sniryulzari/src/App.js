@@ -31,8 +31,9 @@ const App = () => {
   const [lastName, setlastName] = useState("");
 
   const getUser = async () => {
+    const url = `${getServerUrl()}/users/userInfo`;
     try {
-      const res = await axios.get(`http://localhost:8080/users/userInfo`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
       if (res.data._id) {
@@ -54,6 +55,13 @@ const App = () => {
     getUser();
   });
 
+  const getServerUrl = () => {
+    if (process.env.NODE_ENV == "production") {
+      return "https://pet-adoption-133f.onrender.com";
+    }
+    return "http://localhost:8080";
+  };
+
   return (
     <UsersContext.Provider
       value={{
@@ -65,10 +73,11 @@ const App = () => {
         setisAdmin,
         userPets,
         setUserPets,
-        firstName, 
+        firstName,
         setfirstName,
-        lastName, 
-        setlastName
+        lastName,
+        setlastName,
+        getServerUrl,
       }}
     >
       <PetContext.Provider
@@ -79,8 +88,9 @@ const App = () => {
           setPetSearchRes,
           petId,
           setPetId,
-          noSearchRes, 
+          noSearchRes,
           setNoSearchRes,
+          getServerUrl,
         }}
       >
         <div className="main-container">

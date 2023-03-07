@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Form, FloatingLabel } from "react-bootstrap";
+import { UsersContext } from "../Context/Context-Users";
 
 const ProfileSettings = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,9 +11,12 @@ const ProfileSettings = () => {
   const [password, setPassword] = useState("");
   const [bio, setBio] = useState("");
 
+  const {getServerUrl} = useContext(UsersContext);
+
   const getUserInfo = async () => {
+    const url = `${getServerUrl()}/users/userInfo`;
     try {
-      const res = await axios.get(`http://localhost:8080/users/userInfo`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
       if (res.data._id) {
@@ -33,15 +37,16 @@ const ProfileSettings = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
+    e.preventDefault();
     try {
-        const res = await axios.put(
-            `http://localhost:8080/users/userInfo`,
-            { firstName, lastName, phoneNumber, email, password, bio},
-            {
-              withCredentials: true,
-            }
-          );
+      const url = `${getServerUrl()}/users/userInfo`;
+      const res = await axios.put(
+        url,
+        { firstName, lastName, phoneNumber, email, password, bio },
+        {
+          withCredentials: true,
+        }
+      );
     } catch (err) {
       console.log(err);
     }
@@ -51,7 +56,10 @@ const ProfileSettings = () => {
     <div className="profile-settings-container">
       <h1 className="profile-settings-header">Profile Settings</h1>
       <form className="profile-settings-form">
-        <Form.Group className="profile-settings-field" controlId="formBasicFirstName">
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicFirstName"
+        >
           <Form.Label>First Name</Form.Label>
           <Form.Control
             onChange={(e) => setFirstName(e.target.value)}
@@ -61,7 +69,10 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="profile-settings-field" controlId="formBasicLastName">
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicLastName"
+        >
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             onChange={(e) => setLastName(e.target.value)}
@@ -71,7 +82,10 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="profile-settings-field" controlId="formBasicPhoneNumber">
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicPhoneNumber"
+        >
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             onChange={(e) => setPhoneNumber(e.target.value)}
@@ -81,7 +95,10 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="profile-settings-field" controlId="formBasicEmail">
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicEmail"
+        >
           <Form.Label>Email</Form.Label>
           <Form.Control
             onChange={(e) => setEmail(e.target.value)}
@@ -91,7 +108,10 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="profile-settings-field" controlId="formBasicPassword">
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicPassword"
+        >
           <Form.Label>Password</Form.Label>
           <Form.Control
             onChange={(e) => setPassword(e.target.value)}
@@ -101,20 +121,30 @@ const ProfileSettings = () => {
           />
         </Form.Group>
 
-        <Form.Group className="profile-settings-field" controlId="formBasicTextarea">
-        <Form.Label>Bio</Form.Label>
-        <FloatingLabel controlId="floatingTextarea" className="profile-settings-field">
-          <Form.Control
-            as="textarea"
-            placeholder="Leave a comment here"
-            onChange={(e) => setBio(e.target.value)}
-            value={bio}
-          />
-        </FloatingLabel>
+        <Form.Group
+          className="profile-settings-field"
+          controlId="formBasicTextarea"
+        >
+          <Form.Label>Bio</Form.Label>
+          <FloatingLabel
+            controlId="floatingTextarea"
+            className="profile-settings-field"
+          >
+            <Form.Control
+              as="textarea"
+              placeholder="Leave a comment here"
+              onChange={(e) => setBio(e.target.value)}
+              value={bio}
+            />
+          </FloatingLabel>
         </Form.Group>
 
         <div className="profile-settings-button-container">
-          <button className="profile-settings-button" type="submit" onClick={handleSubmit}>
+          <button
+            className="profile-settings-button"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Save
           </button>
         </div>

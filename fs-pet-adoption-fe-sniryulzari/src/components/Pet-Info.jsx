@@ -4,7 +4,7 @@ import { UsersContext } from "../Context/Context-Users";
 
 function PetCard() {
   const [pet, setPet] = useState();
-  const { isLogin } = useContext(UsersContext);
+  const { isLogin, getServerUrl } = useContext(UsersContext);
   const [savePet, setSavePet] = useState(false);
   const [adoptPet, setAdoptPet] = useState(false);
   const [fosterPet, setFosterPet] = useState(false);
@@ -17,8 +17,9 @@ function PetCard() {
   };
 
   const fetchPet = async (petId) => {
+    const url = `${getServerUrl()}/pets/${petId}`;
     try {
-      const res = await axios.get(`http://localhost:8080/pets/${petId}`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
       setPet(res.data);
@@ -40,9 +41,10 @@ function PetCard() {
   }, []);
 
   const getUserInfo = async () => {
+    const url = `${getServerUrl()}/users/userInfo`;
     try {
       const petId = getPetId();
-      const res = await axios.get(`http://localhost:8080/users/userInfo`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
 
@@ -84,9 +86,10 @@ function PetCard() {
 
   const handleSavePet = async () => {
     const petId = getPetId();
+    const url = `${getServerUrl()}/users/${petId}`;
     try {
       const res = await axios.put(
-        `http://localhost:8080/users/${petId}`,
+        url,
         {},
         {
           withCredentials: true,
@@ -103,7 +106,8 @@ function PetCard() {
   const handleUnSavedPet = async () => {
     try {
       const petId = getPetId();
-      const res = await axios.delete(`http://localhost:8080/users/${petId}`, {
+      const url = `${getServerUrl()}/users/${petId}`;
+      const res = await axios.delete(url, {
         withCredentials: true,
       });
       if (res.data.ok) {
@@ -117,8 +121,9 @@ function PetCard() {
   const handleAdopt = async () => {
     try {
       const petId = getPetId();
+      const url = `${getServerUrl()}/users/adopt/${petId}`;
       const res = await axios.put(
-        `http://localhost:8080/users/adopt/${petId}`,
+        url,
         {},
         {
           withCredentials: true,
@@ -126,9 +131,10 @@ function PetCard() {
       );
       const userId = res.data;
       if (userId) {
+        const url = `${getServerUrl()}/pets/adopt`;
         try {
           const res = await axios.put(
-            `http://localhost:8080/pets/adopt`,
+            url,
             { userId, petId },
             {
               withCredentials: true,
@@ -148,8 +154,9 @@ function PetCard() {
   const handleFoster = async () => {
     try {
       const petId = getPetId();
+      const url = `${getServerUrl()}/users/foster/${petId}`;
       const res = await axios.put(
-        `http://localhost:8080/users/foster/${petId}`,
+        url,
         {},
         {
           withCredentials: true,
@@ -157,9 +164,10 @@ function PetCard() {
       );
       const userId = res.data;
       if (userId) {
+        const url = `${getServerUrl()}/pets/foster`;
         try {
           const res = await axios.put(
-            `http://localhost:8080/pets/foster`,
+            url,
             { userId, petId },
             {
               withCredentials: true,
@@ -179,17 +187,16 @@ function PetCard() {
   const handleReturn = async () => {
     try {
       const petId = getPetId();
-      const res = await axios.delete(
-        `http://localhost:8080/users/returnPet/${petId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const url = `${getServerUrl()}/users/returnPet/${petId}`;
+      const res = await axios.delete(url, {
+        withCredentials: true,
+      });
       const userId = res.data;
       if (userId) {
+        const url = `${getServerUrl()}/pets/returnPet`;
         try {
           const res = await axios.put(
-            `http://localhost:8080/pets/returnPet`,
+            url,
             { userId, petId },
             {
               withCredentials: true,

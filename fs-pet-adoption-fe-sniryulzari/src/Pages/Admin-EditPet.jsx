@@ -3,10 +3,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Col, Row } from "react-bootstrap";
 import { PetContext } from "../Context/Context-Pets";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function AdminEditPet() {
-  const { petId } = useContext(PetContext);
+  const { petId, getServerUrl } = useContext(PetContext);
   const [newPetInfo, setNewPetInfo] = useState({
     type: "",
     breed: "",
@@ -23,8 +23,9 @@ export default function AdminEditPet() {
   const navigate = useNavigate();
 
   const getPetInfo = async (petId) => {
+    const url = `${getServerUrl()}/admin/${petId}`;
     try {
-      const res = await axios.get(`http://localhost:8080/admin/${petId}`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
       setNewPetInfo(res.data);
@@ -57,17 +58,14 @@ export default function AdminEditPet() {
       for (let value of formData.values()) {
         console.log(value);
       }
-      const res = await axios.put(
-        `http://localhost:8080/admin/editpet`,
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
-      if (res.data) {
-        toast.success('Pet Info updated Successfully  !', {
-          position: toast.POSITION.TOP_RIGHT
+      const url = `${getServerUrl()}/admin/editpet`;
+      const res = await axios.put(url, formData, {
+        withCredentials: true,
       });
+      if (res.data) {
+        toast.success("Pet Info updated Successfully  !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
         navigate("/admin-Dashboard");
       }
     } catch (err) {

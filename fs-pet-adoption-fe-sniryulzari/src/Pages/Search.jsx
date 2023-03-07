@@ -29,7 +29,7 @@ const SearchPets = () => {
   const [isDolphinPress, setIsDolphinPress] = useState(false);
   const [isTigerPress, setIsTigerPress] = useState(false);
 
-  const { setPetSearchRes, noSearchRes, setNoSearchRes } =
+  const { setPetSearchRes, noSearchRes, setNoSearchRes, getServerUrl } =
     useContext(PetContext);
 
   function handlePetInfo(e) {
@@ -39,7 +39,8 @@ const SearchPets = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     setNoSearchRes(false);
-    const res = await axios.get(`http://localhost:8080/pets/search`, {
+    const url = `${getServerUrl()}/pets/search`;
+    const res = await axios.get(url, {
       params: { ...petInfo },
     });
     if (res.data.length === 0) {
@@ -283,7 +284,11 @@ const SearchPets = () => {
             Clear Search
           </button>
         </div>
-        {noSearchRes ? <p className="search-no-result-text">Sorry no result found</p> : <SearchPetsCardList />}
+        {noSearchRes ? (
+          <p className="search-no-result-text">Sorry no result found</p>
+        ) : (
+          <SearchPetsCardList />
+        )}
       </div>
       <Footer />
     </div>

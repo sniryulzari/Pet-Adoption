@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import SearchPetCard from "../components/Search-PetCard";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { UsersContext } from "../Context/Context-Users";
 
 const MyPets = () => {
   const [mySavedPetId, setmySavedPetId] = useState([]);
@@ -16,12 +17,14 @@ const MyPets = () => {
   const [myFosteredPetInfo, setMyFosteredPetInfo] = useState([]);
 
   const [togglePets, setTogglePets] = useState(true);
+  const {getServerUrl} = useContext(UsersContext);
 
   const navigate = useNavigate();
 
   const getMyPetsId = async () => {
+    const url = `${getServerUrl()}/users/mypets`;
     try {
-      const res = await axios.get(`http://localhost:8080/users/mypets`, {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
 
@@ -40,12 +43,10 @@ const MyPets = () => {
   const getMySavedPetsInfo = async () => {
     try {
       for (let key of mySavedPetId) {
-        const res = await axios.get(
-          `http://localhost:8080/pets/mySavedPets/${key}`,
-          {
-            withCredentials: true,
-          }
-        );
+        const url = `${getServerUrl()}/pets/mySavedPets/${key}`;
+        const res = await axios.get(url, {
+          withCredentials: true,
+        });
 
         if (res.data._id) {
           setmySavedPetInfo((prev) => [...prev, res.data]);
@@ -63,12 +64,10 @@ const MyPets = () => {
   const getMyAdoptedPetsInfo = async () => {
     try {
       for (let key of myAdoptedPetId) {
-        const res = await axios.get(
-          `http://localhost:8080/pets/myAdoptedPets/${key}`,
-          {
-            withCredentials: true,
-          }
-        );
+        const url = `${getServerUrl()}/pets/myAdoptedPets/${key}`;
+        const res = await axios.get(url, {
+          withCredentials: true,
+        });
 
         if (res.data._id) {
           setMyAdoptedPetInfo((prev) => [...prev, res.data]);
@@ -86,12 +85,10 @@ const MyPets = () => {
   const getMyFosteredPetsInfo = async () => {
     try {
       for (let key of myFosteredPetId) {
-        const res = await axios.get(
-          `http://localhost:8080/pets/myFosteredPets/${key}`,
-          {
-            withCredentials: true,
-          }
-        );
+        const url = `${getServerUrl()}/pets/myFosteredPets/${key}`;
+        const res = await axios.get(url, {
+          withCredentials: true,
+        });
 
         if (res.data._id) {
           setMyFosteredPetInfo((prev) => [...prev, res.data]);

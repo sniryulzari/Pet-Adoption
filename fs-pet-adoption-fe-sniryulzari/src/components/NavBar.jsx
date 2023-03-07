@@ -6,14 +6,22 @@ import { UsersContext } from "../Context/Context-Users";
 import logo from "../Images/logo.jpg";
 
 function NavigationBar(props) {
-  const { isAdmin, isLogin, setIsLogin, setisAdmin, firstName, lastName } =
-    useContext(UsersContext);
+  const {
+    isAdmin,
+    isLogin,
+    setIsLogin,
+    setisAdmin,
+    firstName,
+    lastName,
+    getServerUrl,
+  } = useContext(UsersContext);
 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
+    const url = `${getServerUrl()}/users/logout`;
     try {
-      const res = await axios.get("http://localhost:8080/users/logout", {
+      const res = await axios.get(url, {
         withCredentials: true,
       });
       if (res.data.ok) {
@@ -71,21 +79,20 @@ function NavigationBar(props) {
             </Link>
           </li>
         )}
-      
-      {isLogin ? (
-        <div className="nav-logout-container">
-          <li>
-            <span className="nav-welcome-user">
-              Welcome {firstName} {lastName}
-            </span>
-          
-          
-            <button className="logout" onClick={handleLogout}>
-              Logout
-            </button>
-          </li>
-        </div>
-      ) : null}
+
+        {isLogin ? (
+          <div className="nav-logout-container">
+            <li>
+              <span className="nav-welcome-user">
+                Welcome {firstName} {lastName}
+              </span>
+
+              <button className="logout" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </div>
+        ) : null}
       </ul>
     </nav>
   );
