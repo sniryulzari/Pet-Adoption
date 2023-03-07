@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 
 app.use("/images", express.static("Images"));
-app.use(cors({ origin: 'https://pet-adoption-133f.onrender.com', credentials: true }));
+app.use(cors({ origin: 'https://pet-adoption-bbvp.onrender.com', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
