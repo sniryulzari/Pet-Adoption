@@ -25,7 +25,7 @@ app.use("/appOperations", appOperationsRoute);
 
 mongoose.set("strictQuery", true);
 
-const URI = process.env.MONGO_URI.toString();
+const URI = String(process.env.MONGO_URI);
 
 mongoose
   .connect(URI, {
