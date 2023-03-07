@@ -129,10 +129,10 @@ const Home = () => {
         />
       </div>
       <HomeWelcome />
-      {/* <HomePhotoGallery /> */}
-      {/* <PetOfTheWeek /> */}
-      {/* <HomeClientsTestimonials /> */}
-      {/* <Footer /> */}
+      <HomePhotoGallery />
+      <PetOfTheWeek />
+      <HomeClientsTestimonials />
+      <Footer />
     </div>
   );
 };
