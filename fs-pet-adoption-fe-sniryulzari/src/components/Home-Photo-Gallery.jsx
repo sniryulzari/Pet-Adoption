@@ -4,7 +4,7 @@ function HomePhotoGallery() {
 
 
   return (
-    <div className="home-photo-gallery-container">
+    <section className="home-photo-gallery-container">
       <span className="photo-gallery-heading-top">Photo Gallery</span>
       <h2 className="photo-gallery-heading-bottom">
         Looking & Smelling Great!
@@ -36,7 +36,7 @@ function HomePhotoGallery() {
         </div>
       </div>
       <div></div>
-    </div>
+    </section>
   );
 }
 

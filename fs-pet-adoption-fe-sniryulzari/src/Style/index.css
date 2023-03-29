@@ -8,19 +8,24 @@ html {
   box-sizing: inherit;
 }
 
-body #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+body {
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
   background-color: #ffffff;
+  padding: 0;
+  margin: 0;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Home Page */
@@ -30,8 +35,8 @@ body #root {
 }
 
 .home-top-container {
-  margin-bottom: 10rem;
   position: relative;
+  margin-bottom: 10rem;
 }
 .main-image {
   width: 100%;
@@ -50,8 +55,8 @@ body #root {
   height: 2.5rem;
   width: 2.5rem;
   position: absolute;
-  top: 13rem;
-  right: 43rem;
+  top: 14%;
+  right: 47%;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -84,8 +89,8 @@ body #root {
   height: 9.375rem;
   width: 7.625rem;
   position: absolute;
-  bottom: 13rem;
-  right: 50rem;
+  bottom: 34%;
+  right: 60%;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -114,8 +119,8 @@ body #root {
   height: 1.25rem;
   width: 1.25rem;
   position: absolute;
-  top: 18rem;
-  right: 6rem;
+  top: 30%;
+  right: 8%;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -148,8 +153,8 @@ body #root {
   height: 4rem;
   width: 4.4375rem;
   position: absolute;
-  bottom: 20rem;
-  right: 15rem;
+  bottom: 39%;
+  right: 16%;
 }
 
 .welcome-container {
@@ -279,10 +284,12 @@ body #root {
 /* home welcome */
 .home-welcome-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .home-welcome-heading {
@@ -297,24 +304,25 @@ body #root {
 
 .home-welcome-content {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
-  width: 100%;
-  height: 45rem;
+  gap: 2%;
+  padding-bottom: 2rem;
 }
 
 .home-welcome-img {
-  width: 50%;
-  padding-left: 30px;
-  padding-right: 15px;
-  height: auto;
+  flex-basis: 49%;
+  padding-left: 1.875rem;
+  padding-right: 0.9375rem;
   margin: 0 auto;
+  display: flex;
   position: relative;
 }
 
 .petImg2 {
   position: absolute;
-  top: 5rem;
-  left: 5rem;
+  top: 12%;
+  left: 6%;
   animation-duration: 1s;
   animation-fill-mode: both;
   clip-path: path(
@@ -346,8 +354,8 @@ body #root {
 
 .petImg3 {
   position: absolute;
-  top: 5rem;
-  left: 5rem;
+  top: 12%;
+  left: 6%;
   height: 30rem;
   width: 40rem;
   background-color: #b1b1b142;
@@ -381,7 +389,7 @@ body #root {
 }
 
 .home-welcome-text {
-  width: 50%;
+  flex-basis: 49%;
   padding: 1rem;
 }
 
@@ -440,23 +448,37 @@ body #root {
   border: 1px solid #ff4880;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1150px) {
   .home-welcome-content {
-    flex-direction: column;
+    flex-flow: column nowrap;
   }
   .home-welcome-heading {
     font-size: 2.5rem;
   }
   .home-welcome-text {
-    width: 100%;
+    flex-basis: 100%;
+    order: 1;
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+  .home-welcome-text-top,
+  .home-welcome-text-middle {
+    padding: 0;
+  }
+  .learn-more-button {
+    margin-left: 0;
   }
   .home-welcome-img {
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    flex-basis: 100%;
+    order: 2;
   }
   .petImg2,
   .petImg3 {
     /* display: none; */
-    width: 100%;
+    /* width: 100%; */
+    flex-basis: 100%;
   }
 }
 
@@ -468,6 +490,7 @@ body #root {
   justify-content: center;
   width: 100%;
   margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .photo-gallery-heading-top {
@@ -487,7 +510,7 @@ body #root {
 .photo-gallery-image-container {
   margin: 2rem 3rem;
   display: flex;
-  width: 100%;
+  flex-basis: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
@@ -534,7 +557,7 @@ body #root {
   justify-content: center;
   width: 100%;
   margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 
 .pet-of-the-week-heading-top {
@@ -553,7 +576,7 @@ body #root {
 
 .pet-of-the-week-card {
   display: flex;
-  width: 100%;
+  flex-basis: 100%;
 }
 
 .pet-of-the-week-card-left {
@@ -563,7 +586,7 @@ body #root {
 }
 
 .pet-of-the-week-card-right {
-  width: 60%;
+  flex-basis: 60%;
   margin-right: 7rem;
   padding-top: 6rem;
   padding-left: 5rem;
@@ -656,9 +679,7 @@ body #root {
   justify-content: center;
   width: 100%;
   margin-top: 10rem;
-  margin-bottom: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-bottom: 10rem;
 }
 
 .clients-testimonias-heading {
@@ -685,7 +706,7 @@ body #root {
   justify-content: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 30%;
+  flex-basis: 30%;
 }
 
 .clients-testimonias-person-image {
@@ -721,7 +742,7 @@ body #root {
   }
   .clients-testimonias-person {
     flex-flow: column nowrap;
-    width: fit-content;
+    flex-basis: content;
     text-align: center;
   }
   .clients-testimonias-person-image {
@@ -759,7 +780,7 @@ body #root {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 25%;
+  flex-basis: 25%;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -947,7 +968,7 @@ body #root {
   .footer-contact-us,
   .footer-working-hours,
   .footer-newsletter {
-    width: 100%;
+    flex-basis: 100%;
     padding: 0;
     margin: 0;
     margin-top: 3rem;
@@ -1414,7 +1435,7 @@ input:invalid[focused="true"] ~ .error-message {
   align-items: flex-start;
   justify-content: space-between;
   margin-left: 4rem;
-  width: 100%;
+  flex-basis: 100%;
 }
 
 .pet-card-image {
@@ -1437,8 +1458,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .pet-card-button-container {
-  width: 100%;
-  height: 100%;
+  flex-basis: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1504,7 +1524,8 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .my-pets {
-  width: 25% !important;
+  /* width: 25% !important; */
+  flex-basis: 25%;
 }
 
 /* Profile Settings Page */
@@ -1529,7 +1550,7 @@ input:invalid[focused="true"] ~ .error-message {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   color: #858687;
-  width: fit-content;
+  flex-basis: content;
   display: flex;
   flex-flow: row wrap;
   padding: 1rem;
@@ -1541,7 +1562,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .profile-settings-button-container {
-  width: 100%;
+  flex-basis: 100%;
   height: fit-content;
   padding-top: 1rem;
   padding-bottom: 1rem;

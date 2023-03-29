@@ -5,7 +5,7 @@ import person3 from "../Images/rachel.jpeg";
 
 function HomeClientsTestimonials() {
   return (
-    <div className="clients-testimonias-container">
+    <section className="clients-testimonias-container">
       <div className="clients-testimonias-header">
         <h2 className="clients-testimonias-heading">CLIENT'S TESTIMONIAS</h2>
       </div>
@@ -35,7 +35,7 @@ function HomeClientsTestimonials() {
             aliquip ex ea commodo consequat.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

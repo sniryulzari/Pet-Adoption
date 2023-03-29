@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../Context/Context-Users";
 import logo from "../Images/logo.jpg";
+import { Twirl as Hamburger } from "hamburger-react";
 
 function NavigationBar(props) {
   const {
@@ -15,6 +16,8 @@ function NavigationBar(props) {
     lastName,
     getServerUrl,
   } = useContext(UsersContext);
+
+  const [isOpen, setOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -93,6 +96,24 @@ function NavigationBar(props) {
             </li>
           </div>
         ) : null}
+        <li>
+          <Hamburger
+            className="hamburgerButton"
+            toggled={isOpen}
+            toggle={setOpen}
+            size={25}
+            direction="right"
+            rounded
+            label="Show menu"
+            onToggle={toggled => {
+              if (toggled) {
+                 // open a menu
+              } else {
+                 // close a menu
+              }
+            }}
+          />
+        </li>
       </ul>
     </nav>
   );

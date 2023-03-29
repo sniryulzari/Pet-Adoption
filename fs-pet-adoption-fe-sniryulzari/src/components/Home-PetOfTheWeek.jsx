@@ -25,7 +25,7 @@ function PetOfTheWeek() {
   }, []);
 
   return (
-    <div className="home-pet-of-the-week-container">
+    <section className="home-pet-of-the-week-container">
       <span className="pet-of-the-week-heading-top">Meet Our</span>
       <h2 className="pet-of-the-week-heading-bottom">PET OF THE WEEK!</h2>
       <div className="pet-of-the-week-card">
@@ -54,7 +54,7 @@ function PetOfTheWeek() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

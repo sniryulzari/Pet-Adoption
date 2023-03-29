@@ -14,7 +14,7 @@ function HomeWelcome() {
   }
 
   return (
-    <div className="home-welcome-container">
+    <section className="home-welcome-container">
       <h1 className="home-welcome-heading">Welcome To </h1>
       <h1 className="home-welcome-heading">Ado-Pet Centre</h1>
       <div className="home-welcome-content">
@@ -76,7 +76,7 @@ function HomeWelcome() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

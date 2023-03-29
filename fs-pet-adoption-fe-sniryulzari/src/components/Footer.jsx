@@ -10,7 +10,7 @@ import { MdLocationOn } from "react-icons/md";
 
 function Footer() {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="footer-main">
         <div className="footer-social-media">
           <div className="footer-social-media-top">
@@ -79,7 +79,7 @@ function Footer() {
             <span className="footer-copyright-text">Made by Snir Yulzari</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
