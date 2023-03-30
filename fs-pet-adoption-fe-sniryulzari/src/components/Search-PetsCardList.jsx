@@ -9,7 +9,7 @@ function SearchPetsCardList() {
 
 
   return (
-    <div>
+    <section>
       <Row xs={1} md={2} lg={3} xl={4} className="search-pet-results g-4">
         {petSearchRes.map((pet) => (
           <Col key={pet._id} >
@@ -30,7 +30,7 @@ function SearchPetsCardList() {
           </Col>
         ))}
       </Row>
-      </div>
+      </section>
   );
 }
 

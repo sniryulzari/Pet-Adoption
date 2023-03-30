@@ -217,7 +217,7 @@ function PetCard() {
   };
 
   return (
-    <div className="pet-card-container">
+    <section className="pet-card-container">
       {pet ? (
         <div className="pet-card">
           <img
@@ -290,7 +290,7 @@ function PetCard() {
       ) : (
         ""
       )}
-    </div>
+    </section>
   );
 }
 

@@ -96,7 +96,7 @@ function NavigationBar(props) {
             </li>
           </div>
         ) : null}
-        <li>
+        {/* <li>
           <Hamburger
             className="hamburgerButton"
             toggled={isOpen}
@@ -113,7 +113,7 @@ function NavigationBar(props) {
               }
             }}
           />
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

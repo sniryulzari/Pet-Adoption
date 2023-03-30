@@ -36,10 +36,15 @@ section {
 
 .home-top-container {
   position: relative;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10rem;
 }
 .main-image {
   width: 100%;
+  max-width: 1600px;
+  max-height: 800px;
+  overflow: hidden;
 }
 
 .hills {
@@ -55,8 +60,8 @@ section {
   height: 2.5rem;
   width: 2.5rem;
   position: absolute;
-  top: 14%;
-  right: 47%;
+  top: 12%;
+  right: 43%;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -89,8 +94,8 @@ section {
   height: 9.375rem;
   width: 7.625rem;
   position: absolute;
-  bottom: 34%;
-  right: 60%;
+  bottom: 32%;
+  right: 51%;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -119,8 +124,8 @@ section {
   height: 1.25rem;
   width: 1.25rem;
   position: absolute;
-  top: 30%;
-  right: 8%;
+  top: 29%;
+  right: 10%;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -153,15 +158,15 @@ section {
   height: 4rem;
   width: 4.4375rem;
   position: absolute;
-  bottom: 39%;
-  right: 16%;
+  bottom: 28%;
+  right: 14%;
 }
 
 .welcome-container {
   display: flex;
   flex-direction: column;
-  top: 15rem;
-  right: 7.5rem;
+  top: 22%;
+  right: 5%;
   position: absolute;
   width: 36%;
 }

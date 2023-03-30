@@ -63,7 +63,7 @@ const EditPet = () => {
   };
 
   return (
-    <div className="admin-add-pet-container">
+    <section className="admin-add-pet-container">
       <h1 className="display-3">Add Pets</h1>
       <Form className="admin-add-pet-form">
         <Row className="mb-3">
@@ -238,7 +238,7 @@ const EditPet = () => {
           </button>
         </div>
       </Form>
-    </div>
+    </section>
   );
 };
 
