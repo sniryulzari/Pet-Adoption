@@ -518,9 +518,7 @@ section {
   flex-basis: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  gap: 1%;
 }
 
 .photo-gallery-image {
@@ -582,6 +580,7 @@ section {
 .pet-of-the-week-card {
   display: flex;
   flex-basis: 100%;
+  gap: 4%;
 }
 
 .pet-of-the-week-card-left {
@@ -664,7 +663,7 @@ section {
   border: 1px solid #ff4880;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .pet-of-the-week-card {
     flex-flow: column wrap;
   }
@@ -698,10 +697,10 @@ section {
 .clients-testimonias-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:space-between;
   padding: 1rem 2rem;
   flex-flow: row wrap;
-  gap: 1rem;
+  gap: 4%;
 }
 
 .clients-testimonias-person {
@@ -762,6 +761,8 @@ section {
 /* Footer */
 .footer-container {
   background-image: url("../Images/footer-bg-01.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 32rem;
   margin-top: 10rem;
   display: flex;
@@ -959,8 +960,6 @@ section {
 
 @media (max-width: 850px) {
   .footer-container {
-    background-image: none;
-    background-color: #8f94f9;
     height: 100%;
     flex-flow: column wrap;
   }
