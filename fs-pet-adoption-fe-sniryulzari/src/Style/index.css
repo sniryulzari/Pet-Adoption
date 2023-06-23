@@ -42,8 +42,6 @@ section {
 }
 .main-image {
   width: 100%;
-  max-width: 1600px;
-  max-height: 800px;
   overflow: hidden;
 }
 
