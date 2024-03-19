@@ -16,6 +16,11 @@ body {
   margin: 0;
 }
 
+img, picture {
+  width: 100%;
+  max-width: 100%;;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -39,10 +44,6 @@ section {
   display: flex;
   justify-content: center;
   margin-bottom: 10rem;
-}
-.main-image {
-  width: 100%;
-  overflow: hidden;
 }
 
 .hills {
@@ -235,53 +236,6 @@ section {
 
 .welcome-login-search-Button:hover {
   background-color: #ffae00;
-}
-
-@media (max-width: 1200px) {
-  .welcome-container {
-    top: 13rem;
-    right: 4rem;
-  }
-  .welcome-title-top {
-    font-size: 1.2rem;
-  }
-  .welcome-title-bottom-start,
-  .welcome-title-bottom-end {
-    font-size: 2.5rem;
-  }
-  .dog-bone-img {
-    top: 9rem;
-    right: 28rem;
-  }
-  .arrow-img {
-    bottom: 7rem;
-    right: 32rem;
-  }
-  .dog-footprints-img {
-    bottom: 15rem;
-    right: 4rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .hills,
-  .arrow-img,
-  .dog-footprints-img,
-  .dog-bone-img,
-  .star-img {
-    display: none;
-  }
-  .welcome-container {
-    position: initial;
-    width: 80%;
-    margin: 2rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .welcome-login-search-Button {
-    margin: 2rem 0;
-  }
 }
 
 /* home welcome */
@@ -781,7 +735,7 @@ section {
 .footer-working-hours,
 .footer-newsletter {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: flex-start;
   justify-content: flex-start;
   flex-basis: 25%;
@@ -956,7 +910,8 @@ section {
   text-decoration: underline;
 }
 
-@media (max-width: 850px) {
+/* 850px */
+@media (max-width: 700px) {
   .footer-container {
     height: 100%;
     flex-flow: column wrap;
@@ -974,6 +929,9 @@ section {
     padding: 0;
     margin: 0;
     margin-top: 3rem;
+  }
+  .newsletter-input {
+    width: auto;
   }
 }
 
@@ -1586,4 +1544,61 @@ input:invalid[focused="true"] ~ .error-message {
   color: #ff4880;
   background-color: #ffffff;
   border: 1px solid #ff4880;
+}
+
+/* tablet */
+@media (max-width: 1200px) {
+  .welcome-container {
+    top: 13rem;
+    right: 4rem;
+  }
+  .welcome-title-top {
+    font-size: 1.2rem;
+  }
+  .welcome-title-bottom-start,
+  .welcome-title-bottom-end {
+    font-size: 2.5rem;
+  }
+  .dog-bone-img {
+    top: 9rem;
+    right: 28rem;
+  }
+  .arrow-img {
+    bottom: 7rem;
+    right: 32rem;
+  }
+  .dog-footprints-img {
+    bottom: 15rem;
+    right: 4rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 700px) {
+  .hills,
+  .arrow-img,
+  .dog-footprints-img,
+  .dog-bone-img,
+  .star-img,
+  .home-welcome-img,
+  .petImg3,
+  .petImg2,
+  .pet-of-the-week-frame {
+    display: none;
+  }
+  .home-top-container {
+    flex-flow: column wrap;
+  }
+  .welcome-container {
+    position: initial;
+  }
+  
+  .home-welcome-container,
+  .home-photo-gallery-container,
+  .home-pet-of-the-week-container,
+  .clients-testimonias-container,
+  .footer-container,
+  .navBar {
+    display: none;
+  }
 }

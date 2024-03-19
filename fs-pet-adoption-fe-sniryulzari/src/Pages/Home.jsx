@@ -8,7 +8,8 @@ import HomePhotoGallery from "../components/Home-Photo-Gallery";
 import PetOfTheWeek from "../components/Home-PetOfTheWeek";
 import HomeClientsTestimonials from "../components/Home-Clients-Testimonials";
 import Footer from "../components/Footer";
-import mainImage from "../Images/1.jpg";
+import desktopImage from '../Images/dog-4310597_1280.jpg';
+import mobileImage from "../Images/alvan-nee-ZCHj_2lJP00-unsplash.jpg";
 import hillsSvg from "../Images/hills.svg";
 
 const Home = () => {
@@ -43,7 +44,11 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-top-container">
-        <img className="main-image" alt="main image" src={mainImage} />
+        <picture>
+          <source media="(max-width: 699px)" srcset={mobileImage} className="mobile-image"/>
+          <source media="(min-width: 700px)" srcset={desktopImage} className="desktop-image"/>
+          <img src={desktopImage} alt="pet"/>
+        </picture>
         <img src={hillsSvg} alt="hills" className="hills" />
 
         <img
@@ -105,18 +110,6 @@ const Home = () => {
           </div>
         )}
 
-        <div className="home-bottom-page-container">
-          {/* <label>what are we doing?</label>
-        <p>
-        For almost two decades, Ado-Pet has helped in creating true social
-        change by bringing pet adoption into the mainstream. Our work has
-        helped make a difference to the Israel rescue community and thousands
-        of pets in need of rescue and rehabilitation. But, until every pet is
-        safe, respected, and loved, we all still have big, hairy work to do.
-        Find out more about our mission to help save 10,000 healthy and
-        rehomable pets each year.
-      </p> */}
-        </div>
         <SignupModal
           show={show}
           handleClose={handleClose}

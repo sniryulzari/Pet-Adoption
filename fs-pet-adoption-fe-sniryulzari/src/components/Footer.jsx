@@ -9,6 +9,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { MdLocationOn } from "react-icons/md";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer-container">
       <div className="footer-main">
@@ -73,7 +74,7 @@ function Footer() {
       <div className="footer-bottom">
         <hr className="footer-bottom-breaking-line"></hr>
         <div className="footer-bottom-copyright">
-            <span className="footer-copyright-text">Copyright © 2023 Ado-Pet LTD. All rights reserved.</span>
+            <span className="footer-copyright-text">Copyright © {currentYear} Ado-Pet LTD. All rights reserved.</span>
             <span className="footer-copyright-text terms-of-use">Terms of Use</span>
             <span className="footer-copyright-text privacy-policy">Privacy Policy</span>
             <span className="footer-copyright-text">Made by Snir Yulzari</span>
