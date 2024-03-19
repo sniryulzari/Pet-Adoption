@@ -40,7 +40,7 @@ function NavigationBar(props) {
 
   return (
     <nav className="navBar">
-      <ul>
+      <ul className="desktop_nav">
         <li>
           <a href="/" className="logo-link">
             <img src={logo} alt="logo" className="nav-bar-logo" />
@@ -96,24 +96,87 @@ function NavigationBar(props) {
             </li>
           </div>
         ) : null}
-        {/* <li>
-          <Hamburger
+      </ul>
+
+      <ul className="mobile_nav">
+        <li className="logo-container">
+          <a href="/" className="logo-link">
+            <img src={logo} alt="logo" className="nav-bar-logo" />
+            <span className="nav-bar-logo-text">Ado-Pet</span>
+          </a>
+        </li>
+        <li className="hamburger-container">
+        <Hamburger
             className="hamburgerButton"
             toggled={isOpen}
             toggle={setOpen}
             size={25}
-            direction="right"
+            direction="left"
             rounded
-            label="Show menu"
             onToggle={toggled => {
               if (toggled) {
                  // open a menu
+                 setOpen(true)
               } else {
                  // close a menu
+                 setOpen(false)
               }
             }}
           />
-        </li> */}
+          </li>
+        {isOpen ? (
+          <ul className="nav_links_container">
+            <li>
+          <Link className="link" to="/">
+            Home
+          </Link>
+        </li>
+
+        <li>
+          <Link className="link" to="/search">
+            Search
+          </Link>
+        </li>
+
+        {isLogin ? (
+          <li>
+            <Link className="link" to="/mypets">
+              My Pets
+            </Link>
+          </li>
+        ) : null}
+
+        {isLogin ? (
+          <li>
+            <Link className="link" to="/profile-Settings">
+              Profile Settings
+            </Link>
+          </li>
+        ) : null}
+
+        {isAdmin && (
+          <li>
+            <Link className="link" to="/admin-Dashboard">
+              Admin
+            </Link>
+          </li>
+        )}
+
+        {isLogin ? (
+          <div className="nav-logout-container">
+            <li>
+              <span className="nav-welcome-user">
+                Welcome {firstName} {lastName}
+              </span>
+
+              <button className="logout" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </div>
+        ) : null}
+          </ul>
+        ) : null}
       </ul>
     </nav>
   );

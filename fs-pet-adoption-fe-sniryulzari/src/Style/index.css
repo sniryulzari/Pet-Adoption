@@ -715,7 +715,6 @@ section {
   background-image: url("../Images/footer-bg-01.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 32rem;
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
@@ -892,6 +891,7 @@ section {
   align-items: center;
   justify-content: space-around;
   width: 90%;
+  margin-bottom: 1.5rem;
 }
 
 .footer-copyright-text {
@@ -910,32 +910,11 @@ section {
   text-decoration: underline;
 }
 
-/* 850px */
-@media (max-width: 700px) {
-  .footer-container {
-    height: 100%;
-    flex-flow: column wrap;
-  }
-  .footer-main {
-    flex-flow: column wrap;
-    margin: 0;
-    padding: 1rem;
-  }
-  .footer-social-media,
-  .footer-contact-us,
-  .footer-working-hours,
-  .footer-newsletter {
-    flex-basis: 100%;
-    padding: 0;
-    margin: 0;
-    margin-top: 3rem;
-  }
-  .newsletter-input {
-    width: auto;
-  }
-}
 
 /* nav bar */
+.mobile_nav {
+  display: none;
+}
 .navBar {
   height: auto;
   background-color: #ffffff;
@@ -1021,18 +1000,6 @@ nav ul {
   background-color: #ffffff;
   border: 1px solid #ff4880;
   transition-duration: 0.4s;
-}
-
-@media (max-width: 850px) {
-  nav ul {
-    justify-content: flex-start;
-  }
-  nav li:first-child {
-    flex-basis: 100%;
-  }
-  nav li {
-    margin: 0.5rem auto;
-  }
 }
 
 /* Signup and Login Modal */
@@ -1484,7 +1451,6 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .my-pets {
-  /* width: 25% !important; */
   flex-basis: 25%;
 }
 
@@ -1571,34 +1537,144 @@ input:invalid[focused="true"] ~ .error-message {
     bottom: 15rem;
     right: 4rem;
   }
+  .home-welcome-img,
+  .petImg3,
+  .petImg2 {
+    display: none;
+  }
+
+  /* Footer */
+  .footer-social-media, .footer-newsletter {
+    margin: 0;
+  }
+  
+  
 }
 
 /* mobile */
 @media (max-width: 700px) {
-  .hills,
-  .arrow-img,
-  .dog-footprints-img,
-  .dog-bone-img,
-  .star-img,
+  /* Nav Bar */
+  .desktop_nav {
+    display: none;
+  }
+  .mobile_nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .logo-container {
+    flex-basis: 85%;
+  }
+  .hamburger-container {
+    flex-basis: 10%;
+  }
+  .nav_links_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul {
+    padding: 0;
+  }
+  nav li {
+    margin: 0.5rem 0;
+  }
+  .nav-bar-logo, .nav-bar-logo-text  {
+    margin: 0;
+    padding: 0;
+  }
+  .nav-logout-container {
+    margin: 0;
+  }
+  .nav-logout-container li {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-welcome-user {
+    padding: 0;
+    order: 2;
+  }
+  .logout {
+    margin: 1rem 0;
+  }
+
+  /* Home */
   .home-welcome-img,
   .petImg3,
-  .petImg2,
-  .pet-of-the-week-frame {
+  .petImg2 {
     display: none;
   }
   .home-top-container {
-    flex-flow: column wrap;
+    flex-direction: column;
   }
   .welcome-container {
-    position: initial;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
   }
-  
-  .home-welcome-container,
-  .home-photo-gallery-container,
-  .home-pet-of-the-week-container,
-  .clients-testimonias-container,
-  .footer-container,
-  .navBar {
-    display: none;
+  .dog-bone-img {
+    top: 15rem;
+    right: 35rem;
+  }
+
+  /* Photo Gallery */
+  .photo-gallery-image-container {
+    flex-direction: column;
+    gap: 10%;
+    width: 100%;
+    margin-top: 10rem;
+    padding: 0 1rem 0 1rem;
+  }
+  .photo-gallery-image {
+    margin: 0;
+    padding: 0;
+  }
+  .photo-gallery-image-col-1, .photo-gallery-image-col-2, .photo-gallery-image-col-3, .photo-gallery-image-col-4, .photo-gallery-image-col-5 {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+  }
+
+  /* Footer */
+  .footer-main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .footer-social-media,
+  .footer-contact-us,
+  .footer-working-hours,
+  .footer-newsletter {
+    flex-basis: 100%;
+    padding: 0;
+    margin: 1rem;
+  }
+  .newsletter-input {
+    width: auto;
+  }
+  .footer-social-media-links {
+    justify-content: flex-start;
+    gap: 10%;
+  }
+  .footer-bottom-breaking-line {
+    margin: 1rem 0;
+  }
+  .footer-bottom-copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom-copyright >span {
+    margin-bottom: 1rem;
   }
 }

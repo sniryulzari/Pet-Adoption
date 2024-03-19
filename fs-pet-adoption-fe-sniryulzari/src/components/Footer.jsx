@@ -15,7 +15,7 @@ function Footer() {
       <div className="footer-main">
         <div className="footer-social-media">
           <div className="footer-social-media-top">
-            <img src={logo} className="footer-logo" />
+            <img src={logo} className="footer-logo" alt="logo" />
             <span className="social-media-header">Ado-Pet</span>
           </div>
           <p className="footer-social-media-text">
@@ -74,9 +74,9 @@ function Footer() {
       <div className="footer-bottom">
         <hr className="footer-bottom-breaking-line"></hr>
         <div className="footer-bottom-copyright">
-            <span className="footer-copyright-text">Copyright © {currentYear} Ado-Pet LTD. All rights reserved.</span>
             <span className="footer-copyright-text terms-of-use">Terms of Use</span>
             <span className="footer-copyright-text privacy-policy">Privacy Policy</span>
+            <span className="footer-copyright-text">Copyright © {currentYear} Ado-Pet LTD. All rights reserved.</span>
             <span className="footer-copyright-text">Made by Snir Yulzari</span>
         </div>
       </div>

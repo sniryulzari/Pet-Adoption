@@ -45,8 +45,8 @@ const Home = () => {
     <div className="home-container">
       <div className="home-top-container">
         <picture>
-          <source media="(max-width: 699px)" srcset={mobileImage} className="mobile-image"/>
-          <source media="(min-width: 700px)" srcset={desktopImage} className="desktop-image"/>
+          <source media="(max-width: 699px)" srcSet={mobileImage} className="mobile-image"/>
+          <source media="(min-width: 700px)" srcSet={desktopImage} className="desktop-image"/>
           <img src={desktopImage} alt="pet"/>
         </picture>
         <img src={hillsSvg} alt="hills" className="hills" />
