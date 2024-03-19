@@ -8,7 +8,15 @@ const cookieParser = require("cookie-parser");
 const app = express();
 
 app.use("/images", express.static("Images"));
-app.use(cors({ origin: 'https://pet-adoption-bbvp.onrender.com', credentials: true }));
+
+const getServerUrl = () => {
+  if (process.env.NODE_ENV === "production") {
+    return 'https://pet-adoption-bbvp.onrender.com'
+  }
+  return 'http://localhost:3000'
+};
+
+app.use(cors({ origin: getServerUrl(), credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -40,4 +48,6 @@ mongoose
     console.error(err.stack);
     process.exit(1);
   });
+
+  
   
