@@ -11,7 +11,7 @@ function HomeClientsTestimonials() {
       </div>
       <div className="clients-testimonias-content">
         <div className="clients-testimonias-person">
-          <img src={person1} className="clients-testimonias-person-image"/>
+          <img src={person1} className="clients-testimonias-person-image" alt="person"/>
           <span className="clients-testimonias-person-name">Angela Ju</span>
           <p className="clients-testimonias-person-recommendation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -19,7 +19,7 @@ function HomeClientsTestimonials() {
             aliquip ex ea commodo consequat.</p>
         </div>
         <div className="clients-testimonias-person">
-          <img src={person2} className="clients-testimonias-person-image"/>
+          <img src={person2} className="clients-testimonias-person-image" alt="person"/>
           <span className="clients-testimonias-person-name">Erica Norman</span>
           <p className="clients-testimonias-person-recommendation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -27,7 +27,7 @@ function HomeClientsTestimonials() {
             aliquip ex ea commodo consequat.</p>
         </div>
         <div className="clients-testimonias-person">
-          <img src={person3} className="clients-testimonias-person-image"/>
+          <img src={person3} className="clients-testimonias-person-image" alt="person"/>
           <span className="clients-testimonias-person-name">Rachel Muldoon</span>
           <p className="clients-testimonias-person-recommendation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

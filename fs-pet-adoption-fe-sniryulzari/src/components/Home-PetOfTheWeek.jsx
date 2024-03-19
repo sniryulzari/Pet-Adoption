@@ -30,11 +30,11 @@ function PetOfTheWeek() {
       <h2 className="pet-of-the-week-heading-bottom">PET OF THE WEEK!</h2>
       <div className="pet-of-the-week-card">
         <div className="pet-of-the-week-card-left">
-          <img src={petOfTheWeekFrame} className="pet-of-the-week-frame" />
+          <img src={petOfTheWeekFrame} className="pet-of-the-week-frame" alt="pet-of-the-week"/>
           <div className="pet-of-the-week-image-container">
             <img
               src={petOfTheWeek[0]?.imageUrl}
-              alt="pet of the week"
+              alt="pet-of-the-week"
               className="pet-of-the-week-image"
             />
           </div>

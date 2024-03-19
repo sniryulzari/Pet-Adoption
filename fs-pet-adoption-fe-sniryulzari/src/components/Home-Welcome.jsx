@@ -29,7 +29,7 @@ function HomeWelcome() {
           ></div>
           <img
             src={petImg2}
-            alt="pet image"
+            alt="pet"
             className="petImg2"
             style={{
               animationName: isMousedOver ? "petImg2-hover" : "petImg2-unhover",

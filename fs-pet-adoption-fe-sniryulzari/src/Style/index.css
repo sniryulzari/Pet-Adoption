@@ -433,8 +433,6 @@ section {
   }
   .petImg2,
   .petImg3 {
-    /* display: none; */
-    /* width: 100%; */
     flex-basis: 100%;
   }
 }
@@ -1551,7 +1549,7 @@ input:invalid[focused="true"] ~ .error-message {
   
 }
 
-/* mobile */
+/* Mobile */
 @media (max-width: 700px) {
   /* Nav Bar */
   .desktop_nav {
@@ -1620,10 +1618,35 @@ input:invalid[focused="true"] ~ .error-message {
     justify-content: center;
     margin-top: 2rem;
   }
-  .dog-bone-img {
-    top: 15rem;
-    right: 35rem;
+  .welcome-title-top {
+    order: 4;
+    margin-top: 27rem;
   }
+  .hills {
+    height: 10%;
+  }
+  .star-img {
+    top: 2rem;
+    right: 2rem;
+  }
+  .dog-bone-img {
+    top: 10rem;
+    left: 2rem;
+  }
+  .arrow-img {
+    bottom: 8rem;
+    right: 14rem;
+  }
+  .dog-footprints-img {
+    bottom: 11rem;
+    right: 2rem;
+  }
+
+  /* Home Welcome */
+.home-welcome-container, .home-welcome-content, .home-welcome-text {
+  margin: 0;
+  padding: 0 1rem;
+}
 
   /* Photo Gallery */
   .photo-gallery-image-container {
@@ -1636,6 +1659,8 @@ input:invalid[focused="true"] ~ .error-message {
   .photo-gallery-image {
     margin: 0;
     padding: 0;
+    height: 10rem;
+    width: 10rem;
   }
   .photo-gallery-image-col-1, .photo-gallery-image-col-2, .photo-gallery-image-col-3, .photo-gallery-image-col-4, .photo-gallery-image-col-5 {
     margin: 0;
@@ -1645,6 +1670,24 @@ input:invalid[focused="true"] ~ .error-message {
     display: flex;
     align-items: center;
     justify-content:space-around;
+  }
+  /* Pet of the week */
+  .pet-of-the-week-heading-bottom {
+    margin-bottom: 1rem;
+  }
+  .pet-of-the-week-frame {
+    height: 25rem;
+    width: 25rem;
+  }
+  .pet-of-the-week-image-container {
+    height: 77%;
+    width: 83%;
+    top: 46px;
+    left: 42px;
+  }
+  .pet-of-the-week-card-right {
+    margin: 0;
+    padding: 1rem;
   }
 
   /* Footer */
