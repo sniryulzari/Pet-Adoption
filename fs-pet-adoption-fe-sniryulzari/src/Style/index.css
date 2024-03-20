@@ -1239,6 +1239,7 @@ input:invalid[focused='true'] ~ .error-message {
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .pet-icon {
@@ -1280,6 +1281,10 @@ input:invalid[focused='true'] ~ .error-message {
   font-family: 'MikadoBold';
   font-size: 1.2rem;
   color: #393d72;
+}
+
+label {
+  margin: 0;
 }
 
 .advanced-search-container {
@@ -1613,17 +1618,17 @@ input:invalid[focused='true'] ~ .error-message {
   .welcome-container {
     top: 0;
     left: 0;
-    width: 100%;
     align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
   }
   .welcome-title-top {
-    order: 4;
-    margin-top: 8rem;
+    position: absolute;
+    bottom: -100px;
   }
   .welcome-login-search-Button {
-    margin-top: 21rem;
+    position: absolute;
+    bottom: 20%;
   }
   .hills {
     height: 10%;
@@ -1704,6 +1709,9 @@ input:invalid[focused='true'] ~ .error-message {
   }
 
   /* Clients Testimonials */
+  .clients-testimonias-container {
+    margin: 0;
+  }
   .clients-testimonias-heading {
     font-size: 2.5rem;
   }
@@ -1716,7 +1724,7 @@ input:invalid[focused='true'] ~ .error-message {
 
   /* Footer */
   .footer-container {
-    margin-top: -12rem;
+    margin: 0;
   }
   .footer-main {
     flex-direction: column;
@@ -1747,4 +1755,16 @@ input:invalid[focused='true'] ~ .error-message {
   .footer-bottom-copyright > span {
     margin-bottom: 1rem;
   }
+}
+
+/* Search */
+.search-header-text {
+  font-size: 2.5rem;
+}
+.advanced-search-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.search-pet-btn-container {
+  flex-direction: column;
 }

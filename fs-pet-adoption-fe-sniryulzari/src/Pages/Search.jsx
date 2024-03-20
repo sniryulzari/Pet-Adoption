@@ -169,7 +169,7 @@ const SearchPets = () => {
         <div className={isChecked ? "d-block" : "d-none"}>
           <Form className="advanced-search-container">
             <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} controlId="formGridName">
                 <Form.Label className="search-field">Name</Form.Label>
                 <Form.Control
                   type="text"
@@ -180,9 +180,9 @@ const SearchPets = () => {
                 />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridState">
+              <Form.Group as={Col} controlId="formGridStatus">
                 <Form.Label className="search-field">
-                  Adoption Status
+                  Status
                 </Form.Label>
                 <Form.Select
                   name="adoptionStatus"
