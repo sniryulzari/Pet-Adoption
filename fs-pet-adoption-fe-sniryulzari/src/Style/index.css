@@ -9,16 +9,17 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   background-color: #ffffff;
   padding: 0;
   margin: 0;
 }
 
-img, picture {
+img,
+picture {
   width: 100%;
-  max-width: 100%;;
+  max-width: 100%;
 }
 
 .main-container {
@@ -171,7 +172,7 @@ section {
 }
 
 .welcome-title-top {
-  font-family: "Comic-Gecko";
+  font-family: 'Comic-Gecko';
   font-size: 1.8rem;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
@@ -187,22 +188,22 @@ section {
 }
 
 @font-face {
-  font-family: "Comic-Gecko";
-  src: url("Comic-Gecko.ttf.woff") format("woff"),
-    url("Comic-Gecko.ttf.svg#Comic-Gecko") format("svg"),
-    url("Comic-Gecko.ttf.eot"),
-    url("Comic-Gecko.ttf.eot?#iefix") format("embedded-opentype");
+  font-family: 'Comic-Gecko';
+  src: url('Comic-Gecko.ttf.woff') format('woff'),
+    url('Comic-Gecko.ttf.svg#Comic-Gecko') format('svg'),
+    url('Comic-Gecko.ttf.eot'),
+    url('Comic-Gecko.ttf.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MikadoBold";
-  src: url("MikadoBold.otf");
+  font-family: 'MikadoBold';
+  src: url('MikadoBold.otf');
 }
 
 .welcome-title-bottom-start {
-  font-family: "Comic-Gecko";
+  font-family: 'Comic-Gecko';
   font-weight: normal;
   font-style: normal;
   font-size: 4rem;
@@ -210,7 +211,7 @@ section {
 }
 
 .welcome-title-bottom-end {
-  font-family: "Comic-Gecko";
+  font-family: 'Comic-Gecko';
   font-weight: normal;
   font-style: normal;
   font-size: 4rem;
@@ -224,7 +225,7 @@ section {
   border: none;
   border-radius: 20px;
   text-align: center;
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -250,7 +251,7 @@ section {
 }
 
 .home-welcome-heading {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-weight: normal;
   font-style: normal;
   color: #393d72;
@@ -283,7 +284,7 @@ section {
   animation-duration: 1s;
   animation-fill-mode: both;
   clip-path: path(
-    "M500.45,77.07c-55.98-22.78-120.41-2.72-178.53-11.01C260.98,57.36,187.26,7.27,129.2,1.51C-38.98-15.15-22.16,177.84,63.12,286.89C422.79,746.83,740.54,174.75,500.45,77.07z"
+    'M500.45,77.07c-55.98-22.78-120.41-2.72-178.53-11.01C260.98,57.36,187.26,7.27,129.2,1.51C-38.98-15.15-22.16,177.84,63.12,286.89C422.79,746.83,740.54,174.75,500.45,77.07z'
   );
 }
 
@@ -319,7 +320,7 @@ section {
   animation-duration: 1s;
   animation-fill-mode: both;
   clip-path: path(
-    "M478.57,0.4c-99.74,0-116.28,76.85-191.72,116.59C201.86,161.75,23.42,124.9,2.21,244.6c-30.14,170.07,266.27,253.45,389.84,175.18c78.22-49.54,203.58-206.77,205.54-299.42C599.07,49.77,552.22,0.4,478.57,0.4z"
+    'M478.57,0.4c-99.74,0-116.28,76.85-191.72,116.59C201.86,161.75,23.42,124.9,2.21,244.6c-30.14,170.07,266.27,253.45,389.84,175.18c78.22-49.54,203.58-206.77,205.54-299.42C599.07,49.77,552.22,0.4,478.57,0.4z'
   );
 }
 
@@ -351,7 +352,7 @@ section {
 }
 
 .home-welcome-text-top {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: #858687;
   text-align: left;
@@ -385,7 +386,7 @@ section {
 }
 
 .learn-more-button {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 0.875rem;
   color: #ffffff;
   background-color: #ff4880;
@@ -449,13 +450,13 @@ section {
 }
 
 .photo-gallery-heading-top {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 1.375rem;
   color: #ff4880;
 }
 
 .photo-gallery-heading-bottom {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 3.125rem;
   padding: 1rem;
@@ -514,13 +515,13 @@ section {
 }
 
 .pet-of-the-week-heading-top {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 1.375rem;
   color: #ff4880;
 }
 
 .pet-of-the-week-heading-bottom {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 3.125rem;
   padding: 1rem;
@@ -578,13 +579,13 @@ section {
 }
 
 .pet-name {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #ffae01;
   font-size: 1.7rem;
 }
 
 .pet-bio {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #858687;
   font-size: 1rem;
   text-align: left;
@@ -599,7 +600,7 @@ section {
   border: none;
   border-radius: 20px;
   text-align: center;
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -637,7 +638,7 @@ section {
 }
 
 .clients-testimonias-heading {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 3.125rem;
   padding: 1rem;
@@ -647,7 +648,7 @@ section {
 .clients-testimonias-content {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 1rem 2rem;
   flex-flow: row wrap;
   gap: 4%;
@@ -670,7 +671,7 @@ section {
 }
 
 .clients-testimonias-person-name {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #ff4880;
   font-size: 1.3rem;
   font-weight: bolder;
@@ -680,7 +681,7 @@ section {
 }
 
 .clients-testimonias-person-recommendation {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #858687;
   font-size: 1rem;
   padding-top: 1rem;
@@ -710,7 +711,7 @@ section {
 
 /* Footer */
 .footer-container {
-  background-image: url("../Images/footer-bg-01.png");
+  background-image: url('../Images/footer-bg-01.png');
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 10rem;
@@ -764,7 +765,7 @@ section {
 .contact-us-header,
 .working-hours-header,
 .newsletter-header {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -774,7 +775,7 @@ section {
 .footer-social-media-text {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #858687;
   font-size: 15px;
   box-sizing: border-box;
@@ -824,13 +825,13 @@ section {
 }
 
 .contact-us-info {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 1rem;
 }
 
 .working-hours-text {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #858687;
   font-size: 15px;
   box-sizing: border-box;
@@ -845,7 +846,7 @@ section {
   border-radius: 15px;
   padding: 12px 15px 12px 15px;
   margin-bottom: 10px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   color: #858687;
   outline: none;
@@ -857,7 +858,7 @@ section {
   border: none;
   border-radius: 20px;
   text-align: center;
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -894,7 +895,7 @@ section {
 
 .footer-copyright-text {
   color: #858687;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 }
 
@@ -907,7 +908,6 @@ section {
 .privacy-policy:hover {
   text-decoration: underline;
 }
-
 
 /* nav bar */
 .mobile_nav {
@@ -945,7 +945,7 @@ nav ul {
 }
 
 .nav-bar-logo-text {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #ffae00;
   font-size: 1.5rem;
   padding-bottom: 1rem;
@@ -953,7 +953,7 @@ nav ul {
 }
 
 .link {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 1.1rem;
   text-decoration: none;
@@ -974,7 +974,7 @@ nav ul {
 }
 
 .nav-welcome-user {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #ffae00;
   font-size: 1.1rem;
   padding: 0px 1rem;
@@ -1005,7 +1005,7 @@ nav ul {
 .loginForm {
   display: flex;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   padding: 1.875rem 3rem;
 }
@@ -1040,11 +1040,11 @@ label {
   display: none;
 }
 
-input:invalid[focused="true"] {
+input:invalid[focused='true'] {
   border: 1px solid red;
 }
 
-input:invalid[focused="true"] ~ .error-message {
+input:invalid[focused='true'] ~ .error-message {
   display: block;
 }
 
@@ -1102,7 +1102,7 @@ input:invalid[focused="true"] ~ .error-message {
 
 .admin-dashboard-header,
 .admin-add-pet-header {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
   margin-left: auto;
@@ -1112,7 +1112,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .admin-dashboard-table-header {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   color: #ff4880;
   padding-bottom: 0.5rem;
@@ -1151,7 +1151,7 @@ input:invalid[focused="true"] ~ .error-message {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .edit-icon {
@@ -1171,7 +1171,7 @@ input:invalid[focused="true"] ~ .error-message {
 .admin-add-pet-form {
   display: flex;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -1228,7 +1228,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .search-header-text {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   color: #393d72;
   font-size: 3rem;
   padding-top: 1rem;
@@ -1277,7 +1277,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .advanced-search-checkbox {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 1.2rem;
   color: #393d72;
 }
@@ -1287,7 +1287,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .search-field {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   color: #858687;
 }
@@ -1301,7 +1301,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .search-pet-btn {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 0.875rem;
   color: #ffffff;
   background-color: #ff4880;
@@ -1324,19 +1324,19 @@ input:invalid[focused="true"] ~ .error-message {
   display: block;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 }
 
 .search-no-result-text {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 2rem;
   color: #393d72;
   padding: 1rem;
 }
 
 .see-more-button {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 }
 
@@ -1368,13 +1368,13 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .pet-card-pet-name {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
 }
 
 .pet-card-info {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 }
 
@@ -1427,7 +1427,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .my-pets-header {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
   margin-top: 2rem;
@@ -1436,12 +1436,12 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .my-pets-button {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   margin-left: 3rem;
 }
 
 .my-pets-sub-header {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 1.5rem;
   color: #ff4880;
   padding-left: 3.3rem;
@@ -1463,7 +1463,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .profile-settings-header {
-  font-family: "MikadoBold";
+  font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
   padding-top: 3rem;
@@ -1471,7 +1471,7 @@ input:invalid[focused="true"] ~ .error-message {
 }
 
 .profile-settings-form {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: #858687;
   flex-basis: content;
@@ -1542,11 +1542,10 @@ input:invalid[focused="true"] ~ .error-message {
   }
 
   /* Footer */
-  .footer-social-media, .footer-newsletter {
+  .footer-social-media,
+  .footer-newsletter {
     margin: 0;
   }
-  
-  
 }
 
 /* Mobile */
@@ -1582,7 +1581,8 @@ input:invalid[focused="true"] ~ .error-message {
   nav li {
     margin: 0.5rem 0;
   }
-  .nav-bar-logo, .nav-bar-logo-text  {
+  .nav-bar-logo,
+  .nav-bar-logo-text {
     margin: 0;
     padding: 0;
   }
@@ -1620,7 +1620,10 @@ input:invalid[focused="true"] ~ .error-message {
   }
   .welcome-title-top {
     order: 4;
-    margin-top: 27rem;
+    margin-top: 8rem;
+  }
+  .welcome-login-search-Button {
+    margin-top: 21rem;
   }
   .hills {
     height: 10%;
@@ -1643,10 +1646,12 @@ input:invalid[focused="true"] ~ .error-message {
   }
 
   /* Home Welcome */
-.home-welcome-container, .home-welcome-content, .home-welcome-text {
-  margin: 0;
-  padding: 0 1rem;
-}
+  .home-welcome-container,
+  .home-welcome-content,
+  .home-welcome-text {
+    margin: 0;
+    padding: 0 1rem;
+  }
 
   /* Photo Gallery */
   .photo-gallery-image-container {
@@ -1656,24 +1661,32 @@ input:invalid[focused="true"] ~ .error-message {
     margin-top: 10rem;
     padding: 0 1rem 0 1rem;
   }
+  .photo-gallery-heading-bottom {
+    font-size: 2.5rem;
+  }
   .photo-gallery-image {
     margin: 0;
     padding: 0;
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
   }
-  .photo-gallery-image-col-1, .photo-gallery-image-col-2, .photo-gallery-image-col-3, .photo-gallery-image-col-4, .photo-gallery-image-col-5 {
+  .photo-gallery-image-col-1,
+  .photo-gallery-image-col-2,
+  .photo-gallery-image-col-3,
+  .photo-gallery-image-col-4,
+  .photo-gallery-image-col-5 {
     margin: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content: center;
+    gap: 10%;
   }
   /* Pet of the week */
   .pet-of-the-week-heading-bottom {
     margin-bottom: 1rem;
+    font-size: 2.5rem;
   }
   .pet-of-the-week-frame {
     height: 25rem;
@@ -1683,14 +1696,28 @@ input:invalid[focused="true"] ~ .error-message {
     height: 77%;
     width: 83%;
     top: 46px;
-    left: 42px;
+    left: 40px;
   }
   .pet-of-the-week-card-right {
     margin: 0;
     padding: 1rem;
   }
 
+  /* Clients Testimonials */
+  .clients-testimonias-heading {
+    font-size: 2.5rem;
+  }
+  .clients-testimonias-person-recommendation {
+    text-align: left;
+  }
+  .clients-testimonias-person {
+    padding: 0;
+  }
+
   /* Footer */
+  .footer-container {
+    margin-top: -12rem;
+  }
   .footer-main {
     flex-direction: column;
     padding: 1rem;
@@ -1717,7 +1744,7 @@ input:invalid[focused="true"] ~ .error-message {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer-bottom-copyright >span {
+  .footer-bottom-copyright > span {
     margin-bottom: 1rem;
   }
 }
