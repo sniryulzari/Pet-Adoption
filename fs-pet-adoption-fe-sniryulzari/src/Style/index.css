@@ -1178,10 +1178,9 @@ input:invalid[focused='true'] ~ .error-message {
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1000px;
 }
 
 .add-pet-buttons-container {
@@ -1197,15 +1196,21 @@ input:invalid[focused='true'] ~ .error-message {
 }
 
 /* edit page */
-.admin-edit-pet-header {
+.admin-edit-pet-header-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .pet-img {
+  height: 10rem;
+  width: 10rem;
   border-radius: 50%;
+}
+.admin-add-pet-form {
+  width: 100%;
+  max-width: 1000px;
 }
 
 /* admin user pets */
@@ -1574,7 +1579,7 @@ label {
   }
   .pet-card-button-container {
     margin-top: 2rem;
-  }  
+  }
 
   /* Profile Settings */
   .profile-settings-form {
@@ -1603,14 +1608,13 @@ label {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  .admin-edit-pet-header {
+  .admin-edit-pet-header-container {
     flex-direction: column;
   }
   .pet-img {
     width: 10rem;
     height: 10rem;
   }
-  
 }
 
 /* Mobile */
@@ -1826,7 +1830,13 @@ label {
     margin: 0 auto;
   }
   .search-pet-btn-container {
+    display: flex;
     flex-direction: column;
+    width: 90%;
+  }
+  .search-pet-btn {
+    margin: 1rem auto;
+    width: 100%;
   }
   .pet-icon {
     margin: 1rem;
@@ -1884,6 +1894,7 @@ label {
   .signup-login-btn {
     margin: 0.5rem 0;
     padding: 0.6rem 2rem;
+    width: 100%;
   }
 
   /* My Pets */
@@ -1957,11 +1968,15 @@ label {
   }
   .add-pet-buttons-container > .add-pet-buttons {
     margin: 0.5rem 0;
+    width: 100%;
   }
 
   /* Edit Pet */
   .pet-img {
     width: 7rem;
     height: 7rem;
+  }
+  .edit-pet-row {
+    flex-direction: column;
   }
 }

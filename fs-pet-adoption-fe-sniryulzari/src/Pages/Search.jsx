@@ -47,6 +47,7 @@ const SearchPets = () => {
       setNoSearchRes(true);
     } else {
       setPetSearchRes(res.data);
+      window.location.href = "#search-result"
     }
   };
 
@@ -267,15 +268,14 @@ const SearchPets = () => {
           </Form>
         </div>
         <div className="search-pet-btn-container">
-          <a href="#search-result">
-            <button
-              type="submit"
-              className="search-pet-btn"
-              onClick={handleSearch}
-            >
-              Search
-            </button>
-          </a>
+          <button
+            type="submit"
+            className="search-pet-btn"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+
           <button
             type="submit"
             className="search-pet-btn clear-search"

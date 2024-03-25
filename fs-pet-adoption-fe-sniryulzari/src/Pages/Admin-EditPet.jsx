@@ -75,18 +75,16 @@ export default function AdminEditPet() {
 
   return (
     <div className="admin-edit-pet-container">
-      <div className="admin-edit-pet-header">
-        <h1 className="">Edit Pet</h1>
+      <div className="admin-edit-pet-header-container">
+        <h1 className="admin-edit-pet-header">Edit Pet</h1>
         <img
           className="pet-img"
           src={newPetInfo.imageUrl}
           alt="pet"
-          height="200em"
-          width="200em"
         />
       </div>
       <Form className="admin-add-pet-form">
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group
             as={Col}
             className="mb-3"
@@ -123,7 +121,7 @@ export default function AdminEditPet() {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group as={Col} className="mb-3" controlId="formBasicname">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -153,7 +151,7 @@ export default function AdminEditPet() {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group as={Col} className="mb-3" controlId="formBasicHeight">
             <Form.Label>Height (cm)</Form.Label>
             <Form.Control
@@ -176,7 +174,7 @@ export default function AdminEditPet() {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group
             as={Col}
             className="mb-3"
@@ -213,7 +211,7 @@ export default function AdminEditPet() {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group
             as={Col}
             className="mb-3"
@@ -249,7 +247,7 @@ export default function AdminEditPet() {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="edit-pet-row">
           <Form.Group as={Col} controlId="formImageFile" className="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
