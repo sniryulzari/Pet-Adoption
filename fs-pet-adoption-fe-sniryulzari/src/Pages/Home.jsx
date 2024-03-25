@@ -91,7 +91,7 @@ const Home = () => {
               className="welcome-login-search-Button"
               onClick={() => navigate("/search")}
             >
-              Search Your New Pet
+              Search
             </button>
           </div>
         ) : (

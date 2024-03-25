@@ -1519,8 +1519,8 @@ label {
 /* tablet */
 @media (max-width: 1200px) {
   .welcome-container {
-    top: 13rem;
-    right: 4rem;
+    top: 3rem;
+    right: 3rem;
   }
   .welcome-title-top {
     font-size: 1.2rem;
@@ -1541,6 +1541,9 @@ label {
     bottom: 15rem;
     right: 4rem;
   }
+  .hills {
+    height: 10%;
+  }
   .home-welcome-img,
   .petImg3,
   .petImg2 {
@@ -1551,6 +1554,32 @@ label {
   .footer-social-media,
   .footer-newsletter {
     margin: 0;
+  }
+
+  /* Pet Card */
+  .pet-card {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .pet-card-image {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 5px;
+  }
+  .card-right {
+    margin: 1rem 0;
+  }
+  .pet-card-pet-name {
+    font-size: 2.5rem;
+  }
+  .pet-card-button-container {
+    margin-top: 2rem;
+  }  
+
+  /* Profile Settings */
+  .profile-settings-form {
+    flex-direction: column;
+    width: 100%;
   }
 
   /* Admin */
@@ -1660,6 +1689,7 @@ label {
   .welcome-login-search-Button {
     position: absolute;
     bottom: 20%;
+    padding: 0.6rem 3rem;
   }
   .hills {
     height: 10%;
@@ -1821,9 +1851,6 @@ label {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-  }
-  .card-right {
-    margin: 1rem 0;
   }
   .pet-card-pet-name {
     font-size: 2rem;
