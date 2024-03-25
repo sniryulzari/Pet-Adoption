@@ -23,13 +23,13 @@ const handleUserPets = (user) => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th className="fs-5 text-center">Number</th>
-            <th className="fs-5 text-center">First Name</th>
-            <th className="fs-5 text-center">Last Name</th>
-            <th className="fs-5 text-center">Email</th>
-            <th className="fs-5 text-center">Phone Number</th>
-            <th className="fs-5 text-center">Bio</th>
-            <th className="fs-5 text-center">Pet Owner</th>
+            <th className="text-center">Number</th>
+            <th className="text-center">First Name</th>
+            <th className="text-center">Last Name</th>
+            <th className="text-center">Email</th>
+            <th className="text-center">Phone Number</th>
+            <th className="text-center">Bio</th>
+            <th className="text-center">Pet Owner</th>
           </tr>
         </thead>
 

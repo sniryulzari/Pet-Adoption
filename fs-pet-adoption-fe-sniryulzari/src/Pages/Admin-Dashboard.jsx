@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import PetsList from "../components/Admin-PetList";
-import UsersList from "../components/Admin-UserList";
-import { UsersContext } from "../Context/Context-Users";
-import { PetContext } from "../Context/Context-Pets";
-import axios from "axios";
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PetsList from '../components/Admin-PetList';
+import UsersList from '../components/Admin-UserList';
+import { UsersContext } from '../Context/Context-Users';
+import { PetContext } from '../Context/Context-Pets';
+import axios from 'axios';
 
 const AdminDashboard = () => {
   const { users, setusers, getServerUrl } = useContext(UsersContext);
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
         <h3 className="admin-dashboard-table-header">List of Pets</h3>
         <button
           className="add-pet-button-link"
-          onClick={() => navigate("/admin-AddPet")}
+          onClick={() => navigate('/admin-AddPet')}
         >
           Add Pet
         </button>

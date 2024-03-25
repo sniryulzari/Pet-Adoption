@@ -31,16 +31,16 @@ const PetsList = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th className="fs-5 text-center">Number</th>
-            <th className="fs-5 text-center">Type</th>
-            <th className="fs-5 text-center">Breed</th>
-            <th className="fs-5 text-center">Name</th>
-            <th className="fs-5 text-center">AdoptionStatus</th>
-            <th className="fs-5 text-center">Color</th>
-            <th className="fs-5 text-center">Hypoallergenic</th>
-            <th className="fs-5 text-center">DietaryRestrictions</th>
-            <th className="fs-5 text-center">Edit</th>
-            <th className="fs-5 text-center">Delete</th>
+            <th className="text-center">Number</th>
+            <th className="text-center">Type</th>
+            <th className="text-center">Breed</th>
+            <th className="text-center">Name</th>
+            <th className="text-center">Adoption Status</th>
+            <th className="text-center">Color</th>
+            <th className="text-center">Hypoallergenic</th>
+            <th className="text-center">Dietary Restrictions</th>
+            <th className="text-center">Edit</th>
+            <th className="text-center">Delete</th>
           </tr>
         </thead>
 

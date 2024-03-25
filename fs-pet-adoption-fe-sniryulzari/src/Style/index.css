@@ -34,6 +34,10 @@ section {
   padding: 0 1rem;
 }
 
+th {
+  font-size: 1.25rem;
+}
+
 /* Home Page */
 .home-container {
   height: 100%;
@@ -1021,7 +1025,7 @@ nav ul {
   flex-direction: column;
 }
 
-label {
+.formInput > label {
   font-size: 0.8rem;
   color: gray;
   margin-top: 0.9rem;
@@ -1075,6 +1079,7 @@ input:invalid[focused='true'] ~ .error-message {
   text-align: center;
   letter-spacing: 0.1rem;
   padding: 0.8125rem 2.5rem;
+  border: 1px solid #ff4880;
 }
 
 .signup-login-btn:hover {
@@ -1091,9 +1096,10 @@ input:invalid[focused='true'] ~ .error-message {
   font-size: 1.2rem;
 }
 
-/* admin pages */
+/* Admin Pages */
 .admin-dashboard-pets-container,
-.admin-add-pet-container {
+.admin-add-pet-container,
+.admin-edit-pet-container {
   font-size: 1rem;
   width: 100%;
   padding: 1rem 4rem;
@@ -1102,14 +1108,12 @@ input:invalid[focused='true'] ~ .error-message {
 }
 
 .admin-dashboard-header,
-.admin-add-pet-header {
+.admin-add-pet-header,
+.admin-edit-pet-header {
   font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
 }
 
 .admin-dashboard-table-header {
@@ -1193,7 +1197,7 @@ input:invalid[focused='true'] ~ .error-message {
 }
 
 /* edit page */
-.admin-add-pet-header {
+.admin-edit-pet-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1548,6 +1552,36 @@ label {
   .footer-newsletter {
     margin: 0;
   }
+
+  /* Admin */
+  .admin-dashboard-pets-container,
+  .admin-add-pet-container,
+  .admin-edit-pet-container {
+    padding: 1rem;
+  }
+  th {
+    font-size: 0.7rem;
+  }
+  td {
+    font-size: 0.5rem;
+  }
+  .admin-add-pet-form {
+    padding: 1rem;
+    margin: 0;
+  }
+  .add-pet-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .admin-edit-pet-header {
+    flex-direction: column;
+  }
+  .pet-img {
+    width: 10rem;
+    height: 10rem;
+  }
+  
 }
 
 /* Mobile */
@@ -1768,7 +1802,7 @@ label {
     margin: 1rem;
   }
   .search-pet-results {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
   section {
     padding: 0;
@@ -1865,5 +1899,42 @@ label {
   .profile-settings-field {
     width: 100%;
     margin: 0.4rem 0;
+  }
+
+  /* Admin */
+  .admin-dashboard-header,
+  .admin-add-pet-header,
+  .admin-edit-pet-header {
+    font-size: 2.2rem;
+    margin: 1rem auto;
+  }
+  .admin-dashboard-table-header {
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+  }
+  th {
+    font-size: 10px;
+  }
+  td {
+    font-size: 10px;
+  }
+  .add-pet-button-link {
+    padding: 0.5rem 2rem;
+  }
+
+  /* Add Pet */
+  .add-pet-buttons-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .add-pet-buttons-container > .add-pet-buttons {
+    margin: 0.5rem 0;
+  }
+
+  /* Edit Pet */
+  .pet-img {
+    width: 7rem;
+    height: 7rem;
   }
 }

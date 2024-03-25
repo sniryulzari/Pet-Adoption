@@ -1,23 +1,23 @@
-import axios from "axios";
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { Form, Col, Row } from "react-bootstrap";
-import { PetContext } from "../Context/Context-Pets";
-import { toast } from "react-toastify";
+import axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Form, Col, Row } from 'react-bootstrap';
+import { PetContext } from '../Context/Context-Pets';
+import { toast } from 'react-toastify';
 
 export default function AdminEditPet() {
   const { petId, getServerUrl } = useContext(PetContext);
   const [newPetInfo, setNewPetInfo] = useState({
-    type: "",
-    breed: "",
-    name: "",
-    adoptionStatus: "",
-    height: "",
-    weight: "",
-    color: "",
-    bio: "",
-    hypoallergenic: "",
-    dietaryRestrictions: "",
+    type: '',
+    breed: '',
+    name: '',
+    adoptionStatus: '',
+    height: '',
+    weight: '',
+    color: '',
+    bio: '',
+    hypoallergenic: '',
+    dietaryRestrictions: '',
   });
   const [petImage, setPetImage] = useState();
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ export default function AdminEditPet() {
       for (let key in newPetInfo) {
         formData.append(key, newPetInfo[key]);
       }
-      formData.append("petImage", petImage);
+      formData.append('petImage', petImage);
 
       for (let value of formData.values()) {
         console.log(value);
@@ -63,10 +63,10 @@ export default function AdminEditPet() {
         withCredentials: true,
       });
       if (res.data) {
-        toast.success("Pet Info updated Successfully  !", {
+        toast.success('Pet Info updated Successfully  !', {
           position: toast.POSITION.TOP_RIGHT,
         });
-        navigate("/admin-Dashboard");
+        navigate('/admin-Dashboard');
       }
     } catch (err) {
       console.log(err);
@@ -74,12 +74,13 @@ export default function AdminEditPet() {
   };
 
   return (
-    <div className="admin-add-pet-container">
-      <div className="admin-add-pet-header">
-        <h1 className="display-3">Edit Pet</h1>
+    <div className="admin-edit-pet-container">
+      <div className="admin-edit-pet-header">
+        <h1 className="">Edit Pet</h1>
         <img
           className="pet-img"
           src={newPetInfo.imageUrl}
+          alt="pet"
           height="200em"
           width="200em"
         />
@@ -270,7 +271,7 @@ export default function AdminEditPet() {
           <button
             className="add-pet-buttons"
             type="submit"
-            onClick={() => navigate("/admin-Dashboard")}
+            onClick={() => navigate('/admin-Dashboard')}
           >
             Dashboard
           </button>

@@ -70,9 +70,9 @@ const AdminAddPet = () => {
 
   return (
     <div className="admin-add-pet-container">
-      <h1 className="admin-add-pet-header">Add Pets</h1>
+      <h1 className="admin-add-pet-header">Add Pet</h1>
       <Form className="admin-add-pet-form">
-        <Row className="mb-3">
+        <Row className="add-pet-row mb-3">
           <Form.Group
             as={Col}
             className="mb-3"
@@ -150,7 +150,7 @@ const AdminAddPet = () => {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="add-pet-row mb-3">
           <Form.Group
             as={Col}
             className="mb-3"
@@ -198,7 +198,7 @@ const AdminAddPet = () => {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="add-pet-row mb-3">
           <Form.Group as={Col} controlId="formImageFile" className="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
