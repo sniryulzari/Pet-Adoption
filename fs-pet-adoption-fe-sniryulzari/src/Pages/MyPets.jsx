@@ -130,7 +130,7 @@ const MyPets = () => {
         </div>
 
         {!togglePets && (
-          <div>
+          <div className="my-pets-result-container">
             <h2 className="my-pets-sub-header">My Saved Pets</h2>
             <Row xs={1} md={2} lg={3} xl={4} className="search-pet-results">
               {mySavedPetInfo.map((pet) => (
@@ -147,7 +147,7 @@ const MyPets = () => {
         )}
 
         {togglePets && (myAdoptedPetInfo.length || myFosteredPetInfo.length) ? (
-          <div>
+          <div className="my-pets-result-container">
             <h2 className="my-pets-sub-header">My Owen Pets</h2>
             <Row xs={1} md={2} lg={3} xl={4} className="search-pet-results">
               {myAdoptedPetInfo.map((pet) => (

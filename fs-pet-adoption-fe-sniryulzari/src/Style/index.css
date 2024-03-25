@@ -1386,10 +1386,10 @@ label {
 }
 
 .pet-card-button-container {
-  flex-basis: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-basis: 100%;
 }
 
 .pet-card-button {
@@ -1469,8 +1469,7 @@ label {
   font-family: 'MikadoBold';
   font-size: 3rem;
   color: #393d72;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 
 .profile-settings-form {
@@ -1795,6 +1794,18 @@ label {
   .pet-card-pet-name {
     font-size: 2rem;
   }
+  .pet-card-button-container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .pet-card-button-container > div {
+    display: flex;
+  }
+  .pet-card-button {
+    padding: 0.4rem 1rem;
+    margin: 0.4rem 0.4rem 0 0;
+    font-size: 0.7rem;
+  }
 
   /* Signup and Login Form */
   .SignupForm,
@@ -1814,5 +1825,45 @@ label {
     padding: 0.6rem 2rem;
   }
 
-  
+  /* My Pets */
+  .my-pets-container {
+    padding: 0;
+  }
+  .my-pets-header-container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .my-pets-header {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  .my-pets-result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+  }
+  .my-pets-sub-header {
+    padding: 0;
+  }
+  .search-pet-results {
+    padding: 0;
+  }
+  .my-pets {
+    margin: 5rem 0;
+  }
+
+  /* Profile Settings */
+  .profile-settings-container {
+    padding: 0 0.5rem;
+  }
+  .profile-settings-header {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+  .profile-settings-field {
+    width: 100%;
+    margin: 0.4rem 0;
+  }
 }
