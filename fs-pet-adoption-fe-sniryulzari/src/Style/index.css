@@ -1979,4 +1979,12 @@ label {
   .edit-pet-row {
     flex-direction: column;
   }
+
+  /* Admin User Pets */
+  .admin-user-pets-container {
+    padding: 1rem;
+  }
+  .search-pet-results-column {
+    margin: 4rem 0;
+  }
 }

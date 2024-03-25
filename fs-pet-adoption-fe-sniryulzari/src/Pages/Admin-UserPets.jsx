@@ -67,6 +67,7 @@ function AdminUserPets() {
             <Col
               key={pet._id}
               onClick={() => navigate(`/petcard?petId=${pet._id}`)}
+              className="search-pet-results-column"
             >
               <SearchPetCard {...pet} />
             </Col>
@@ -75,6 +76,7 @@ function AdminUserPets() {
             <Col
               key={pet._id}
               onClick={() => navigate(`/petcard?petId=${pet._id}`)}
+              className="search-pet-results-column"
             >
               <SearchPetCard {...pet} />
             </Col>
