@@ -1,22 +1,22 @@
-import React from "react";
-import { useState, useContext } from "react";
-import axios from "axios";
-import { Form, Col, Row } from "react-bootstrap";
-import { FaDog } from "react-icons/fa";
-import { FaCat } from "react-icons/fa";
-import { FaHorse } from "react-icons/fa";
-import { GiDolphin } from "react-icons/gi";
-import { GiTigerHead } from "react-icons/gi";
-import RangeSlider from "react-bootstrap-range-slider";
-import { PetContext } from "../Context/Context-Pets";
-import SearchPetsCardList from "../components/Search-PetsCardList";
-import Footer from "../components/Footer";
+import React from 'react';
+import { useState, useContext } from 'react';
+import axios from 'axios';
+import { Form, Col, Row } from 'react-bootstrap';
+import { FaDog } from 'react-icons/fa';
+import { FaCat } from 'react-icons/fa';
+import { FaHorse } from 'react-icons/fa';
+import { GiDolphin } from 'react-icons/gi';
+import { GiTigerHead } from 'react-icons/gi';
+import RangeSlider from 'react-bootstrap-range-slider';
+import { PetContext } from '../Context/Context-Pets';
+import SearchPetsCardList from '../components/Search-PetsCardList';
+import Footer from '../components/Footer';
 
 const SearchPets = () => {
   const [petInfo, setPetInfo] = useState({
-    type: "",
-    name: "",
-    adoptionStatus: "",
+    type: '',
+    name: '',
+    adoptionStatus: '',
     minHeight: 0,
     maxHeight: 300,
     minWeight: 0,
@@ -52,9 +52,9 @@ const SearchPets = () => {
 
   const handleClearSearch = (e) => {
     setPetInfo({
-      type: "",
-      name: "",
-      adoptionStatus: "",
+      type: '',
+      name: '',
+      adoptionStatus: '',
       minHeight: 0,
       maxHeight: 300,
       minWeight: 0,
@@ -70,12 +70,12 @@ const SearchPets = () => {
   };
 
   const selectStyle = {
-    border: "1px solid blue",
-    borderRadius: "20px",
+    border: '1px solid blue',
+    borderRadius: '20px',
   };
 
   const unselectStyle = {
-    border: "none",
+    border: 'none',
   };
 
   return (
@@ -91,7 +91,7 @@ const SearchPets = () => {
             name="type"
             style={isDogPress ? selectStyle : unselectStyle}
             onClick={() => {
-              setPetInfo({ ...petInfo, type: "Dog" });
+              setPetInfo({ ...petInfo, type: 'Dog' });
               setIsDogPress(!isDogPress);
               setIsCatPress(false);
               setIsHorsePress(false);
@@ -105,7 +105,7 @@ const SearchPets = () => {
             name="type"
             style={isCatPress ? selectStyle : unselectStyle}
             onClick={() => {
-              setPetInfo({ ...petInfo, type: "Cat" });
+              setPetInfo({ ...petInfo, type: 'Cat' });
               setIsCatPress(!isCatPress);
               setIsDogPress(false);
               setIsHorsePress(false);
@@ -119,7 +119,7 @@ const SearchPets = () => {
             name="type"
             style={isHorsePress ? selectStyle : unselectStyle}
             onClick={() => {
-              setPetInfo({ ...petInfo, type: "Horse" });
+              setPetInfo({ ...petInfo, type: 'Horse' });
               setIsHorsePress(!isHorsePress);
               setIsDogPress(false);
               setIsCatPress(false);
@@ -133,7 +133,7 @@ const SearchPets = () => {
             name="type"
             style={isDolphinPress ? selectStyle : unselectStyle}
             onClick={() => {
-              setPetInfo({ ...petInfo, type: "Dolphin" });
+              setPetInfo({ ...petInfo, type: 'Dolphin' });
               setIsDolphinPress(!isDolphinPress);
               setIsDogPress(false);
               setIsCatPress(false);
@@ -147,7 +147,7 @@ const SearchPets = () => {
             name="type"
             style={isTigerPress ? selectStyle : unselectStyle}
             onClick={() => {
-              setPetInfo({ ...petInfo, type: "Tiger" });
+              setPetInfo({ ...petInfo, type: 'Tiger' });
               setIsTigerPress(!isTigerPress);
               setIsDogPress(false);
               setIsCatPress(false);
@@ -166,7 +166,7 @@ const SearchPets = () => {
           />
         </Form.Group>
 
-        <div className={isChecked ? "d-block" : "d-none"}>
+        <div className={isChecked ? 'd-block' : 'd-none'}>
           <Form className="advanced-search-container">
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridName">
@@ -181,9 +181,7 @@ const SearchPets = () => {
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridStatus">
-                <Form.Label className="search-field">
-                  Status
-                </Form.Label>
+                <Form.Label className="search-field">Status</Form.Label>
                 <Form.Select
                   name="adoptionStatus"
                   // value={petInfo.adoptionStatus}
@@ -269,13 +267,15 @@ const SearchPets = () => {
           </Form>
         </div>
         <div className="search-pet-btn-container">
-          <button
-            type="submit"
-            className="search-pet-btn"
-            onClick={handleSearch}
-          >
-            Search
-          </button>
+          <a href="#search-result">
+            <button
+              type="submit"
+              className="search-pet-btn"
+              onClick={handleSearch}
+            >
+              Search
+            </button>
+          </a>
           <button
             type="submit"
             className="search-pet-btn clear-search"
@@ -284,11 +284,13 @@ const SearchPets = () => {
             Clear Search
           </button>
         </div>
-        {noSearchRes ? (
-          <p className="search-no-result-text">Sorry no result found</p>
-        ) : (
-          <SearchPetsCardList />
-        )}
+        <section id="search-result">
+          {noSearchRes ? (
+            <p className="search-no-result-text">Sorry no result found</p>
+          ) : (
+            <SearchPetsCardList />
+          )}
+        </section>
       </div>
       <Footer />
     </div>

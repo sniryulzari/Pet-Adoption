@@ -21,7 +21,7 @@ function SearchPetCard(props) {
 
   return (
     <div className="mx-1 my-1 ">
-      <Card border={adoptionStatus == "Available" && "primary"}>
+      <Card border={adoptionStatus === "Available" && "primary"}>
         <Card.Img
           variant="top"
           src={imageUrl}

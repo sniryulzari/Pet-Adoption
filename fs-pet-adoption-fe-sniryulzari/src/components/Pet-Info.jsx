@@ -224,7 +224,7 @@ function PetCard() {
             src={pet.imageUrl}
             height="500em"
             width="500em"
-            alt="Pet Image"
+            alt="Pet"
             className="pet-card-image"
           ></img>
           <div className="card-right">
@@ -235,7 +235,7 @@ function PetCard() {
                 This {pet.type} is of the breed {pet.breed}.
               </p>
               <p className="pet-info">
-                {pet.name} is {pet.height} cm tall and weight {pet.weight} kg.
+                {pet.name} is {pet.height}cm tall and weight {pet.weight}kg.
               </p>
               <p className="pet-info">color: {pet.color}</p>
               <p className="pet-info">Adoption Status: {pet.adoptionStatus}</p>
