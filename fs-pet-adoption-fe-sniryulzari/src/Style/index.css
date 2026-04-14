@@ -1397,8 +1397,9 @@ label {
 .pet-card-button-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-basis: 100%;
+  padding: 1rem 3rem;
 }
 
 .pet-card-button {
@@ -1579,9 +1580,7 @@ label {
   .pet-card-pet-name {
     font-size: 2.5rem;
   }
-  .pet-card-button-container {
-    margin-top: 2rem;
-  }
+
 
   /* Profile Settings */
   .profile-settings-form {
@@ -1868,12 +1867,10 @@ label {
     font-size: 2rem;
   }
   .pet-card-button-container {
-    width: 100%;
-    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: flex-start;
   }
-  .pet-card-button-container > div {
-    display: flex;
-  }
+  
   .pet-card-button {
     padding: 0.4rem 1rem;
     margin: 0.4rem 0.4rem 0 0;

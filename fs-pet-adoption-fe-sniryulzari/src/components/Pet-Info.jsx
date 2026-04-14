@@ -1,6 +1,6 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import { UsersContext } from "../Context/Context-Users";
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { UsersContext } from '../Context/Context-Users';
 
 function PetCard() {
   const [pet, setPet] = useState();
@@ -12,7 +12,7 @@ function PetCard() {
 
   const getPetId = () => {
     const queryParams = new URLSearchParams(window.location.search);
-    const id = queryParams.get("petId");
+    const id = queryParams.get('petId');
     return id;
   };
 
@@ -25,11 +25,11 @@ function PetCard() {
       setPet(res.data);
 
       setAvialable(false);
-      if (res.data.adoptionStatus === "Available") {
+      if (res.data.adoptionStatus === 'Available') {
         setAvialable(true);
       }
 
-      console.log("avialable", avialable);
+      console.log('avialable', avialable);
     } catch (err) {
       console.log(err);
     }
@@ -93,7 +93,7 @@ function PetCard() {
         {},
         {
           withCredentials: true,
-        }
+        },
       );
       if (res.data.ok) {
         setSavePet(true);
@@ -127,7 +127,7 @@ function PetCard() {
         {},
         {
           withCredentials: true,
-        }
+        },
       );
       const userId = res.data;
       if (userId) {
@@ -138,7 +138,7 @@ function PetCard() {
             { userId, petId },
             {
               withCredentials: true,
-            }
+            },
           );
           setAdoptPet(true);
           setFosterPet(false);
@@ -160,7 +160,7 @@ function PetCard() {
         {},
         {
           withCredentials: true,
-        }
+        },
       );
       const userId = res.data;
       if (userId) {
@@ -171,7 +171,7 @@ function PetCard() {
             { userId, petId },
             {
               withCredentials: true,
-            }
+            },
           );
           setFosterPet(true);
           setAdoptPet(false);
@@ -200,7 +200,7 @@ function PetCard() {
             { userId, petId },
             {
               withCredentials: true,
-            }
+            },
           );
           if (res.data) {
             setFosterPet(false);
@@ -217,80 +217,84 @@ function PetCard() {
   };
 
   return (
-    <section className="pet-card-container">
-      {pet ? (
-        <div className="pet-card">
-          <img
-            src={pet.imageUrl}
-            height="500em"
-            width="500em"
-            alt="Pet"
-            className="pet-card-image"
-          ></img>
-          <div className="card-right">
-            <div className="pet-card-info">
-              <span className="pet-card-pet-name">{pet.name}</span>
+    <div>
+      <section className="pet-card-container">
+        {pet ? (
+          <div className="pet-card">
+            <img
+              src={pet.imageUrl}
+              height="500em"
+              width="500em"
+              alt="Pet"
+              className="pet-card-image"
+            ></img>
+            <div className="card-right">
+              <div className="pet-card-info">
+                <span className="pet-card-pet-name">{pet.name}</span>
 
-              <p className="pet-info">
-                This {pet.type} is of the breed {pet.breed}.
-              </p>
-              <p className="pet-info">
-                {pet.name} is {pet.height}cm tall and weight {pet.weight}kg.
-              </p>
-              <p className="pet-info">color: {pet.color}</p>
-              <p className="pet-info">Adoption Status: {pet.adoptionStatus}</p>
-              <p className="pet-info">Hypoallergenic: {pet.hypoallergenic}</p>
-              <p className="pet-info">
-                Dietary Restrictions: {pet.dietaryRestrictions}
-              </p>
-              <p className="pet-info">Bio: {pet.bio}</p>
+                <p className="pet-info">
+                  This {pet.type} is of the breed {pet.breed}.
+                </p>
+                <p className="pet-info">
+                  {pet.name} is {pet.height}cm tall and weight {pet.weight}kg.
+                </p>
+                <p className="pet-info">color: {pet.color}</p>
+                <p className="pet-info">
+                  Adoption Status: {pet.adoptionStatus}
+                </p>
+                <p className="pet-info">Hypoallergenic: {pet.hypoallergenic}</p>
+                <p className="pet-info">
+                  Dietary Restrictions: {pet.dietaryRestrictions}
+                </p>
+                <p className="pet-info">Bio: {pet.bio}</p>
+              </div>
             </div>
+          </div>
+        ) : (
+          ''
+        )}
+      </section>
+      <section>
+        <div>
+          {isLogin && (avialable || adoptPet || fosterPet) ? (
+            <div className="pet-card-button-container">
+              {fosterPet ? (
+                <button className="pet-card-button" onClick={handleAdopt}>
+                  Adopt
+                </button>
+              ) : null}
 
-            {isLogin && (avialable || adoptPet || fosterPet) ? (
-              <div className="pet-card-button-container">
-                {fosterPet ? (
+              {adoptPet || fosterPet ? (
+                <button className="pet-card-button" onClick={handleReturn}>
+                  Return Pet
+                </button>
+              ) : (
+                <div>
                   <button className="pet-card-button" onClick={handleAdopt}>
                     Adopt
                   </button>
-                ) : null}
-
-                {adoptPet || fosterPet ? (
-                  <button className="pet-card-button" onClick={handleReturn}>
-                    Return Pet
+                  <button className="pet-card-button" onClick={handleFoster}>
+                    Foster
                   </button>
-                ) : (
-                  <div>
-                    <button className="pet-card-button" onClick={handleAdopt}>
-                      Adopt
-                    </button>
-                    <button className="pet-card-button" onClick={handleFoster}>
-                      Foster
-                    </button>
-                  </div>
-                )}
+                </div>
+              )}
 
-                {savePet && !(adoptPet || fosterPet) ? (
-                  <button
-                    className="pet-card-button"
-                    onClick={handleUnSavedPet}
-                  >
-                    Unsave Pet
-                  </button>
-                ) : null}
+              {savePet && !(adoptPet || fosterPet) ? (
+                <button className="pet-card-button" onClick={handleUnSavedPet}>
+                  Unsave Pet
+                </button>
+              ) : null}
 
-                {!savePet && !(adoptPet || fosterPet) ? (
-                  <button className="pet-card-button" onClick={handleSavePet}>
-                    Save Pet
-                  </button>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
+              {!savePet && !(adoptPet || fosterPet) ? (
+                <button className="pet-card-button" onClick={handleSavePet}>
+                  Save Pet
+                </button>
+              ) : null}
+            </div>
+          ) : null}
         </div>
-      ) : (
-        ""
-      )}
-    </section>
+      </section>
+    </div>
   );
 }
 
