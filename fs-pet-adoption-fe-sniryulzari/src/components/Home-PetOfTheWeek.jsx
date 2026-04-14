@@ -20,9 +20,9 @@ function PetOfTheWeek() {
     }
   };
 
-  useEffect(() => {
-    getPetOfTheWeek();
-  }, []);
+  // useEffect(() => {
+  //   getPetOfTheWeek();
+  // }, []); //fix: need to fix this to update pet of the week every week.
 
   return (
     <section className="home-pet-of-the-week-container">
