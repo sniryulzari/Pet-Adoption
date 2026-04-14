@@ -1452,17 +1452,19 @@ label {
   margin-left: 3rem;
 }
 
+.my-pets-result-container {
+  width: 100%;
+}
+
 .my-pets-sub-header {
   font-family: 'MikadoBold';
   font-size: 1.5rem;
   color: #ff4880;
   padding-left: 3.3rem;
   margin-top: 1rem;
+  text-align: center;
 }
 
-.my-pets {
-  flex-basis: 25%;
-}
 
 /* Profile Settings Page */
 .profile-settings-container {
